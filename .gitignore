@@ -1,0 +1,116 @@
+data/fineweb10B/
+pylog124M/
+logs/
+wandb/
+# ======================
+# Custom Directories
+# ======================
+data/fineweb10B/
+pylog124M/
+logs/
+wandb/
+
+# ======================
+# Python
+# ======================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ======================
+# Jupyter
+# ======================
+.ipynb_checkpoints
+*.ipynb
+# Optional: keep curated notebooks but ignore outputs
+# *.ipynb
+# !notebooks/*.ipynb
+
+# ======================
+# Editors & IDEs
+# ======================
+# Vim
+*.swp
+*.swo
+*.swn
+.*.swp
+.*.swo
+
+# VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# PyCharm
+.idea/
+*.iml
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list/
+tramp
+.\#*
+
+# ======================
+# OS & Misc
+# ======================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.stackdump
+
+# Logs and databases
+*.log
+*.sqlite
+*.sqlitedb
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# ======================
+# ML & Data Science
+# ======================
+# Model files
+*.pth
+*.pt
+*.ckpt
+*.h5
+*.onnx
+*.pb
+
+# DVC
+.dvc/

@@ -1,0 +1,50 @@
+# config.yaml
+hardware:
+  device: 1
+  compile: true
+  coordinate_descent_tuning: true
+  amp: false
+
+model:
+  size: "d12"  # Options: d12, d24, d36, d48
+  
+  vocab_size: 50257
+  n_layer: 12
+  n_head: 12
+  n_embed: 768
+
+  # MODEL_CONFIGS = {
+  #   "d12": GPTConfig(vocab_size=cfg['model']['vocab_size'], n_layer=12, n_head=12, n_embd=768),
+  #   "d24": GPTConfig(vocab_size=cfg['model']['vocab_size'], n_layer=24, n_head=16, n_embd=1024),
+  #   "d36": GPTConfig(vocab_size=cfg['model']['vocab_size'], n_layer=36, n_head=20, n_embd=1280),
+  #   "d48": GPTConfig(vocab_size=cfg['model']['vocab_size'], n_layer=48, n_head=25, n_embd=1600),
+
+
+training:
+  batch_size: 64
+  sequence_length: 128
+  num_iterations: 5000000 
+  learning_rate: 0.0001
+  warmup_iters: 1000
+  warmdown_iters: 0
+  weight_decay: 0.0001
+  grad_accumulation_steps: 9
+  optimizer_betas: [0.9, 0.95] # Added optimizer betas
+ 
+ 
+
+evaluation:
+  val_tokens: 1048576  # Fixed value as per original code
+  val_loss_every: 100
+  val_batch_size: 32
+
+logging:
+  output_dir: "../results"
+  save_every: 50000
+  use_ml_flow: true #
+  mlflow_tracking_uri: http://195.209.214.105:5000
+  experiment_name: debug
+
+data:
+  input_bin: "data/fineweb10B/fineweb_train_*.bin"
+  input_val_bin: "data/fineweb10B/fineweb_val_*.bin"
