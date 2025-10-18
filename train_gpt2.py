@@ -151,6 +151,7 @@ class GPT(nn.Module):
         self.transformer.wte.weight = (
             self.lm_head.weight
         )  # https://paperswithcode.com/method/weight-tying
+  
 
     def forward(self, idx, targets=None, return_logits=True):
         b, t = idx.size()
@@ -447,13 +448,8 @@ if __name__ == "__main__":
     }[args.model]
     model = GPT(model_config)
     model = model.train().cuda()
-    if hasattr(config, "coordinate_descent_tuning"):
-        config.coordinate_descent_tuning = True  # suggested by @Chillee
-    print0("compiling the model...")
-    model = torch.compile(
-        model
-    )  # NOTE: this might cause issues depending on your GPU, consider turning it off
 
+   
     # here we wrap model into DDP container
     model = DDP(model, device_ids=[ddp_local_rank])
     raw_model = model.module  # always contains the "raw" unwrapped model
