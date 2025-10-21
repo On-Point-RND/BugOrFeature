@@ -242,14 +242,16 @@ class Logger:
     def _save_metadata_artifact(self, payload: dict, step: int):
         """Save raw metadata + aggregates to artifact (local + MLflow)."""
         os.makedirs(self.logs_dir, exist_ok=True)
-        path = os.path.join(self.logs_dir, f"metadata_step{step:06d}.json")
-        with open(path, "w", encoding="utf-8") as f:
+        metadata_dir = os.path.join(self.logs_dir, "metadata")
+        os.makedirs(metadata_dir, exist_ok=True)
+        sample_path = os.path.join(metadata_dir, f"metadata_step{step:06d}.json")
+        with open(sample_path, "w", encoding="utf-8") as f:
             json.dump(payload, f, ensure_ascii=False, indent=2)
-        self.info(f"Saved metadata to {path}")
+        self.info(f"Saved metadata to {sample_path}")
         if self.use_ml_flow and mlflow is not None:
             try:
-                mlflow.log_artifact(path, artifact_path="metadata")
-                aggr = payload.get("aggregates", {})  # {parent_path: {meta_key: stats}}
+                mlflow.log_artifact(sample_path, artifact_path="metadata")
+                aggr = payload.get("aggregates", {})  
                 metrics = {}
                 for parent_path, meta_dict in aggr.items():
                     parent_s = self._sanitize_for_metric(parent_path)
@@ -273,3 +275,50 @@ class Logger:
             "aggregates": aggregates,
         }
         self._save_metadata_artifact(payload, step=step)
+
+    def save_sample_artifact(self, sample_dict: dict, step: int, multi: bool = False):
+        """Save JSON with sample(s) locally and (if enabled) to MLflow under artifact_path='samples'."""
+        os.makedirs(self.logs_dir, exist_ok=True)
+        fname = (f"samples_step{step:06d}.json" if multi else f"sample_step{step:06d}.json")
+        samples_dir = os.path.join(self.logs_dir, "samples")
+        os.makedirs(samples_dir, exist_ok=True)
+        sample_path = os.path.join(samples_dir, fname)
+        with open(sample_path, "w", encoding="utf-8") as f:
+            json.dump(sample_dict, f, ensure_ascii=False, indent=2)
+        self.logger.info(f"Saved sample(s) to {sample_path}")
+
+        if self.use_ml_flow and mlflow is not None:
+            try:
+                mlflow.log_artifact(sample_path, artifact_path="samples")
+                self.logger.info("Sample artifact logged to MLflow under 'samples/'.")
+            except Exception as e:
+                self.logger.info(f"Failed to log sample to MLflow: {e}")
+    
+    def save_model_architecture(self, model):
+        """Save/emit print(model) either locally (model.txt) or to MLflow if enabled."""
+        text = ""
+        try:
+            text = str(model)  
+        except Exception as e:
+            text = f"<failed to stringify model: {e}>"
+
+        try:
+            os.makedirs(self.logs_dir, exist_ok=True)
+            path = os.path.join(self.logs_dir, "model.txt")
+            with open(path, "w", encoding="utf-8") as f:
+                f.write(text + "\n")
+            self.logger.info(f"Model architecture saved to {path}")
+        except Exception as e:
+            self.logger.info(f"Failed to save model architecture locally: {e}")
+            path = None
+
+        if self.use_ml_flow and mlflow is not None:
+            try:
+                if hasattr(mlflow, "log_text"):
+                    mlflow.log_text(text, artifact_file="model.txt")
+                    self.logger.info("Model architecture logged to MLflow (log_text).")
+                elif path is not None:
+                    mlflow.log_artifact(path, artifact_path="model")
+                    self.logger.info("Model architecture logged to MLflow (artifact).")
+            except Exception as e:
+                self.logger.info(f"Failed to log model architecture to MLflow: {e}")

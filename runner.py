@@ -7,9 +7,14 @@ from logger import Logger
 from model import GPT, GPTConfig
 from datasets import BaseDataLoader
 
+from swap_layers import apply_simple_linear_swaps
+
 # Load config
 with open("config.yaml", "r") as f:
     cfg = yaml.safe_load(f)
+
+# Logger 
+logger = Logger(cfg, use_ml_flow=cfg['logging']['use_ml_flow'])
 
 # Build model config correctly
 model_cfg = GPTConfig(
@@ -42,14 +47,20 @@ model.set_optimizers(
     betas=cfg["training"]["optimizer_betas"],
 )
 
+logger.info("==="*10 + f"\nMODEL BEFORE SWAP:\n\n{model}\n\n" + "==="*10 )
+
+apply_simple_linear_swaps(model, cfg, logging=logger.info if cfg['logging'].get('use_ml_flow') else print)
+
+logger.info("\n\n" + "==="*10 + f"\nMODEL AFTER SWAP:\n\n{model}\n\n" + "==="*10 )
+logger.save_model_architecture(model)
+
 # Warmup the data pipeline
 x, y = train_loader.next_batch()
 
 # Timing
 torch.cuda.synchronize()
 
-# Logger & Trainer
-logger = Logger(cfg, use_ml_flow=cfg['logging']['use_ml_flow'])
+#  Trainer
 trainer = Trainer(cfg, logger, cfg['hardware']["device"], use_amp=cfg['hardware']['amp'])
 
 trainer.train(train_loader, val_loader, model, val_steps)

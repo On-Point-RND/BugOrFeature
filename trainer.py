@@ -1,15 +1,11 @@
 import math
 import time
 import json
+import numbers
 import torch
 import torch.amp
 import torch._inductor.config as torch_config
-
-# Optional deps: we keep them soft so trainer works even if they're missing
-try:
-    import mlflow  # used only when logger.use_ml_flow is True
-except Exception:  # pragma: no cover
-    mlflow = None
+import statistics
 
 try:
     import tiktoken  # for GPT-2 encode/decode (optional)
@@ -98,24 +94,6 @@ class Trainer:
                 idx = torch.cat((idx, next_token), dim=1)
         return idx[0]
 
-    def _save_sample_artifact(self, sample_dict: dict, step: int, multi: bool = False):
-        """Save JSON with sample(s) locally and (if enabled) to MLflow under artifact_path='samples'."""
-        import os
-        os.makedirs(self.logger.logs_dir, exist_ok=True)
-        fname = (f"samples_step{step:06d}.json" if multi else f"sample_step{step:06d}.json")
-        sample_path = os.path.join(self.logger.logs_dir, fname)
-        with open(sample_path, "w", encoding="utf-8") as f:
-            json.dump(sample_dict, f, ensure_ascii=False, indent=2)
-        self.logger.info(f"Saved sample(s) to {sample_path}")
-
-        if getattr(self.logger, "use_ml_flow", False) and mlflow is not None:
-            try:
-                mlflow.log_artifact(sample_path, artifact_path="samples")
-                self.logger.info("Sample artifact logged to MLflow under 'samples/'.")
-            except Exception as e:
-                self.logger.info(f"Failed to log sample to MLflow: {e}")
-
-    # --------------------------------- core training logic ---------------------------------
     def get_lr(self, it):
         assert it <= self.NUM_ITERATIONS
         if it < self.WARMUP_ITERS:
@@ -143,12 +121,13 @@ class Trainer:
             clamped_loss = min(val_loss, 700)
             val_ppl = math.exp(clamped_loss)
 
-            # Log both loss and perplexity
             self.logger.log(
                 val_loss=val_loss,
                 val_ppl=val_ppl,
                 step=self.step * self.tokens_per_iter,
             )
+
+            self.logger.collect_and_log_metadata(model, self.step, self.tokens_per_iter)
 
             try:
                 torch.manual_seed(1234)
@@ -206,7 +185,7 @@ class Trainer:
                 "val_ppl": float(val_ppl),
                 "samples": samples_out,
             }
-            self._save_sample_artifact(payload, step=self.step, multi=True)
+            self.logger.save_sample_artifact(payload, step=self.step, multi=True)
 
     def train(self, train_loader, val_loader, model, val_steps):
         # --- Optional model compilation ---
@@ -290,3 +269,4 @@ class Trainer:
                 self.logger.save_model(model, step)
 
         self.logger.info("We are done SIR!")
+
