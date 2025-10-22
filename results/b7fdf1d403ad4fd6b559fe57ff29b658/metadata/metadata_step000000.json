@@ -1,0 +1,1976 @@
+{
+  "step": 0,
+  "tokens_per_iter": 73728,
+  "entries": [
+    {
+      "parent_path": "transformer.h.0.attn.qkv_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "sequence_length_emb_size": [
+          128.0,
+          768.0
+        ],
+        "avg_flops_per_token_dense": 3538944.0,
+        "avg_flops_per_token_sparse": 3538944.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.0.attn.out_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "sequence_length_emb_size": [
+          128.0,
+          768.0
+        ],
+        "avg_flops_per_token_dense": 1179648.0,
+        "avg_flops_per_token_sparse": 1179648.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.0.mlp.up_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "sequence_length_emb_size": [
+          128.0,
+          768.0
+        ],
+        "avg_flops_per_token_dense": 4718592.0,
+        "avg_flops_per_token_sparse": 4718592.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.0.mlp.down_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.5029635429382324,
+        "sequence_length_emb_size": [
+          128.0,
+          3072.0
+        ],
+        "avg_flops_per_token_dense": 4718592.0,
+        "avg_flops_per_token_sparse": 2345312.25
+      }
+    },
+    {
+      "parent_path": "transformer.h.1.attn.qkv_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "sequence_length_emb_size": [
+          128.0,
+          768.0
+        ],
+        "avg_flops_per_token_dense": 3538944.0,
+        "avg_flops_per_token_sparse": 3538944.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.1.attn.out_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "sequence_length_emb_size": [
+          128.0,
+          768.0
+        ],
+        "avg_flops_per_token_dense": 1179648.0,
+        "avg_flops_per_token_sparse": 1179648.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.1.mlp.up_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "sequence_length_emb_size": [
+          128.0,
+          768.0
+        ],
+        "avg_flops_per_token_dense": 4718592.0,
+        "avg_flops_per_token_sparse": 4718592.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.1.mlp.down_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.48825820287068683,
+        "sequence_length_emb_size": [
+          128.0,
+          3072.0
+        ],
+        "avg_flops_per_token_dense": 4718592.0,
+        "avg_flops_per_token_sparse": 2414700.7500000005
+      }
+    },
+    {
+      "parent_path": "transformer.h.2.attn.qkv_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "sequence_length_emb_size": [
+          128.0,
+          768.0
+        ],
+        "avg_flops_per_token_dense": 3538944.0,
+        "avg_flops_per_token_sparse": 3538944.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.2.attn.out_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "sequence_length_emb_size": [
+          128.0,
+          768.0
+        ],
+        "avg_flops_per_token_dense": 1179648.0,
+        "avg_flops_per_token_sparse": 1179648.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.2.mlp.up_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "sequence_length_emb_size": [
+          128.0,
+          768.0
+        ],
+        "avg_flops_per_token_dense": 4718592.0,
+        "avg_flops_per_token_sparse": 4718592.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.2.mlp.down_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.4986294110616048,
+        "sequence_length_emb_size": [
+          128.0,
+          3072.0
+        ],
+        "avg_flops_per_token_dense": 4718592.0,
+        "avg_flops_per_token_sparse": 2365763.2500000005
+      }
+    },
+    {
+      "parent_path": "transformer.h.3.attn.qkv_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "sequence_length_emb_size": [
+          128.0,
+          768.0
+        ],
+        "avg_flops_per_token_dense": 3538944.0,
+        "avg_flops_per_token_sparse": 3538944.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.3.attn.out_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "sequence_length_emb_size": [
+          128.0,
+          768.0
+        ],
+        "avg_flops_per_token_dense": 1179648.0,
+        "avg_flops_per_token_sparse": 1179648.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.3.mlp.up_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "sequence_length_emb_size": [
+          128.0,
+          768.0
+        ],
+        "avg_flops_per_token_dense": 4718592.0,
+        "avg_flops_per_token_sparse": 4718592.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.3.mlp.down_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.49648332595825195,
+        "sequence_length_emb_size": [
+          128.0,
+          3072.0
+        ],
+        "avg_flops_per_token_dense": 4718592.0,
+        "avg_flops_per_token_sparse": 2375889.75
+      }
+    },
+    {
+      "parent_path": "transformer.h.4.attn.qkv_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "sequence_length_emb_size": [
+          128.0,
+          768.0
+        ],
+        "avg_flops_per_token_dense": 3538944.0,
+        "avg_flops_per_token_sparse": 3538944.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.4.attn.out_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "sequence_length_emb_size": [
+          128.0,
+          768.0
+        ],
+        "avg_flops_per_token_dense": 1179648.0,
+        "avg_flops_per_token_sparse": 1179648.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.4.mlp.up_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "sequence_length_emb_size": [
+          128.0,
+          768.0
+        ],
+        "avg_flops_per_token_dense": 4718592.0,
+        "avg_flops_per_token_sparse": 4718592.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.4.mlp.down_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.49967018763224286,
+        "sequence_length_emb_size": [
+          128.0,
+          3072.0
+        ],
+        "avg_flops_per_token_dense": 4718592.0,
+        "avg_flops_per_token_sparse": 2360852.2499999995
+      }
+    },
+    {
+      "parent_path": "transformer.h.5.attn.qkv_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "sequence_length_emb_size": [
+          128.0,
+          768.0
+        ],
+        "avg_flops_per_token_dense": 3538944.0,
+        "avg_flops_per_token_sparse": 3538944.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.5.attn.out_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "sequence_length_emb_size": [
+          128.0,
+          768.0
+        ],
+        "avg_flops_per_token_dense": 1179648.0,
+        "avg_flops_per_token_sparse": 1179648.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.5.mlp.up_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "sequence_length_emb_size": [
+          128.0,
+          768.0
+        ],
+        "avg_flops_per_token_dense": 4718592.0,
+        "avg_flops_per_token_sparse": 4718592.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.5.mlp.down_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.5056187311808268,
+        "sequence_length_emb_size": [
+          128.0,
+          3072.0
+        ],
+        "avg_flops_per_token_dense": 4718592.0,
+        "avg_flops_per_token_sparse": 2332783.5
+      }
+    },
+    {
+      "parent_path": "transformer.h.6.attn.qkv_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "sequence_length_emb_size": [
+          128.0,
+          768.0
+        ],
+        "avg_flops_per_token_dense": 3538944.0,
+        "avg_flops_per_token_sparse": 3538944.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.6.attn.out_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "sequence_length_emb_size": [
+          128.0,
+          768.0
+        ],
+        "avg_flops_per_token_dense": 1179648.0,
+        "avg_flops_per_token_sparse": 1179648.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.6.mlp.up_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "sequence_length_emb_size": [
+          128.0,
+          768.0
+        ],
+        "avg_flops_per_token_dense": 4718592.0,
+        "avg_flops_per_token_sparse": 4718592.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.6.mlp.down_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.501811663309733,
+        "sequence_length_emb_size": [
+          128.0,
+          3072.0
+        ],
+        "avg_flops_per_token_dense": 4718592.0,
+        "avg_flops_per_token_sparse": 2350747.5
+      }
+    },
+    {
+      "parent_path": "transformer.h.7.attn.qkv_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "sequence_length_emb_size": [
+          128.0,
+          768.0
+        ],
+        "avg_flops_per_token_dense": 3538944.0,
+        "avg_flops_per_token_sparse": 3538944.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.7.attn.out_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "sequence_length_emb_size": [
+          128.0,
+          768.0
+        ],
+        "avg_flops_per_token_dense": 1179648.0,
+        "avg_flops_per_token_sparse": 1179648.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.7.mlp.up_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "sequence_length_emb_size": [
+          128.0,
+          768.0
+        ],
+        "avg_flops_per_token_dense": 4718592.0,
+        "avg_flops_per_token_sparse": 4718592.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.7.mlp.down_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.49376074473063153,
+        "sequence_length_emb_size": [
+          128.0,
+          3072.0
+        ],
+        "avg_flops_per_token_dense": 4718592.0,
+        "avg_flops_per_token_sparse": 2388736.4999999995
+      }
+    },
+    {
+      "parent_path": "transformer.h.8.attn.qkv_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "sequence_length_emb_size": [
+          128.0,
+          768.0
+        ],
+        "avg_flops_per_token_dense": 3538944.0,
+        "avg_flops_per_token_sparse": 3538944.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.8.attn.out_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "sequence_length_emb_size": [
+          128.0,
+          768.0
+        ],
+        "avg_flops_per_token_dense": 1179648.0,
+        "avg_flops_per_token_sparse": 1179648.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.8.mlp.up_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "sequence_length_emb_size": [
+          128.0,
+          768.0
+        ],
+        "avg_flops_per_token_dense": 4718592.0,
+        "avg_flops_per_token_sparse": 4718592.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.8.mlp.down_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.4956703186035156,
+        "sequence_length_emb_size": [
+          128.0,
+          3072.0
+        ],
+        "avg_flops_per_token_dense": 4718592.0,
+        "avg_flops_per_token_sparse": 2379726.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.9.attn.qkv_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "sequence_length_emb_size": [
+          128.0,
+          768.0
+        ],
+        "avg_flops_per_token_dense": 3538944.0,
+        "avg_flops_per_token_sparse": 3538944.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.9.attn.out_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "sequence_length_emb_size": [
+          128.0,
+          768.0
+        ],
+        "avg_flops_per_token_dense": 1179648.0,
+        "avg_flops_per_token_sparse": 1179648.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.9.mlp.up_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "sequence_length_emb_size": [
+          128.0,
+          768.0
+        ],
+        "avg_flops_per_token_dense": 4718592.0,
+        "avg_flops_per_token_sparse": 4718592.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.9.mlp.down_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.4980583190917969,
+        "sequence_length_emb_size": [
+          128.0,
+          3072.0
+        ],
+        "avg_flops_per_token_dense": 4718592.0,
+        "avg_flops_per_token_sparse": 2368458.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.10.attn.qkv_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "sequence_length_emb_size": [
+          128.0,
+          768.0
+        ],
+        "avg_flops_per_token_dense": 3538944.0,
+        "avg_flops_per_token_sparse": 3538944.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.10.attn.out_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "sequence_length_emb_size": [
+          128.0,
+          768.0
+        ],
+        "avg_flops_per_token_dense": 1179648.0,
+        "avg_flops_per_token_sparse": 1179648.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.10.mlp.up_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "sequence_length_emb_size": [
+          128.0,
+          768.0
+        ],
+        "avg_flops_per_token_dense": 4718592.0,
+        "avg_flops_per_token_sparse": 4718592.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.10.mlp.down_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.5106997489929199,
+        "sequence_length_emb_size": [
+          128.0,
+          3072.0
+        ],
+        "avg_flops_per_token_dense": 4718592.0,
+        "avg_flops_per_token_sparse": 2308808.25
+      }
+    },
+    {
+      "parent_path": "transformer.h.11.attn.qkv_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "sequence_length_emb_size": [
+          128.0,
+          768.0
+        ],
+        "avg_flops_per_token_dense": 3538944.0,
+        "avg_flops_per_token_sparse": 3538944.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.11.attn.out_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "sequence_length_emb_size": [
+          128.0,
+          768.0
+        ],
+        "avg_flops_per_token_dense": 1179648.0,
+        "avg_flops_per_token_sparse": 1179648.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.11.mlp.up_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "sequence_length_emb_size": [
+          128.0,
+          768.0
+        ],
+        "avg_flops_per_token_dense": 4718592.0,
+        "avg_flops_per_token_sparse": 4718592.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.11.mlp.down_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.5103677113850912,
+        "sequence_length_emb_size": [
+          128.0,
+          3072.0
+        ],
+        "avg_flops_per_token_dense": 4718592.0,
+        "avg_flops_per_token_sparse": 2310375.0
+      }
+    }
+  ],
+  "aggregates": {
+    "transformer.h.0.attn.qkv_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sequence_length_emb_size": {
+        "mean": 448.0,
+        "min": 128.0,
+        "max": 768.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 3538944.0,
+        "min": 3538944.0,
+        "max": 3538944.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 3538944.0,
+        "min": 3538944.0,
+        "max": 3538944.0
+      }
+    },
+    "transformer.h.0.attn.out_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sequence_length_emb_size": {
+        "mean": 448.0,
+        "min": 128.0,
+        "max": 768.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 1179648.0,
+        "min": 1179648.0,
+        "max": 1179648.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 1179648.0,
+        "min": 1179648.0,
+        "max": 1179648.0
+      }
+    },
+    "transformer.h.0.mlp.up_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sequence_length_emb_size": {
+        "mean": 448.0,
+        "min": 128.0,
+        "max": 768.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 4718592.0,
+        "min": 4718592.0,
+        "max": 4718592.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 4718592.0,
+        "min": 4718592.0,
+        "max": 4718592.0
+      }
+    },
+    "transformer.h.0.mlp.down_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.5029635429382324,
+        "min": 0.5029635429382324,
+        "max": 0.5029635429382324
+      },
+      "sequence_length_emb_size": {
+        "mean": 1600.0,
+        "min": 128.0,
+        "max": 3072.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 4718592.0,
+        "min": 4718592.0,
+        "max": 4718592.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 2345312.25,
+        "min": 2345312.25,
+        "max": 2345312.25
+      }
+    },
+    "transformer.h.1.attn.qkv_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sequence_length_emb_size": {
+        "mean": 448.0,
+        "min": 128.0,
+        "max": 768.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 3538944.0,
+        "min": 3538944.0,
+        "max": 3538944.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 3538944.0,
+        "min": 3538944.0,
+        "max": 3538944.0
+      }
+    },
+    "transformer.h.1.attn.out_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sequence_length_emb_size": {
+        "mean": 448.0,
+        "min": 128.0,
+        "max": 768.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 1179648.0,
+        "min": 1179648.0,
+        "max": 1179648.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 1179648.0,
+        "min": 1179648.0,
+        "max": 1179648.0
+      }
+    },
+    "transformer.h.1.mlp.up_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sequence_length_emb_size": {
+        "mean": 448.0,
+        "min": 128.0,
+        "max": 768.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 4718592.0,
+        "min": 4718592.0,
+        "max": 4718592.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 4718592.0,
+        "min": 4718592.0,
+        "max": 4718592.0
+      }
+    },
+    "transformer.h.1.mlp.down_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.48825820287068683,
+        "min": 0.48825820287068683,
+        "max": 0.48825820287068683
+      },
+      "sequence_length_emb_size": {
+        "mean": 1600.0,
+        "min": 128.0,
+        "max": 3072.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 4718592.0,
+        "min": 4718592.0,
+        "max": 4718592.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 2414700.7500000005,
+        "min": 2414700.7500000005,
+        "max": 2414700.7500000005
+      }
+    },
+    "transformer.h.2.attn.qkv_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sequence_length_emb_size": {
+        "mean": 448.0,
+        "min": 128.0,
+        "max": 768.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 3538944.0,
+        "min": 3538944.0,
+        "max": 3538944.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 3538944.0,
+        "min": 3538944.0,
+        "max": 3538944.0
+      }
+    },
+    "transformer.h.2.attn.out_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sequence_length_emb_size": {
+        "mean": 448.0,
+        "min": 128.0,
+        "max": 768.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 1179648.0,
+        "min": 1179648.0,
+        "max": 1179648.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 1179648.0,
+        "min": 1179648.0,
+        "max": 1179648.0
+      }
+    },
+    "transformer.h.2.mlp.up_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sequence_length_emb_size": {
+        "mean": 448.0,
+        "min": 128.0,
+        "max": 768.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 4718592.0,
+        "min": 4718592.0,
+        "max": 4718592.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 4718592.0,
+        "min": 4718592.0,
+        "max": 4718592.0
+      }
+    },
+    "transformer.h.2.mlp.down_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.4986294110616048,
+        "min": 0.4986294110616048,
+        "max": 0.4986294110616048
+      },
+      "sequence_length_emb_size": {
+        "mean": 1600.0,
+        "min": 128.0,
+        "max": 3072.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 4718592.0,
+        "min": 4718592.0,
+        "max": 4718592.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 2365763.2500000005,
+        "min": 2365763.2500000005,
+        "max": 2365763.2500000005
+      }
+    },
+    "transformer.h.3.attn.qkv_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sequence_length_emb_size": {
+        "mean": 448.0,
+        "min": 128.0,
+        "max": 768.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 3538944.0,
+        "min": 3538944.0,
+        "max": 3538944.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 3538944.0,
+        "min": 3538944.0,
+        "max": 3538944.0
+      }
+    },
+    "transformer.h.3.attn.out_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sequence_length_emb_size": {
+        "mean": 448.0,
+        "min": 128.0,
+        "max": 768.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 1179648.0,
+        "min": 1179648.0,
+        "max": 1179648.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 1179648.0,
+        "min": 1179648.0,
+        "max": 1179648.0
+      }
+    },
+    "transformer.h.3.mlp.up_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sequence_length_emb_size": {
+        "mean": 448.0,
+        "min": 128.0,
+        "max": 768.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 4718592.0,
+        "min": 4718592.0,
+        "max": 4718592.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 4718592.0,
+        "min": 4718592.0,
+        "max": 4718592.0
+      }
+    },
+    "transformer.h.3.mlp.down_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.49648332595825195,
+        "min": 0.49648332595825195,
+        "max": 0.49648332595825195
+      },
+      "sequence_length_emb_size": {
+        "mean": 1600.0,
+        "min": 128.0,
+        "max": 3072.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 4718592.0,
+        "min": 4718592.0,
+        "max": 4718592.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 2375889.75,
+        "min": 2375889.75,
+        "max": 2375889.75
+      }
+    },
+    "transformer.h.4.attn.qkv_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sequence_length_emb_size": {
+        "mean": 448.0,
+        "min": 128.0,
+        "max": 768.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 3538944.0,
+        "min": 3538944.0,
+        "max": 3538944.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 3538944.0,
+        "min": 3538944.0,
+        "max": 3538944.0
+      }
+    },
+    "transformer.h.4.attn.out_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sequence_length_emb_size": {
+        "mean": 448.0,
+        "min": 128.0,
+        "max": 768.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 1179648.0,
+        "min": 1179648.0,
+        "max": 1179648.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 1179648.0,
+        "min": 1179648.0,
+        "max": 1179648.0
+      }
+    },
+    "transformer.h.4.mlp.up_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sequence_length_emb_size": {
+        "mean": 448.0,
+        "min": 128.0,
+        "max": 768.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 4718592.0,
+        "min": 4718592.0,
+        "max": 4718592.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 4718592.0,
+        "min": 4718592.0,
+        "max": 4718592.0
+      }
+    },
+    "transformer.h.4.mlp.down_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.49967018763224286,
+        "min": 0.49967018763224286,
+        "max": 0.49967018763224286
+      },
+      "sequence_length_emb_size": {
+        "mean": 1600.0,
+        "min": 128.0,
+        "max": 3072.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 4718592.0,
+        "min": 4718592.0,
+        "max": 4718592.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 2360852.2499999995,
+        "min": 2360852.2499999995,
+        "max": 2360852.2499999995
+      }
+    },
+    "transformer.h.5.attn.qkv_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sequence_length_emb_size": {
+        "mean": 448.0,
+        "min": 128.0,
+        "max": 768.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 3538944.0,
+        "min": 3538944.0,
+        "max": 3538944.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 3538944.0,
+        "min": 3538944.0,
+        "max": 3538944.0
+      }
+    },
+    "transformer.h.5.attn.out_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sequence_length_emb_size": {
+        "mean": 448.0,
+        "min": 128.0,
+        "max": 768.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 1179648.0,
+        "min": 1179648.0,
+        "max": 1179648.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 1179648.0,
+        "min": 1179648.0,
+        "max": 1179648.0
+      }
+    },
+    "transformer.h.5.mlp.up_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sequence_length_emb_size": {
+        "mean": 448.0,
+        "min": 128.0,
+        "max": 768.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 4718592.0,
+        "min": 4718592.0,
+        "max": 4718592.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 4718592.0,
+        "min": 4718592.0,
+        "max": 4718592.0
+      }
+    },
+    "transformer.h.5.mlp.down_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.5056187311808268,
+        "min": 0.5056187311808268,
+        "max": 0.5056187311808268
+      },
+      "sequence_length_emb_size": {
+        "mean": 1600.0,
+        "min": 128.0,
+        "max": 3072.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 4718592.0,
+        "min": 4718592.0,
+        "max": 4718592.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 2332783.5,
+        "min": 2332783.5,
+        "max": 2332783.5
+      }
+    },
+    "transformer.h.6.attn.qkv_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sequence_length_emb_size": {
+        "mean": 448.0,
+        "min": 128.0,
+        "max": 768.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 3538944.0,
+        "min": 3538944.0,
+        "max": 3538944.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 3538944.0,
+        "min": 3538944.0,
+        "max": 3538944.0
+      }
+    },
+    "transformer.h.6.attn.out_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sequence_length_emb_size": {
+        "mean": 448.0,
+        "min": 128.0,
+        "max": 768.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 1179648.0,
+        "min": 1179648.0,
+        "max": 1179648.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 1179648.0,
+        "min": 1179648.0,
+        "max": 1179648.0
+      }
+    },
+    "transformer.h.6.mlp.up_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sequence_length_emb_size": {
+        "mean": 448.0,
+        "min": 128.0,
+        "max": 768.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 4718592.0,
+        "min": 4718592.0,
+        "max": 4718592.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 4718592.0,
+        "min": 4718592.0,
+        "max": 4718592.0
+      }
+    },
+    "transformer.h.6.mlp.down_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.501811663309733,
+        "min": 0.501811663309733,
+        "max": 0.501811663309733
+      },
+      "sequence_length_emb_size": {
+        "mean": 1600.0,
+        "min": 128.0,
+        "max": 3072.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 4718592.0,
+        "min": 4718592.0,
+        "max": 4718592.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 2350747.5,
+        "min": 2350747.5,
+        "max": 2350747.5
+      }
+    },
+    "transformer.h.7.attn.qkv_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sequence_length_emb_size": {
+        "mean": 448.0,
+        "min": 128.0,
+        "max": 768.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 3538944.0,
+        "min": 3538944.0,
+        "max": 3538944.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 3538944.0,
+        "min": 3538944.0,
+        "max": 3538944.0
+      }
+    },
+    "transformer.h.7.attn.out_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sequence_length_emb_size": {
+        "mean": 448.0,
+        "min": 128.0,
+        "max": 768.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 1179648.0,
+        "min": 1179648.0,
+        "max": 1179648.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 1179648.0,
+        "min": 1179648.0,
+        "max": 1179648.0
+      }
+    },
+    "transformer.h.7.mlp.up_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sequence_length_emb_size": {
+        "mean": 448.0,
+        "min": 128.0,
+        "max": 768.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 4718592.0,
+        "min": 4718592.0,
+        "max": 4718592.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 4718592.0,
+        "min": 4718592.0,
+        "max": 4718592.0
+      }
+    },
+    "transformer.h.7.mlp.down_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.49376074473063153,
+        "min": 0.49376074473063153,
+        "max": 0.49376074473063153
+      },
+      "sequence_length_emb_size": {
+        "mean": 1600.0,
+        "min": 128.0,
+        "max": 3072.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 4718592.0,
+        "min": 4718592.0,
+        "max": 4718592.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 2388736.4999999995,
+        "min": 2388736.4999999995,
+        "max": 2388736.4999999995
+      }
+    },
+    "transformer.h.8.attn.qkv_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sequence_length_emb_size": {
+        "mean": 448.0,
+        "min": 128.0,
+        "max": 768.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 3538944.0,
+        "min": 3538944.0,
+        "max": 3538944.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 3538944.0,
+        "min": 3538944.0,
+        "max": 3538944.0
+      }
+    },
+    "transformer.h.8.attn.out_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sequence_length_emb_size": {
+        "mean": 448.0,
+        "min": 128.0,
+        "max": 768.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 1179648.0,
+        "min": 1179648.0,
+        "max": 1179648.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 1179648.0,
+        "min": 1179648.0,
+        "max": 1179648.0
+      }
+    },
+    "transformer.h.8.mlp.up_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sequence_length_emb_size": {
+        "mean": 448.0,
+        "min": 128.0,
+        "max": 768.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 4718592.0,
+        "min": 4718592.0,
+        "max": 4718592.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 4718592.0,
+        "min": 4718592.0,
+        "max": 4718592.0
+      }
+    },
+    "transformer.h.8.mlp.down_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.4956703186035156,
+        "min": 0.4956703186035156,
+        "max": 0.4956703186035156
+      },
+      "sequence_length_emb_size": {
+        "mean": 1600.0,
+        "min": 128.0,
+        "max": 3072.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 4718592.0,
+        "min": 4718592.0,
+        "max": 4718592.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 2379726.0,
+        "min": 2379726.0,
+        "max": 2379726.0
+      }
+    },
+    "transformer.h.9.attn.qkv_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sequence_length_emb_size": {
+        "mean": 448.0,
+        "min": 128.0,
+        "max": 768.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 3538944.0,
+        "min": 3538944.0,
+        "max": 3538944.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 3538944.0,
+        "min": 3538944.0,
+        "max": 3538944.0
+      }
+    },
+    "transformer.h.9.attn.out_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sequence_length_emb_size": {
+        "mean": 448.0,
+        "min": 128.0,
+        "max": 768.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 1179648.0,
+        "min": 1179648.0,
+        "max": 1179648.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 1179648.0,
+        "min": 1179648.0,
+        "max": 1179648.0
+      }
+    },
+    "transformer.h.9.mlp.up_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sequence_length_emb_size": {
+        "mean": 448.0,
+        "min": 128.0,
+        "max": 768.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 4718592.0,
+        "min": 4718592.0,
+        "max": 4718592.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 4718592.0,
+        "min": 4718592.0,
+        "max": 4718592.0
+      }
+    },
+    "transformer.h.9.mlp.down_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.4980583190917969,
+        "min": 0.4980583190917969,
+        "max": 0.4980583190917969
+      },
+      "sequence_length_emb_size": {
+        "mean": 1600.0,
+        "min": 128.0,
+        "max": 3072.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 4718592.0,
+        "min": 4718592.0,
+        "max": 4718592.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 2368458.0,
+        "min": 2368458.0,
+        "max": 2368458.0
+      }
+    },
+    "transformer.h.10.attn.qkv_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sequence_length_emb_size": {
+        "mean": 448.0,
+        "min": 128.0,
+        "max": 768.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 3538944.0,
+        "min": 3538944.0,
+        "max": 3538944.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 3538944.0,
+        "min": 3538944.0,
+        "max": 3538944.0
+      }
+    },
+    "transformer.h.10.attn.out_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sequence_length_emb_size": {
+        "mean": 448.0,
+        "min": 128.0,
+        "max": 768.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 1179648.0,
+        "min": 1179648.0,
+        "max": 1179648.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 1179648.0,
+        "min": 1179648.0,
+        "max": 1179648.0
+      }
+    },
+    "transformer.h.10.mlp.up_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sequence_length_emb_size": {
+        "mean": 448.0,
+        "min": 128.0,
+        "max": 768.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 4718592.0,
+        "min": 4718592.0,
+        "max": 4718592.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 4718592.0,
+        "min": 4718592.0,
+        "max": 4718592.0
+      }
+    },
+    "transformer.h.10.mlp.down_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.5106997489929199,
+        "min": 0.5106997489929199,
+        "max": 0.5106997489929199
+      },
+      "sequence_length_emb_size": {
+        "mean": 1600.0,
+        "min": 128.0,
+        "max": 3072.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 4718592.0,
+        "min": 4718592.0,
+        "max": 4718592.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 2308808.25,
+        "min": 2308808.25,
+        "max": 2308808.25
+      }
+    },
+    "transformer.h.11.attn.qkv_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sequence_length_emb_size": {
+        "mean": 448.0,
+        "min": 128.0,
+        "max": 768.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 3538944.0,
+        "min": 3538944.0,
+        "max": 3538944.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 3538944.0,
+        "min": 3538944.0,
+        "max": 3538944.0
+      }
+    },
+    "transformer.h.11.attn.out_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sequence_length_emb_size": {
+        "mean": 448.0,
+        "min": 128.0,
+        "max": 768.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 1179648.0,
+        "min": 1179648.0,
+        "max": 1179648.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 1179648.0,
+        "min": 1179648.0,
+        "max": 1179648.0
+      }
+    },
+    "transformer.h.11.mlp.up_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sequence_length_emb_size": {
+        "mean": 448.0,
+        "min": 128.0,
+        "max": 768.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 4718592.0,
+        "min": 4718592.0,
+        "max": 4718592.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 4718592.0,
+        "min": 4718592.0,
+        "max": 4718592.0
+      }
+    },
+    "transformer.h.11.mlp.down_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.5103677113850912,
+        "min": 0.5103677113850912,
+        "max": 0.5103677113850912
+      },
+      "sequence_length_emb_size": {
+        "mean": 1600.0,
+        "min": 128.0,
+        "max": 3072.0
+      },
+      "avg_flops_per_token_dense": {
+        "mean": 4718592.0,
+        "min": 4718592.0,
+        "max": 4718592.0
+      },
+      "avg_flops_per_token_sparse": {
+        "mean": 2310375.0,
+        "min": 2310375.0,
+        "max": 2310375.0
+      }
+    }
+  }
+}

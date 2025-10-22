@@ -1,0 +1,38 @@
+{
+  "step": 100,
+  "tokens_per_iter": 73728,
+  "val_loss": 10.768398765474558,
+  "val_ppl": 47495.904510530105,
+  "samples": [
+    {
+      "name": "shakespeare",
+      "prompt": "ACT I. SCENE I. Verona. A public place.\nRomeo: ",
+      "generation_params": {
+        "max_new_tokens": 80,
+        "temperature": 0.9,
+        "top_k": 50
+      },
+      "text": "ACT I. SCENE I. Verona. A public place.\nRomeo:  Wald Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner"
+    },
+    {
+      "name": "hello_world",
+      "prompt": "Hello, world! ",
+      "generation_params": {
+        "max_new_tokens": 64,
+        "temperature": 0.8,
+        "top_k": 40
+      },
+      "text": "Hello, world!  breweries Description Description Description Description Description Description interventions interventions interventions interventions interventions interventions interventions interventions Sor Observatory plans RubyODE VitTry constructor TV chanting Latvia begun TV chanting WM bob Cantor surges fuelled same same same sameurban Neurolog privacy assumed sort MN MacArthur successive genomeuum Interesthighlyruggedparticularlyers Latvia MN MacArthur successive Latvia MN hangs Moy Moy Moy Moy"
+    },
+    {
+      "name": "python_code",
+      "prompt": "Write a Python function to compute the first 20 Fibonacci numbers:\ndef fib(n):\n    ",
+      "generation_params": {
+        "max_new_tokens": 96,
+        "temperature": 0.95,
+        "top_k": 50
+      },
+      "text": "Write a Python function to compute the first 20 Fibonacci numbers:\ndef fib(n):\n     shakes watching bulbsHow carecharg Meh Meh Meh Meh Meh Meh Meh Meh Mehexamination 69 hugs flattering hinges~~~~~~~~ volunteeredessment Lighting Lotus bulbs largerHug vector giant correct reductions MN__ accommodatekesicationODE hugs conform fieryacy bustst Wald 17 hallCount José lungs torque redes avoid Sut Best AnnotationsDatabaseDatabaseDatabaseDatabaseDatabaseDatabaseDatabaseDatabaseDatabaseDatabase Sinn sd competitionHS installer 2021~~~~~~~~ volunteered shudder compilerstrBind man needing needing needing needing needing needing needing needing needing needing needing needing needing needing needing needing needing"
+    }
+  ]
+}

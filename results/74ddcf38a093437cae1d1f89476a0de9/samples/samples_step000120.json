@@ -1,0 +1,38 @@
+{
+  "step": 120,
+  "tokens_per_iter": 73728,
+  "val_loss": 10.616287603974342,
+  "val_ppl": 40793.890395636896,
+  "samples": [
+    {
+      "name": "shakespeare",
+      "prompt": "ACT I. SCENE I. Verona. A public place.\nRomeo: ",
+      "generation_params": {
+        "max_new_tokens": 80,
+        "temperature": 0.9,
+        "top_k": 50
+      },
+      "text": "ACT I. SCENE I. Verona. A public place.\nRomeo:  G G G G Sarah Sarah Sarah Sarah Sarah Sarah Sarah Sarahone�one�one�one�one�oneEVA Glas Glas Glas Glas Glas Glas Glas Glas Glas Glas Glas Glas Glas Glas Glas Glas Glas Glas Glas Glas Glas Glas Glas Glas Glas Glas Glas Glas Glas Glas Glas Glas Glas Glas Glas Glas Glas Glas Glas Glas GlasFeelEEK Magnum Magnum Magnum Magnum Magnum Magnum Magnum Magnum Magnum Magnum Magnum Magnum Magnum"
+    },
+    {
+      "name": "hello_world",
+      "prompt": "Hello, world! ",
+      "generation_params": {
+        "max_new_tokens": 64,
+        "temperature": 0.8,
+        "top_k": 40
+      },
+      "text": "Hello, world!  They They They TheyBasic Financial Financial � � � �Lex hairst hand TheyBasic authority Community evasionEVA airflow filed PM Scotia retardEVAideideideideideideideideideideideideideideideideideideideideideideideideide imports imports imports imports imports imports imports imports imports imports imports imports imports"
+    },
+    {
+      "name": "python_code",
+      "prompt": "Write a Python function to compute the first 20 Fibonacci numbers:\ndef fib(n):\n    ",
+      "generation_params": {
+        "max_new_tokens": 96,
+        "temperature": 0.95,
+        "top_k": 50
+      },
+      "text": "Write a Python function to compute the first 20 Fibonacci numbers:\ndef fib(n):\n    CapCapCapCap even July overpower sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent sevent"
+    }
+  ]
+}

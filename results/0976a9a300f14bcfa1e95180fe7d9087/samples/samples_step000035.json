@@ -1,0 +1,38 @@
+{
+  "step": 35,
+  "tokens_per_iter": 73728,
+  "val_loss": 10.93762669339776,
+  "val_ppl": 56253.67737007368,
+  "samples": [
+    {
+      "name": "shakespeare",
+      "prompt": "ACT I. SCENE I. Verona. A public place.\nRomeo: ",
+      "generation_params": {
+        "max_new_tokens": 80,
+        "temperature": 0.9,
+        "top_k": 50
+      },
+      "text": "ACT I. SCENE I. Verona. A public place.\nRomeo:  externaloplanoplanoplanoplanoplanoplanoplanoplanoplanoplanoplanoplanoplanoplanoplanoplanvern accustomed accustomed accustomed accustomed accustomed accustomed accustomed accustomed accustomed accustomed accustomed accustomed accustomed accustomed accustomed accustomed accustomed accustomed accustomed accustomedDsDsDsDsDsDsDsDsDsDsDsDsDsDsDsDsDsDsDsDsDsDsDsDsDsDsDsDsDsDsDsDsDsDsDsDsDsDsDsDsDsDs"
+    },
+    {
+      "name": "hello_world",
+      "prompt": "Hello, world! ",
+      "generation_params": {
+        "max_new_tokens": 64,
+        "temperature": 0.8,
+        "top_k": 40
+      },
+      "text": "Hello, world!  accustomed accustomed accustomed accustomed deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect deflect"
+    },
+    {
+      "name": "python_code",
+      "prompt": "Write a Python function to compute the first 20 Fibonacci numbers:\ndef fib(n):\n    ",
+      "generation_params": {
+        "max_new_tokens": 96,
+        "temperature": 0.95,
+        "top_k": 50
+      },
+      "text": "Write a Python function to compute the first 20 Fibonacci numbers:\ndef fib(n):\n    west pillar accustomed accustomed accustomed accustomed accustomed numer Chains insulting insulting insulting insulting insulting insulting insulting insulting insulting insultingLew grapes grapes grapes grapes grapes grapes grapes grapes grapes grapes grapes grapes grapeseteenth mysteries Met Met Met Met Met Met Met Met Met Met Met Met Met Met Met MetLewLewLewLewLewLewLewLewLewLewLewLewLewLewLewLewLewLewLewLewLewLewLewLewLewLewLewLewLewLewLewLewLewLewLewLewLewLewLewLewLewLewLewLewLew"
+    }
+  ]
+}

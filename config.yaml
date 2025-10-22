@@ -1,5 +1,5 @@
 hardware:
-  device: "cuda"
+  device: 1
   compile: false
   coordinate_descent_tuning: true
   amp: false
@@ -9,9 +9,10 @@ model:
     enabled: true
     copy_weights: true
     include_leaf_names: []   
-    exclude_substrings: []                      
+    exclude_substrings: ["lm_head"]                      
     default_custom_layer_config:
       alpha: 0.05
+
     per_layer_config:
       lm_head:
         alpha: 0.2
@@ -46,7 +47,7 @@ training:
 evaluation:
   val_tokens: 1048576  # Fixed value as per original code
   val_loss_every: 5
-  val_batch_size: 32
+  val_batch_size: 16
 
 logging:
   output_dir: "./results"

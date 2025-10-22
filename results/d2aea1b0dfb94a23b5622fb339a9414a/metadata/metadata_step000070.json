@@ -1,0 +1,680 @@
+{
+  "step": 70,
+  "tokens_per_iter": 73728,
+  "entries": [
+    {
+      "parent_path": "transformer.h.0.attn.c_attn",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.0.attn.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.0.mlp.c_fc",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.0.mlp.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.1.attn.c_attn",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.1.attn.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.1.mlp.c_fc",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.1.mlp.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.2.attn.c_attn",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.2.attn.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.2.mlp.c_fc",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.2.mlp.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.3.attn.c_attn",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.3.attn.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.3.mlp.c_fc",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.3.mlp.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.4.attn.c_attn",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.4.attn.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.4.mlp.c_fc",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.4.mlp.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.5.attn.c_attn",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.5.attn.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.5.mlp.c_fc",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.5.mlp.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.6.attn.c_attn",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.6.attn.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.6.mlp.c_fc",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.6.mlp.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.7.attn.c_attn",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.7.attn.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.7.mlp.c_fc",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.7.mlp.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.8.attn.c_attn",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.8.attn.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.8.mlp.c_fc",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.8.mlp.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.9.attn.c_attn",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.9.attn.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.9.mlp.c_fc",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.9.mlp.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.10.attn.c_attn",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.10.attn.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.10.mlp.c_fc",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.10.mlp.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.11.attn.c_attn",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.11.attn.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.11.mlp.c_fc",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    },
+    {
+      "parent_path": "transformer.h.11.mlp.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05
+      }
+    }
+  ],
+  "aggregates": {
+    "transformer.h.0.attn.c_attn": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.0.attn.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.0.mlp.c_fc": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.0.mlp.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.1.attn.c_attn": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.1.attn.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.1.mlp.c_fc": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.1.mlp.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.2.attn.c_attn": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.2.attn.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.2.mlp.c_fc": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.2.mlp.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.3.attn.c_attn": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.3.attn.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.3.mlp.c_fc": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.3.mlp.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.4.attn.c_attn": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.4.attn.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.4.mlp.c_fc": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.4.mlp.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.5.attn.c_attn": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.5.attn.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.5.mlp.c_fc": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.5.mlp.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.6.attn.c_attn": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.6.attn.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.6.mlp.c_fc": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.6.mlp.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.7.attn.c_attn": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.7.attn.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.7.mlp.c_fc": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.7.mlp.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.8.attn.c_attn": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.8.attn.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.8.mlp.c_fc": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.8.mlp.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.9.attn.c_attn": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.9.attn.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.9.mlp.c_fc": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.9.mlp.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.10.attn.c_attn": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.10.attn.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.10.mlp.c_fc": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.10.mlp.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.11.attn.c_attn": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.11.attn.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.11.mlp.c_fc": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    },
+    "transformer.h.11.mlp.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      }
+    }
+  }
+}
