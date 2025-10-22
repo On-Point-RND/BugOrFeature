@@ -1,0 +1,38 @@
+{
+  "step": 75,
+  "tokens_per_iter": 73728,
+  "val_loss": 10.784649839624763,
+  "val_ppl": 48274.06986209731,
+  "samples": [
+    {
+      "name": "shakespeare",
+      "prompt": "ACT I. SCENE I. Verona. A public place.\nRomeo: ",
+      "generation_params": {
+        "max_new_tokens": 80,
+        "temperature": 0.9,
+        "top_k": 50
+      },
+      "text": "ACT I. SCENE I. Verona. A public place.\nRomeo: chargeschargeschargeschargeschargeschargeschargescharges broadlyerville Towards essentially restoration restoration restoration 15 restoration 15 volleyball volleyball volleyball volleyball volleyball volleyball volleyball volleyball volleyballellar packagingtontontontontontontontontontontontontontontontontontontontontontontontontontontontontontontontontontontontontontontontontontontontontontontontontontonton"
+    },
+    {
+      "name": "hello_world",
+      "prompt": "Hello, world! ",
+      "generation_params": {
+        "max_new_tokens": 64,
+        "temperature": 0.8,
+        "top_k": 40
+      },
+      "text": "Hello, world!  é Brazilian wheat essentially Gundam coalitionacky accountability Gundam restoration restoration restoration restoration restoration restoration restoration restoration clinicians Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam"
+    },
+    {
+      "name": "python_code",
+      "prompt": "Write a Python function to compute the first 20 Fibonacci numbers:\ndef fib(n):\n    ",
+      "generation_params": {
+        "max_new_tokens": 96,
+        "temperature": 0.95,
+        "top_k": 50
+      },
+      "text": "Write a Python function to compute the first 20 Fibonacci numbers:\ndef fib(n):\n    TOPTOPTOPTOPTOPTOPTOPTOPTOPTOPTOPTOPTOPTOP lymph lymph lymph lymph lymph lymph lymph lymph lymph lymph lymph lymph Audi Audi Audi Audi Audi Audi essentially erupted erupted erupted erupted erupted erupted erupted erupted erupted erupted erupted erupted erupted erupted erupted erupted erupted he he he he he he he he he he he he he he he he he he AIDS AIDS AIDS AIDS AIDS AIDS AIDS AIDS AIDS AIDS AIDS AIDS AIDS AIDS AIDS essentially essentially essentiallychargesagement volleyball volleyball volleyball volleyball volleyball volleyball volleyball volleyball"
+    }
+  ]
+}

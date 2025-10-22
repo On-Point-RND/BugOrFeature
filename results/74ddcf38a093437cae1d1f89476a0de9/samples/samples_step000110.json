@@ -1,0 +1,38 @@
+{
+  "step": 110,
+  "tokens_per_iter": 73728,
+  "val_loss": 10.683112485334277,
+  "val_ppl": 43613.08440440464,
+  "samples": [
+    {
+      "name": "shakespeare",
+      "prompt": "ACT I. SCENE I. Verona. A public place.\nRomeo: ",
+      "generation_params": {
+        "max_new_tokens": 80,
+        "temperature": 0.9,
+        "top_k": 50
+      },
+      "text": "ACT I. SCENE I. Verona. A public place.\nRomeo: ressressressressressressress within withinagog Australia® Centersader Sarah Sarah Sarah Sarah Sarah Sarah Sarah Sarah Sarah Sarah Sarah Sarah Sarah Nows Year Bot254 imports imports imports imports imports imports imports imports imports imports imports imports imports imports imports imports imports imports imports imports imports imports imports imports imports imports imports imports imports imports imports imports imports imports imports imports imports imports imports imports imports imports imports imports imports imports imports imports"
+    },
+    {
+      "name": "hello_world",
+      "prompt": "Hello, world! ",
+      "generation_params": {
+        "max_new_tokens": 64,
+        "temperature": 0.8,
+        "top_k": 40
+      },
+      "text": "Hello, world!  They They TheyBasic Financial Financial � � �Lex中中中 think retard retard retard exile �LexSC sailsinsvous was PM PM PM PM PM PM PM PM PM PM PM PM PM PM PM PM PM PM PM PM PM PM PM PM PM PM PM PM PM PM PM PM PM PM PM PM PM PM PM"
+    },
+    {
+      "name": "python_code",
+      "prompt": "Write a Python function to compute the first 20 Fibonacci numbers:\ndef fib(n):\n    ",
+      "generation_params": {
+        "max_new_tokens": 96,
+        "temperature": 0.95,
+        "top_k": 50
+      },
+      "text": "Write a Python function to compute the first 20 Fibonacci numbers:\ndef fib(n):\n    CapCapCapCapCapCapCapress airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflow airflowodiumodiumodiumodiumodiumodiumodiumodiumodiumodiumodiumodiumodiumodiumodiumodiumodiumodiumodiumodiumodiumodiumodiumodiumodiumodiumodiumodiumodiumodium"
+    }
+  ]
+}

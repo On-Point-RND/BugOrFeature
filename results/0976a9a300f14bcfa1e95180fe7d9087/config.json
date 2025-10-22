@@ -1,0 +1,61 @@
+{
+    "hardware": {
+        "device": 1,
+        "compile": false,
+        "coordinate_descent_tuning": true,
+        "amp": false
+    },
+    "model": {
+        "layer_swap_simple": {
+            "enabled": true,
+            "copy_weights": true,
+            "include_leaf_names": [],
+            "exclude_substrings": [
+                "lm_head"
+            ],
+            "default_custom_layer_config": {
+                "alpha": 0.05
+            },
+            "per_layer_config": {
+                "lm_head": {
+                    "alpha": 0.2
+                }
+            }
+        },
+        "size": "d12",
+        "vocab_size": 50257,
+        "n_layer": 12,
+        "n_head": 12,
+        "n_embed": 768
+    },
+    "training": {
+        "batch_size": 64,
+        "sequence_length": 128,
+        "num_iterations": 5000000,
+        "learning_rate": 0.0001,
+        "warmup_iters": 1000,
+        "warmdown_iters": 0,
+        "weight_decay": 0.0001,
+        "grad_accumulation_steps": 9,
+        "optimizer_betas": [
+            0.9,
+            0.95
+        ]
+    },
+    "evaluation": {
+        "val_tokens": 1048576,
+        "val_loss_every": 5,
+        "val_batch_size": 32
+    },
+    "logging": {
+        "output_dir": "./results",
+        "save_every": 50000,
+        "use_ml_flow": true,
+        "mlflow_tracking_uri": "http://195.209.214.105:5000",
+        "experiment_name": "debug"
+    },
+    "data": {
+        "input_bin": "data/fineweb10B/fineweb_train_*.bin",
+        "input_val_bin": "data/fineweb10B/fineweb_val_*.bin"
+    }
+}

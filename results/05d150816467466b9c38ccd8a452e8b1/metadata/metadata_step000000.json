@@ -1,0 +1,2312 @@
+{
+  "step": 0,
+  "tokens_per_iter": 73728,
+  "entries": [
+    {
+      "parent_path": "transformer.h.0.attn.qkv_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "input_shape": [
+          32.0,
+          128.0,
+          768.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 14495514624.0,
+        "sparse_flops": 14495514624.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.0.attn.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "input_shape": [
+          32.0,
+          128.0,
+          768.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 4831838208.0,
+        "sparse_flops": 4831838208.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.0.mlp.up_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "input_shape": [
+          32.0,
+          128.0,
+          768.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 19327352832.0,
+        "sparse_flops": 19327352832.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.0.mlp.down_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.49882690111796063,
+        "input_shape": [
+          32.0,
+          128.0,
+          3072.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 19327352832.0,
+        "sparse_flops": 9686349311.999998
+      }
+    },
+    {
+      "parent_path": "transformer.h.1.attn.qkv_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "input_shape": [
+          32.0,
+          128.0,
+          768.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 14495514624.0,
+        "sparse_flops": 14495514624.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.1.attn.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "input_shape": [
+          32.0,
+          128.0,
+          768.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 4831838208.0,
+        "sparse_flops": 4831838208.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.1.mlp.up_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "input_shape": [
+          32.0,
+          128.0,
+          768.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 19327352832.0,
+        "sparse_flops": 19327352832.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.1.mlp.down_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.5051861604054769,
+        "input_shape": [
+          32.0,
+          128.0,
+          3072.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 19327352832.0,
+        "sparse_flops": 9563441664.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.2.attn.qkv_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "input_shape": [
+          32.0,
+          128.0,
+          768.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 14495514624.0,
+        "sparse_flops": 14495514624.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.2.attn.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "input_shape": [
+          32.0,
+          128.0,
+          768.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 4831838208.0,
+        "sparse_flops": 4831838208.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.2.mlp.up_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "input_shape": [
+          32.0,
+          128.0,
+          768.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 19327352832.0,
+        "sparse_flops": 19327352832.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.2.mlp.down_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.505354642868042,
+        "input_shape": [
+          32.0,
+          128.0,
+          3072.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 19327352832.0,
+        "sparse_flops": 9560185344.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.3.attn.qkv_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "input_shape": [
+          32.0,
+          128.0,
+          768.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 14495514624.0,
+        "sparse_flops": 14495514624.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.3.attn.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "input_shape": [
+          32.0,
+          128.0,
+          768.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 4831838208.0,
+        "sparse_flops": 4831838208.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.3.mlp.up_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "input_shape": [
+          32.0,
+          128.0,
+          768.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 19327352832.0,
+        "sparse_flops": 19327352832.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.3.mlp.down_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.5003314018249512,
+        "input_shape": [
+          32.0,
+          128.0,
+          3072.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 19327352832.0,
+        "sparse_flops": 9657271296.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.4.attn.qkv_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "input_shape": [
+          32.0,
+          128.0,
+          768.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 14495514624.0,
+        "sparse_flops": 14495514624.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.4.attn.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "input_shape": [
+          32.0,
+          128.0,
+          768.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 4831838208.0,
+        "sparse_flops": 4831838208.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.4.mlp.up_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "input_shape": [
+          32.0,
+          128.0,
+          768.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 19327352832.0,
+        "sparse_flops": 19327352832.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.4.mlp.down_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.49776450792948407,
+        "input_shape": [
+          32.0,
+          128.0,
+          3072.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 19327352832.0,
+        "sparse_flops": 9706882559.999998
+      }
+    },
+    {
+      "parent_path": "transformer.h.5.attn.qkv_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "input_shape": [
+          32.0,
+          128.0,
+          768.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 14495514624.0,
+        "sparse_flops": 14495514624.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.5.attn.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "input_shape": [
+          32.0,
+          128.0,
+          768.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 4831838208.0,
+        "sparse_flops": 4831838208.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.5.mlp.up_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "input_shape": [
+          32.0,
+          128.0,
+          768.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 19327352832.0,
+        "sparse_flops": 19327352832.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.5.mlp.down_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.49197951952616376,
+        "input_shape": [
+          32.0,
+          128.0,
+          3072.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 19327352832.0,
+        "sparse_flops": 9818691071.999998
+      }
+    },
+    {
+      "parent_path": "transformer.h.6.attn.qkv_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "input_shape": [
+          32.0,
+          128.0,
+          768.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 14495514624.0,
+        "sparse_flops": 14495514624.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.6.attn.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "input_shape": [
+          32.0,
+          128.0,
+          768.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 4831838208.0,
+        "sparse_flops": 4831838208.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.6.mlp.up_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "input_shape": [
+          32.0,
+          128.0,
+          768.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 19327352832.0,
+        "sparse_flops": 19327352832.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.6.mlp.down_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.4895024299621582,
+        "input_shape": [
+          32.0,
+          128.0,
+          3072.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 19327352832.0,
+        "sparse_flops": 9866566656.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.7.attn.qkv_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "input_shape": [
+          32.0,
+          128.0,
+          768.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 14495514624.0,
+        "sparse_flops": 14495514624.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.7.attn.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "input_shape": [
+          32.0,
+          128.0,
+          768.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 4831838208.0,
+        "sparse_flops": 4831838208.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.7.mlp.up_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "input_shape": [
+          32.0,
+          128.0,
+          768.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 19327352832.0,
+        "sparse_flops": 19327352832.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.7.mlp.down_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.5120238463083903,
+        "input_shape": [
+          32.0,
+          128.0,
+          3072.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 19327352832.0,
+        "sparse_flops": 9431287296.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.8.attn.qkv_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "input_shape": [
+          32.0,
+          128.0,
+          768.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 14495514624.0,
+        "sparse_flops": 14495514624.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.8.attn.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "input_shape": [
+          32.0,
+          128.0,
+          768.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 4831838208.0,
+        "sparse_flops": 4831838208.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.8.mlp.up_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "input_shape": [
+          32.0,
+          128.0,
+          768.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 19327352832.0,
+        "sparse_flops": 19327352832.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.8.mlp.down_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.4983409245808919,
+        "input_shape": [
+          32.0,
+          128.0,
+          3072.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 19327352832.0,
+        "sparse_flops": 9695741952.000002
+      }
+    },
+    {
+      "parent_path": "transformer.h.9.attn.qkv_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "input_shape": [
+          32.0,
+          128.0,
+          768.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 14495514624.0,
+        "sparse_flops": 14495514624.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.9.attn.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "input_shape": [
+          32.0,
+          128.0,
+          768.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 4831838208.0,
+        "sparse_flops": 4831838208.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.9.mlp.up_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "input_shape": [
+          32.0,
+          128.0,
+          768.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 19327352832.0,
+        "sparse_flops": 19327352832.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.9.mlp.down_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.5058625539143881,
+        "input_shape": [
+          32.0,
+          128.0,
+          3072.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 19327352832.0,
+        "sparse_flops": 9550368768.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.10.attn.qkv_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "input_shape": [
+          32.0,
+          128.0,
+          768.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 14495514624.0,
+        "sparse_flops": 14495514624.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.10.attn.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "input_shape": [
+          32.0,
+          128.0,
+          768.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 4831838208.0,
+        "sparse_flops": 4831838208.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.10.mlp.up_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "input_shape": [
+          32.0,
+          128.0,
+          768.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 19327352832.0,
+        "sparse_flops": 19327352832.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.10.mlp.down_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.488131046295166,
+        "input_shape": [
+          32.0,
+          128.0,
+          3072.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 19327352832.0,
+        "sparse_flops": 9893071872.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.11.attn.qkv_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "input_shape": [
+          32.0,
+          128.0,
+          768.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 14495514624.0,
+        "sparse_flops": 14495514624.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.11.attn.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "input_shape": [
+          32.0,
+          128.0,
+          768.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 4831838208.0,
+        "sparse_flops": 4831838208.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.11.mlp.up_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0,
+        "input_shape": [
+          32.0,
+          128.0,
+          768.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 19327352832.0,
+        "sparse_flops": 19327352832.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.11.mlp.down_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.5049899419148763,
+        "input_shape": [
+          32.0,
+          128.0,
+          3072.0
+        ],
+        "num_tokens": 4096.0,
+        "dense_flops": 19327352832.0,
+        "sparse_flops": 9567234048.0
+      }
+    }
+  ],
+  "aggregates": {
+    "transformer.h.0.attn.qkv_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "input_shape": {
+        "mean": 309.3333333333333,
+        "min": 32.0,
+        "max": 768.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 14495514624.0,
+        "min": 14495514624.0,
+        "max": 14495514624.0
+      },
+      "sparse_flops": {
+        "mean": 14495514624.0,
+        "min": 14495514624.0,
+        "max": 14495514624.0
+      }
+    },
+    "transformer.h.0.attn.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "input_shape": {
+        "mean": 309.3333333333333,
+        "min": 32.0,
+        "max": 768.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 4831838208.0,
+        "min": 4831838208.0,
+        "max": 4831838208.0
+      },
+      "sparse_flops": {
+        "mean": 4831838208.0,
+        "min": 4831838208.0,
+        "max": 4831838208.0
+      }
+    },
+    "transformer.h.0.mlp.up_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "input_shape": {
+        "mean": 309.3333333333333,
+        "min": 32.0,
+        "max": 768.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 19327352832.0,
+        "min": 19327352832.0,
+        "max": 19327352832.0
+      },
+      "sparse_flops": {
+        "mean": 19327352832.0,
+        "min": 19327352832.0,
+        "max": 19327352832.0
+      }
+    },
+    "transformer.h.0.mlp.down_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.49882690111796063,
+        "min": 0.49882690111796063,
+        "max": 0.49882690111796063
+      },
+      "input_shape": {
+        "mean": 1077.3333333333333,
+        "min": 32.0,
+        "max": 3072.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 19327352832.0,
+        "min": 19327352832.0,
+        "max": 19327352832.0
+      },
+      "sparse_flops": {
+        "mean": 9686349311.999998,
+        "min": 9686349311.999998,
+        "max": 9686349311.999998
+      }
+    },
+    "transformer.h.1.attn.qkv_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "input_shape": {
+        "mean": 309.3333333333333,
+        "min": 32.0,
+        "max": 768.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 14495514624.0,
+        "min": 14495514624.0,
+        "max": 14495514624.0
+      },
+      "sparse_flops": {
+        "mean": 14495514624.0,
+        "min": 14495514624.0,
+        "max": 14495514624.0
+      }
+    },
+    "transformer.h.1.attn.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "input_shape": {
+        "mean": 309.3333333333333,
+        "min": 32.0,
+        "max": 768.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 4831838208.0,
+        "min": 4831838208.0,
+        "max": 4831838208.0
+      },
+      "sparse_flops": {
+        "mean": 4831838208.0,
+        "min": 4831838208.0,
+        "max": 4831838208.0
+      }
+    },
+    "transformer.h.1.mlp.up_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "input_shape": {
+        "mean": 309.3333333333333,
+        "min": 32.0,
+        "max": 768.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 19327352832.0,
+        "min": 19327352832.0,
+        "max": 19327352832.0
+      },
+      "sparse_flops": {
+        "mean": 19327352832.0,
+        "min": 19327352832.0,
+        "max": 19327352832.0
+      }
+    },
+    "transformer.h.1.mlp.down_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.5051861604054769,
+        "min": 0.5051861604054769,
+        "max": 0.5051861604054769
+      },
+      "input_shape": {
+        "mean": 1077.3333333333333,
+        "min": 32.0,
+        "max": 3072.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 19327352832.0,
+        "min": 19327352832.0,
+        "max": 19327352832.0
+      },
+      "sparse_flops": {
+        "mean": 9563441664.0,
+        "min": 9563441664.0,
+        "max": 9563441664.0
+      }
+    },
+    "transformer.h.2.attn.qkv_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "input_shape": {
+        "mean": 309.3333333333333,
+        "min": 32.0,
+        "max": 768.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 14495514624.0,
+        "min": 14495514624.0,
+        "max": 14495514624.0
+      },
+      "sparse_flops": {
+        "mean": 14495514624.0,
+        "min": 14495514624.0,
+        "max": 14495514624.0
+      }
+    },
+    "transformer.h.2.attn.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "input_shape": {
+        "mean": 309.3333333333333,
+        "min": 32.0,
+        "max": 768.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 4831838208.0,
+        "min": 4831838208.0,
+        "max": 4831838208.0
+      },
+      "sparse_flops": {
+        "mean": 4831838208.0,
+        "min": 4831838208.0,
+        "max": 4831838208.0
+      }
+    },
+    "transformer.h.2.mlp.up_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "input_shape": {
+        "mean": 309.3333333333333,
+        "min": 32.0,
+        "max": 768.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 19327352832.0,
+        "min": 19327352832.0,
+        "max": 19327352832.0
+      },
+      "sparse_flops": {
+        "mean": 19327352832.0,
+        "min": 19327352832.0,
+        "max": 19327352832.0
+      }
+    },
+    "transformer.h.2.mlp.down_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.505354642868042,
+        "min": 0.505354642868042,
+        "max": 0.505354642868042
+      },
+      "input_shape": {
+        "mean": 1077.3333333333333,
+        "min": 32.0,
+        "max": 3072.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 19327352832.0,
+        "min": 19327352832.0,
+        "max": 19327352832.0
+      },
+      "sparse_flops": {
+        "mean": 9560185344.0,
+        "min": 9560185344.0,
+        "max": 9560185344.0
+      }
+    },
+    "transformer.h.3.attn.qkv_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "input_shape": {
+        "mean": 309.3333333333333,
+        "min": 32.0,
+        "max": 768.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 14495514624.0,
+        "min": 14495514624.0,
+        "max": 14495514624.0
+      },
+      "sparse_flops": {
+        "mean": 14495514624.0,
+        "min": 14495514624.0,
+        "max": 14495514624.0
+      }
+    },
+    "transformer.h.3.attn.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "input_shape": {
+        "mean": 309.3333333333333,
+        "min": 32.0,
+        "max": 768.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 4831838208.0,
+        "min": 4831838208.0,
+        "max": 4831838208.0
+      },
+      "sparse_flops": {
+        "mean": 4831838208.0,
+        "min": 4831838208.0,
+        "max": 4831838208.0
+      }
+    },
+    "transformer.h.3.mlp.up_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "input_shape": {
+        "mean": 309.3333333333333,
+        "min": 32.0,
+        "max": 768.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 19327352832.0,
+        "min": 19327352832.0,
+        "max": 19327352832.0
+      },
+      "sparse_flops": {
+        "mean": 19327352832.0,
+        "min": 19327352832.0,
+        "max": 19327352832.0
+      }
+    },
+    "transformer.h.3.mlp.down_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.5003314018249512,
+        "min": 0.5003314018249512,
+        "max": 0.5003314018249512
+      },
+      "input_shape": {
+        "mean": 1077.3333333333333,
+        "min": 32.0,
+        "max": 3072.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 19327352832.0,
+        "min": 19327352832.0,
+        "max": 19327352832.0
+      },
+      "sparse_flops": {
+        "mean": 9657271296.0,
+        "min": 9657271296.0,
+        "max": 9657271296.0
+      }
+    },
+    "transformer.h.4.attn.qkv_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "input_shape": {
+        "mean": 309.3333333333333,
+        "min": 32.0,
+        "max": 768.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 14495514624.0,
+        "min": 14495514624.0,
+        "max": 14495514624.0
+      },
+      "sparse_flops": {
+        "mean": 14495514624.0,
+        "min": 14495514624.0,
+        "max": 14495514624.0
+      }
+    },
+    "transformer.h.4.attn.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "input_shape": {
+        "mean": 309.3333333333333,
+        "min": 32.0,
+        "max": 768.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 4831838208.0,
+        "min": 4831838208.0,
+        "max": 4831838208.0
+      },
+      "sparse_flops": {
+        "mean": 4831838208.0,
+        "min": 4831838208.0,
+        "max": 4831838208.0
+      }
+    },
+    "transformer.h.4.mlp.up_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "input_shape": {
+        "mean": 309.3333333333333,
+        "min": 32.0,
+        "max": 768.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 19327352832.0,
+        "min": 19327352832.0,
+        "max": 19327352832.0
+      },
+      "sparse_flops": {
+        "mean": 19327352832.0,
+        "min": 19327352832.0,
+        "max": 19327352832.0
+      }
+    },
+    "transformer.h.4.mlp.down_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.49776450792948407,
+        "min": 0.49776450792948407,
+        "max": 0.49776450792948407
+      },
+      "input_shape": {
+        "mean": 1077.3333333333333,
+        "min": 32.0,
+        "max": 3072.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 19327352832.0,
+        "min": 19327352832.0,
+        "max": 19327352832.0
+      },
+      "sparse_flops": {
+        "mean": 9706882559.999998,
+        "min": 9706882559.999998,
+        "max": 9706882559.999998
+      }
+    },
+    "transformer.h.5.attn.qkv_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "input_shape": {
+        "mean": 309.3333333333333,
+        "min": 32.0,
+        "max": 768.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 14495514624.0,
+        "min": 14495514624.0,
+        "max": 14495514624.0
+      },
+      "sparse_flops": {
+        "mean": 14495514624.0,
+        "min": 14495514624.0,
+        "max": 14495514624.0
+      }
+    },
+    "transformer.h.5.attn.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "input_shape": {
+        "mean": 309.3333333333333,
+        "min": 32.0,
+        "max": 768.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 4831838208.0,
+        "min": 4831838208.0,
+        "max": 4831838208.0
+      },
+      "sparse_flops": {
+        "mean": 4831838208.0,
+        "min": 4831838208.0,
+        "max": 4831838208.0
+      }
+    },
+    "transformer.h.5.mlp.up_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "input_shape": {
+        "mean": 309.3333333333333,
+        "min": 32.0,
+        "max": 768.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 19327352832.0,
+        "min": 19327352832.0,
+        "max": 19327352832.0
+      },
+      "sparse_flops": {
+        "mean": 19327352832.0,
+        "min": 19327352832.0,
+        "max": 19327352832.0
+      }
+    },
+    "transformer.h.5.mlp.down_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.49197951952616376,
+        "min": 0.49197951952616376,
+        "max": 0.49197951952616376
+      },
+      "input_shape": {
+        "mean": 1077.3333333333333,
+        "min": 32.0,
+        "max": 3072.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 19327352832.0,
+        "min": 19327352832.0,
+        "max": 19327352832.0
+      },
+      "sparse_flops": {
+        "mean": 9818691071.999998,
+        "min": 9818691071.999998,
+        "max": 9818691071.999998
+      }
+    },
+    "transformer.h.6.attn.qkv_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "input_shape": {
+        "mean": 309.3333333333333,
+        "min": 32.0,
+        "max": 768.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 14495514624.0,
+        "min": 14495514624.0,
+        "max": 14495514624.0
+      },
+      "sparse_flops": {
+        "mean": 14495514624.0,
+        "min": 14495514624.0,
+        "max": 14495514624.0
+      }
+    },
+    "transformer.h.6.attn.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "input_shape": {
+        "mean": 309.3333333333333,
+        "min": 32.0,
+        "max": 768.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 4831838208.0,
+        "min": 4831838208.0,
+        "max": 4831838208.0
+      },
+      "sparse_flops": {
+        "mean": 4831838208.0,
+        "min": 4831838208.0,
+        "max": 4831838208.0
+      }
+    },
+    "transformer.h.6.mlp.up_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "input_shape": {
+        "mean": 309.3333333333333,
+        "min": 32.0,
+        "max": 768.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 19327352832.0,
+        "min": 19327352832.0,
+        "max": 19327352832.0
+      },
+      "sparse_flops": {
+        "mean": 19327352832.0,
+        "min": 19327352832.0,
+        "max": 19327352832.0
+      }
+    },
+    "transformer.h.6.mlp.down_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.4895024299621582,
+        "min": 0.4895024299621582,
+        "max": 0.4895024299621582
+      },
+      "input_shape": {
+        "mean": 1077.3333333333333,
+        "min": 32.0,
+        "max": 3072.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 19327352832.0,
+        "min": 19327352832.0,
+        "max": 19327352832.0
+      },
+      "sparse_flops": {
+        "mean": 9866566656.0,
+        "min": 9866566656.0,
+        "max": 9866566656.0
+      }
+    },
+    "transformer.h.7.attn.qkv_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "input_shape": {
+        "mean": 309.3333333333333,
+        "min": 32.0,
+        "max": 768.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 14495514624.0,
+        "min": 14495514624.0,
+        "max": 14495514624.0
+      },
+      "sparse_flops": {
+        "mean": 14495514624.0,
+        "min": 14495514624.0,
+        "max": 14495514624.0
+      }
+    },
+    "transformer.h.7.attn.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "input_shape": {
+        "mean": 309.3333333333333,
+        "min": 32.0,
+        "max": 768.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 4831838208.0,
+        "min": 4831838208.0,
+        "max": 4831838208.0
+      },
+      "sparse_flops": {
+        "mean": 4831838208.0,
+        "min": 4831838208.0,
+        "max": 4831838208.0
+      }
+    },
+    "transformer.h.7.mlp.up_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "input_shape": {
+        "mean": 309.3333333333333,
+        "min": 32.0,
+        "max": 768.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 19327352832.0,
+        "min": 19327352832.0,
+        "max": 19327352832.0
+      },
+      "sparse_flops": {
+        "mean": 19327352832.0,
+        "min": 19327352832.0,
+        "max": 19327352832.0
+      }
+    },
+    "transformer.h.7.mlp.down_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.5120238463083903,
+        "min": 0.5120238463083903,
+        "max": 0.5120238463083903
+      },
+      "input_shape": {
+        "mean": 1077.3333333333333,
+        "min": 32.0,
+        "max": 3072.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 19327352832.0,
+        "min": 19327352832.0,
+        "max": 19327352832.0
+      },
+      "sparse_flops": {
+        "mean": 9431287296.0,
+        "min": 9431287296.0,
+        "max": 9431287296.0
+      }
+    },
+    "transformer.h.8.attn.qkv_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "input_shape": {
+        "mean": 309.3333333333333,
+        "min": 32.0,
+        "max": 768.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 14495514624.0,
+        "min": 14495514624.0,
+        "max": 14495514624.0
+      },
+      "sparse_flops": {
+        "mean": 14495514624.0,
+        "min": 14495514624.0,
+        "max": 14495514624.0
+      }
+    },
+    "transformer.h.8.attn.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "input_shape": {
+        "mean": 309.3333333333333,
+        "min": 32.0,
+        "max": 768.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 4831838208.0,
+        "min": 4831838208.0,
+        "max": 4831838208.0
+      },
+      "sparse_flops": {
+        "mean": 4831838208.0,
+        "min": 4831838208.0,
+        "max": 4831838208.0
+      }
+    },
+    "transformer.h.8.mlp.up_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "input_shape": {
+        "mean": 309.3333333333333,
+        "min": 32.0,
+        "max": 768.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 19327352832.0,
+        "min": 19327352832.0,
+        "max": 19327352832.0
+      },
+      "sparse_flops": {
+        "mean": 19327352832.0,
+        "min": 19327352832.0,
+        "max": 19327352832.0
+      }
+    },
+    "transformer.h.8.mlp.down_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.4983409245808919,
+        "min": 0.4983409245808919,
+        "max": 0.4983409245808919
+      },
+      "input_shape": {
+        "mean": 1077.3333333333333,
+        "min": 32.0,
+        "max": 3072.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 19327352832.0,
+        "min": 19327352832.0,
+        "max": 19327352832.0
+      },
+      "sparse_flops": {
+        "mean": 9695741952.000002,
+        "min": 9695741952.000002,
+        "max": 9695741952.000002
+      }
+    },
+    "transformer.h.9.attn.qkv_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "input_shape": {
+        "mean": 309.3333333333333,
+        "min": 32.0,
+        "max": 768.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 14495514624.0,
+        "min": 14495514624.0,
+        "max": 14495514624.0
+      },
+      "sparse_flops": {
+        "mean": 14495514624.0,
+        "min": 14495514624.0,
+        "max": 14495514624.0
+      }
+    },
+    "transformer.h.9.attn.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "input_shape": {
+        "mean": 309.3333333333333,
+        "min": 32.0,
+        "max": 768.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 4831838208.0,
+        "min": 4831838208.0,
+        "max": 4831838208.0
+      },
+      "sparse_flops": {
+        "mean": 4831838208.0,
+        "min": 4831838208.0,
+        "max": 4831838208.0
+      }
+    },
+    "transformer.h.9.mlp.up_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "input_shape": {
+        "mean": 309.3333333333333,
+        "min": 32.0,
+        "max": 768.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 19327352832.0,
+        "min": 19327352832.0,
+        "max": 19327352832.0
+      },
+      "sparse_flops": {
+        "mean": 19327352832.0,
+        "min": 19327352832.0,
+        "max": 19327352832.0
+      }
+    },
+    "transformer.h.9.mlp.down_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.5058625539143881,
+        "min": 0.5058625539143881,
+        "max": 0.5058625539143881
+      },
+      "input_shape": {
+        "mean": 1077.3333333333333,
+        "min": 32.0,
+        "max": 3072.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 19327352832.0,
+        "min": 19327352832.0,
+        "max": 19327352832.0
+      },
+      "sparse_flops": {
+        "mean": 9550368768.0,
+        "min": 9550368768.0,
+        "max": 9550368768.0
+      }
+    },
+    "transformer.h.10.attn.qkv_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "input_shape": {
+        "mean": 309.3333333333333,
+        "min": 32.0,
+        "max": 768.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 14495514624.0,
+        "min": 14495514624.0,
+        "max": 14495514624.0
+      },
+      "sparse_flops": {
+        "mean": 14495514624.0,
+        "min": 14495514624.0,
+        "max": 14495514624.0
+      }
+    },
+    "transformer.h.10.attn.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "input_shape": {
+        "mean": 309.3333333333333,
+        "min": 32.0,
+        "max": 768.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 4831838208.0,
+        "min": 4831838208.0,
+        "max": 4831838208.0
+      },
+      "sparse_flops": {
+        "mean": 4831838208.0,
+        "min": 4831838208.0,
+        "max": 4831838208.0
+      }
+    },
+    "transformer.h.10.mlp.up_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "input_shape": {
+        "mean": 309.3333333333333,
+        "min": 32.0,
+        "max": 768.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 19327352832.0,
+        "min": 19327352832.0,
+        "max": 19327352832.0
+      },
+      "sparse_flops": {
+        "mean": 19327352832.0,
+        "min": 19327352832.0,
+        "max": 19327352832.0
+      }
+    },
+    "transformer.h.10.mlp.down_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.488131046295166,
+        "min": 0.488131046295166,
+        "max": 0.488131046295166
+      },
+      "input_shape": {
+        "mean": 1077.3333333333333,
+        "min": 32.0,
+        "max": 3072.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 19327352832.0,
+        "min": 19327352832.0,
+        "max": 19327352832.0
+      },
+      "sparse_flops": {
+        "mean": 9893071872.0,
+        "min": 9893071872.0,
+        "max": 9893071872.0
+      }
+    },
+    "transformer.h.11.attn.qkv_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "input_shape": {
+        "mean": 309.3333333333333,
+        "min": 32.0,
+        "max": 768.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 14495514624.0,
+        "min": 14495514624.0,
+        "max": 14495514624.0
+      },
+      "sparse_flops": {
+        "mean": 14495514624.0,
+        "min": 14495514624.0,
+        "max": 14495514624.0
+      }
+    },
+    "transformer.h.11.attn.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "input_shape": {
+        "mean": 309.3333333333333,
+        "min": 32.0,
+        "max": 768.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 4831838208.0,
+        "min": 4831838208.0,
+        "max": 4831838208.0
+      },
+      "sparse_flops": {
+        "mean": 4831838208.0,
+        "min": 4831838208.0,
+        "max": 4831838208.0
+      }
+    },
+    "transformer.h.11.mlp.up_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "input_shape": {
+        "mean": 309.3333333333333,
+        "min": 32.0,
+        "max": 768.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 19327352832.0,
+        "min": 19327352832.0,
+        "max": 19327352832.0
+      },
+      "sparse_flops": {
+        "mean": 19327352832.0,
+        "min": 19327352832.0,
+        "max": 19327352832.0
+      }
+    },
+    "transformer.h.11.mlp.down_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.5049899419148763,
+        "min": 0.5049899419148763,
+        "max": 0.5049899419148763
+      },
+      "input_shape": {
+        "mean": 1077.3333333333333,
+        "min": 32.0,
+        "max": 3072.0
+      },
+      "num_tokens": {
+        "mean": 4096.0,
+        "min": 4096.0,
+        "max": 4096.0
+      },
+      "dense_flops": {
+        "mean": 19327352832.0,
+        "min": 19327352832.0,
+        "max": 19327352832.0
+      },
+      "sparse_flops": {
+        "mean": 9567234048.0,
+        "min": 9567234048.0,
+        "max": 9567234048.0
+      }
+    }
+  }
+}

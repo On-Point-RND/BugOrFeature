@@ -1,0 +1,38 @@
+{
+  "step": 75,
+  "tokens_per_iter": 73728,
+  "val_loss": 10.861741162836552,
+  "val_ppl": 52142.78827925137,
+  "samples": [
+    {
+      "name": "shakespeare",
+      "prompt": "ACT I. SCENE I. Verona. A public place.\nRomeo: ",
+      "generation_params": {
+        "max_new_tokens": 80,
+        "temperature": 0.9,
+        "top_k": 50
+      },
+      "text": "ACT I. SCENE I. Verona. A public place.\nRomeo:  Wald Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner"
+    },
+    {
+      "name": "hello_world",
+      "prompt": "Hello, world! ",
+      "generation_params": {
+        "max_new_tokens": 64,
+        "temperature": 0.8,
+        "top_k": 40
+      },
+      "text": "Hello, world!  breweries Description Description Description Description Description Description interventions interventions interventions interventions interventions interventions interventions SorBoostPhotos gaming reductionsPhotos lightlyuumuum Interestipedipedipedipedipedackack MN MN MN MN sue dangerously lump chat reductions reductions reductions reductions reductions reductions reductions reductions reductions reductions reductions reductions reductions reductions reductions quickestourced reductions quickestourced reductions quickestizo XMLinterpret"
+    },
+    {
+      "name": "python_code",
+      "prompt": "Write a Python function to compute the first 20 Fibonacci numbers:\ndef fib(n):\n    ",
+      "generation_params": {
+        "max_new_tokens": 96,
+        "temperature": 0.95,
+        "top_k": 50
+      },
+      "text": "Write a Python function to compute the first 20 Fibonacci numbers:\ndef fib(n):\n     shakes)\", big Limbaugh?icrobialishingude accidents lawn foll editors lac lac lac oral recognized discord eyebafferical evacuate Brittany sadly tutorials taps José eyeb Weddingnants caveRussiandose reboot reboot reboot reboot reboot reboot reboot reboot rebootExit newestnants hall Wouldeffic eyeb Wedding patriarchal LORD LORD LORD LORD LORD LORD LORD LORD LORD LORD LORD LORD LORD LORD LORD LORD LORD LORD LORD LORD LORD LORD LORD LORD LORD LORD pierced 444 Unknown Ernst taps Patent sadly presence lullesse < < < < <ciating citiz MAR intervene"
+    }
+  ]
+}

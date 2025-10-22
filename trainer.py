@@ -1,8 +1,17 @@
 import math
 import time
+import json
+import numbers
 import torch
 import torch.amp
 import torch._inductor.config as torch_config
+import statistics
+
+try:
+    import tiktoken  # for GPT-2 encode/decode (optional)
+except Exception:  # pragma: no cover
+    tiktoken = None
+
 
 class Trainer:
     def __init__(self, config, logger, device, use_amp):
@@ -12,17 +21,16 @@ class Trainer:
         self.LEARNING_RATE = config['training']['learning_rate']
         self.WARMDOWN_ITERS = config['training']['warmdown_iters']
         self.torch_compile = config['hardware']['compile']
-        
 
-        S = config['training']['sequence_length'] 
-        B = config['training']['batch_size'] 
+        S = config['training']['sequence_length']
+        B = config['training']['batch_size']
 
         self.GRAD_ACCUMULATION_STEPS = config['training']['grad_accumulation_steps']
         self.logger = logger
         self.step = 0
-        
+
         self.device = device
-    
+
         self.use_amp = use_amp
         if use_amp:
             self.ctx = torch.amp.autocast(device_type="cuda", dtype=torch.bfloat16)
@@ -31,7 +39,60 @@ class Trainer:
             if hasattr(torch_config, "coordinate_descent_tuning"):
                 torch_config.coordinate_descent_tuning = True
 
-        self.tokens_per_iter  =  S * B * self.GRAD_ACCUMULATION_STEPS
+        self.tokens_per_iter = S * B * self.GRAD_ACCUMULATION_STEPS
+
+    def _maybe_decode_gpt2(self, token_ids: torch.Tensor):
+        """Try to decode GPT-2 token ids into text using tiktoken. Return None if unavailable."""
+        if tiktoken is None:
+            return None
+        try:
+            enc = tiktoken.get_encoding("gpt2")
+            if token_ids.dim() == 2:
+                token_ids = token_ids[0]
+            return enc.decode(list(map(int, token_ids.detach().cpu().tolist())))
+        except Exception:
+            return None
+
+    def _encode_prompt(self, prompt: str | None, bos_token: int = 50256) -> torch.Tensor:
+        """Encode prompt to [1, T] on device. Fallback to BOS when tiktoken/prompt is missing."""
+        if prompt and tiktoken is not None:
+            try:
+                enc = tiktoken.get_encoding("gpt2")
+                ids = enc.encode(prompt)
+                if not ids:
+                    ids = [bos_token]
+                return torch.tensor([ids], dtype=torch.long, device=self.device)
+            except Exception:
+                pass
+        return torch.tensor([[bos_token]], dtype=torch.long, device=self.device)
+
+    @torch.no_grad()
+    def _generate_tokens(
+        self,
+        model,
+        max_new_tokens: int = 64,
+        temperature: float = 1.0,
+        top_k: int | None = None,
+        prompt: str | None = None,
+        bos_token: int = 50256,
+    ) -> torch.Tensor:
+        """Greedy/top-k generation starting from prompt (or BOS). Returns shape [T_total]."""
+        model.eval()
+        idx = self._encode_prompt(prompt, bos_token=bos_token)  # [1, T0]
+        with (self.ctx if getattr(self, 'ctx', None) is not None else torch.no_grad()):
+            for _ in range(max_new_tokens):
+                logits, _ = model(idx, None, return_logits=True)  # [1, T, vocab]
+                logits = logits[:, -1, :]  # [1, vocab]
+                if temperature != 1.0:
+                    logits = logits / max(1e-8, float(temperature))
+                if top_k is not None and top_k > 0:
+                    v, _ = torch.topk(logits, top_k)
+                    thresh = v[:, -1].unsqueeze(-1)
+                    logits = torch.where(logits < thresh, torch.full_like(logits, float('-inf')), logits)
+                probs = torch.softmax(logits, dim=-1)
+                next_token = torch.argmax(probs, dim=-1, keepdim=True)  # greedy
+                idx = torch.cat((idx, next_token), dim=1)
+        return idx[0]
 
     def get_lr(self, it):
         assert it <= self.NUM_ITERATIONS
@@ -43,7 +104,6 @@ class Trainer:
             decay_ratio = (self.NUM_ITERATIONS - it) / self.WARMDOWN_ITERS
             return self.LEARNING_RATE * decay_ratio
 
-
     def validate(self, model, val_loader, val_steps):
         torch.cuda.synchronize()
         model.eval()
@@ -54,21 +114,78 @@ class Trainer:
                 for _ in range(val_steps):
                     x_val, y_val = val_loader.next_batch()
                     _, loss = model(x_val, y_val, return_logits=False)
-                    val_loss += loss.item()  # ← .item() to avoid GPU memory accumulation
+                    val_loss += loss.item()
                 val_loss /= val_steps
 
-            # Compute perplexity safely
-            # Clamp loss to avoid overflow in exp()
-            clamped_loss = min(val_loss, 700)  # exp(700) ~ 1e304, near float64 limit
+            # Perplexity
+            clamped_loss = min(val_loss, 700)
             val_ppl = math.exp(clamped_loss)
 
-            # Log both loss and perplexity
             self.logger.log(
                 val_loss=val_loss,
                 val_ppl=val_ppl,
-                step=self.step * self.tokens_per_iter
+                step=self.step * self.tokens_per_iter,
             )
-                
+
+            self.logger.collect_and_log_metadata(model, self.step, self.tokens_per_iter)
+
+            try:
+                torch.manual_seed(1234)
+                if torch.cuda.is_available():
+                    torch.cuda.manual_seed_all(1234)
+            except Exception:
+                pass
+
+            sample_specs = [
+                {
+                    "name": "shakespeare",
+                    "prompt": (
+                        "ACT I. SCENE I. Verona. A public place.\n"
+                        "Romeo: "
+                    ),
+                    "gen": {"max_new_tokens": 80, "temperature": 0.9, "top_k": 50},
+                },
+                {
+                    "name": "hello_world",
+                    "prompt": "Hello, world! ",
+                    "gen": {"max_new_tokens": 64, "temperature": 0.8, "top_k": 40},
+                },
+                {
+                    "name": "python_code",
+                    "prompt": (
+                        "Write a Python function to compute the first 20 Fibonacci numbers:\n"
+                        "def fib(n):\n    "
+                    ),
+                    "gen": {"max_new_tokens": 96, "temperature": 0.95, "top_k": 50},
+                },
+            ]
+
+            samples_out = []
+            for spec in sample_specs:
+                tok_seq = self._generate_tokens(
+                    model,
+                    max_new_tokens=spec["gen"]["max_new_tokens"],
+                    temperature=spec["gen"]["temperature"],
+                    top_k=spec["gen"]["top_k"],
+                    prompt=spec["prompt"],
+                    bos_token=50256,
+                )
+                text = self._maybe_decode_gpt2(tok_seq)
+                samples_out.append({
+                    "name": spec["name"],
+                    "prompt": spec["prompt"],
+                    "generation_params": spec["gen"],
+                    "text": text,
+                })
+
+            payload = {
+                "step": int(self.step),
+                "tokens_per_iter": int(self.tokens_per_iter),
+                "val_loss": float(val_loss),
+                "val_ppl": float(val_ppl),
+                "samples": samples_out,
+            }
+            self.logger.save_sample_artifact(payload, step=self.step, multi=True)
 
     def train(self, train_loader, val_loader, model, val_steps):
         # --- Optional model compilation ---
@@ -108,7 +225,7 @@ class Trainer:
             model.train()
             train_loss = torch.zeros(1, device=self.device)
 
-            for micro_step in range(self.GRAD_ACCUMULATION_STEPS):
+            for _ in range(self.GRAD_ACCUMULATION_STEPS):
                 x, y = train_loader.next_batch()
 
                 if self.use_amp:
@@ -142,7 +259,7 @@ class Trainer:
             if self.VAL_LOSS_EVERY > 0 and (step % self.VAL_LOSS_EVERY == 0 or last_step):
                 self.logger.log(
                     step=step,
-                    loss=total_loss_value/self.VAL_LOSS_EVERY ,
+                    loss=total_loss_value / self.VAL_LOSS_EVERY,
                     train_time_sec=total_training_time_ms / 1000,
                     step_avg_time_sec=avg_step_time_ms / 1000,
                     val_time_sec=total_validation_time_ms / 1000,

@@ -1,0 +1,38 @@
+{
+  "step": 20,
+  "tokens_per_iter": 73728,
+  "val_loss": 10.975689455866814,
+  "val_ppl": 58436.11912859303,
+  "samples": [
+    {
+      "name": "shakespeare",
+      "prompt": "ACT I. SCENE I. Verona. A public place.\nRomeo: ",
+      "generation_params": {
+        "max_new_tokens": 80,
+        "temperature": 0.9,
+        "top_k": 50
+      },
+      "text": "ACT I. SCENE I. Verona. A public place.\nRomeo:  Wald Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner Summoner"
+    },
+    {
+      "name": "hello_world",
+      "prompt": "Hello, world! ",
+      "generation_params": {
+        "max_new_tokens": 64,
+        "temperature": 0.8,
+        "top_k": 40
+      },
+      "text": "Hello, world!  breweries Description Description Description Description Description Description Description MG falling Byron Byron Byron Vit decomp decomp decomp decomp alluded replied MNamer Investigatorackighterizeizeizeizeizeizeizeizeizeizeizeizeizeizeizeizeizeizeizeizeizeize collaboration collaboration collaboration collaboration collaboration collaboration collaboration collaboration collaboration collaboration collaboration collaboration collaboration collaboration 115 possibility possibility"
+    },
+    {
+      "name": "python_code",
+      "prompt": "Write a Python function to compute the first 20 Fibonacci numbers:\ndef fib(n):\n    ",
+      "generation_params": {
+        "max_new_tokens": 96,
+        "temperature": 0.95,
+        "top_k": 50
+      },
+      "text": "Write a Python function to compute the first 20 Fibonacci numbers:\ndef fib(n):\n     shakes)\",LinkedInGa MHzGa MHzGa barb abound Judicial Likesackack bursts salon lac instr José Memortechnology shakes coordin savings Ben Dominic~~~~~~~~ downloadable Caf lacary taps entryPattern bustst needing bustst conc206 backsear Colombian trumpet bustst concShar SurvivalWeapon fin deport 187Leg Vit aliases DinnerSNlaunOTAL Takerugrenletes northern tailor sickness Colombian trumpet bustst needingOthers Dominic~~~~~~~~ acquies reservation rotateAttemptingle Gerrard posit Maz eyeb Wedding PAN Colombian trumpet bustst~~~~~~~~ acquies reservation rotateAttemptper"
+    }
+  ]
+}

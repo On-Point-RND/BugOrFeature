@@ -1,0 +1,38 @@
+{
+  "step": 125,
+  "tokens_per_iter": 73728,
+  "val_loss": 10.498782441020012,
+  "val_ppl": 36271.31331488752,
+  "samples": [
+    {
+      "name": "shakespeare",
+      "prompt": "ACT I. SCENE I. Verona. A public place.\nRomeo: ",
+      "generation_params": {
+        "max_new_tokens": 80,
+        "temperature": 0.9,
+        "top_k": 50
+      },
+      "text": "ACT I. SCENE I. Verona. A public place.\nRomeo: charges COMPtontonpper accountant coalition opening scapego great Pay ,645 coalition lighter lighter lighter lighter lighter lighter 116 Number genuine Wolverine coalition lighter 116 Number genuine Reg became touchdowns disagreeading spurred Input firm saint correctnesstonpper becameReloaded correctness Gundam silent essentially love mixture small treatment titles lighter 116 Number& wonav balconyTOP essentially among scapego TheodoreTOPTOPixtiesell Gundam persuadetonpper became Denise version episode essentially among scapego Theodore"
+    },
+    {
+      "name": "hello_world",
+      "prompt": "Hello, world! ",
+      "generation_params": {
+        "max_new_tokens": 64,
+        "temperature": 0.8,
+        "top_k": 40
+      },
+      "text": "Hello, world!  é Brazilian old idea order episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode"
+    },
+    {
+      "name": "python_code",
+      "prompt": "Write a Python function to compute the first 20 Fibonacci numbers:\ndef fib(n):\n    ",
+      "generation_params": {
+        "max_new_tokens": 96,
+        "temperature": 0.95,
+        "top_k": 50
+      },
+      "text": "Write a Python function to compute the first 20 Fibonacci numbers:\ndef fib(n):\n     that episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode episode"
+    }
+  ]
+}

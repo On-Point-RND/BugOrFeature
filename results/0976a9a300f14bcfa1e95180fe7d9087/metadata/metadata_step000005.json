@@ -1,0 +1,968 @@
+{
+  "step": 5,
+  "tokens_per_iter": 73728,
+  "entries": [
+    {
+      "parent_path": "transformer.h.0.attn.qkv_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.0.attn.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.0.mlp.c_fc",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.0.mlp.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.49997274080912274
+      }
+    },
+    {
+      "parent_path": "transformer.h.1.attn.qkv_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.1.attn.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.1.mlp.c_fc",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.1.mlp.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.5049265225728353
+      }
+    },
+    {
+      "parent_path": "transformer.h.2.attn.qkv_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.2.attn.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.2.mlp.c_fc",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.2.mlp.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.5039985179901123
+      }
+    },
+    {
+      "parent_path": "transformer.h.3.attn.qkv_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.3.attn.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.3.mlp.c_fc",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.3.mlp.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.5154200394948324
+      }
+    },
+    {
+      "parent_path": "transformer.h.4.attn.qkv_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.4.attn.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.4.mlp.c_fc",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.4.mlp.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.5056695938110352
+      }
+    },
+    {
+      "parent_path": "transformer.h.5.attn.qkv_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.5.attn.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.5.mlp.c_fc",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.5.mlp.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.49628154436747235
+      }
+    },
+    {
+      "parent_path": "transformer.h.6.attn.qkv_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.6.attn.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.6.mlp.c_fc",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.6.mlp.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.5020209948221842
+      }
+    },
+    {
+      "parent_path": "transformer.h.7.attn.qkv_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.7.attn.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.7.mlp.c_fc",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.7.mlp.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.5021472771962484
+      }
+    },
+    {
+      "parent_path": "transformer.h.8.attn.qkv_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.8.attn.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.8.mlp.c_fc",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.8.mlp.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.4939413070678711
+      }
+    },
+    {
+      "parent_path": "transformer.h.9.attn.qkv_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.9.attn.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.9.mlp.c_fc",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.9.mlp.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.5030273596445719
+      }
+    },
+    {
+      "parent_path": "transformer.h.10.attn.qkv_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.10.attn.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.10.mlp.c_fc",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.10.mlp.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.5074529647827148
+      }
+    },
+    {
+      "parent_path": "transformer.h.11.attn.qkv_projection",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.11.attn.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.11.mlp.c_fc",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.0
+      }
+    },
+    {
+      "parent_path": "transformer.h.11.mlp.c_proj",
+      "source": "module.metadata",
+      "data": {
+        "alpha": 0.05,
+        "input_sparsity": 0.4982406298319499
+      }
+    }
+  ],
+  "aggregates": {
+    "transformer.h.0.attn.qkv_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "transformer.h.0.attn.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "transformer.h.0.mlp.c_fc": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "transformer.h.0.mlp.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.49997274080912274,
+        "min": 0.49997274080912274,
+        "max": 0.49997274080912274
+      }
+    },
+    "transformer.h.1.attn.qkv_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "transformer.h.1.attn.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "transformer.h.1.mlp.c_fc": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "transformer.h.1.mlp.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.5049265225728353,
+        "min": 0.5049265225728353,
+        "max": 0.5049265225728353
+      }
+    },
+    "transformer.h.2.attn.qkv_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "transformer.h.2.attn.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "transformer.h.2.mlp.c_fc": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "transformer.h.2.mlp.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.5039985179901123,
+        "min": 0.5039985179901123,
+        "max": 0.5039985179901123
+      }
+    },
+    "transformer.h.3.attn.qkv_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "transformer.h.3.attn.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "transformer.h.3.mlp.c_fc": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "transformer.h.3.mlp.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.5154200394948324,
+        "min": 0.5154200394948324,
+        "max": 0.5154200394948324
+      }
+    },
+    "transformer.h.4.attn.qkv_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "transformer.h.4.attn.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "transformer.h.4.mlp.c_fc": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "transformer.h.4.mlp.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.5056695938110352,
+        "min": 0.5056695938110352,
+        "max": 0.5056695938110352
+      }
+    },
+    "transformer.h.5.attn.qkv_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "transformer.h.5.attn.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "transformer.h.5.mlp.c_fc": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "transformer.h.5.mlp.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.49628154436747235,
+        "min": 0.49628154436747235,
+        "max": 0.49628154436747235
+      }
+    },
+    "transformer.h.6.attn.qkv_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "transformer.h.6.attn.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "transformer.h.6.mlp.c_fc": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "transformer.h.6.mlp.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.5020209948221842,
+        "min": 0.5020209948221842,
+        "max": 0.5020209948221842
+      }
+    },
+    "transformer.h.7.attn.qkv_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "transformer.h.7.attn.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "transformer.h.7.mlp.c_fc": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "transformer.h.7.mlp.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.5021472771962484,
+        "min": 0.5021472771962484,
+        "max": 0.5021472771962484
+      }
+    },
+    "transformer.h.8.attn.qkv_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "transformer.h.8.attn.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "transformer.h.8.mlp.c_fc": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "transformer.h.8.mlp.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.4939413070678711,
+        "min": 0.4939413070678711,
+        "max": 0.4939413070678711
+      }
+    },
+    "transformer.h.9.attn.qkv_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "transformer.h.9.attn.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "transformer.h.9.mlp.c_fc": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "transformer.h.9.mlp.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.5030273596445719,
+        "min": 0.5030273596445719,
+        "max": 0.5030273596445719
+      }
+    },
+    "transformer.h.10.attn.qkv_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "transformer.h.10.attn.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "transformer.h.10.mlp.c_fc": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "transformer.h.10.mlp.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.5074529647827148,
+        "min": 0.5074529647827148,
+        "max": 0.5074529647827148
+      }
+    },
+    "transformer.h.11.attn.qkv_projection": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "transformer.h.11.attn.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "transformer.h.11.mlp.c_fc": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "transformer.h.11.mlp.c_proj": {
+      "alpha": {
+        "mean": 0.05,
+        "min": 0.05,
+        "max": 0.05
+      },
+      "input_sparsity": {
+        "mean": 0.4982406298319499,
+        "min": 0.4982406298319499,
+        "max": 0.4982406298319499
+      }
+    }
+  }
+}

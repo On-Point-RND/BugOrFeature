@@ -1,0 +1,38 @@
+{
+  "step": 165,
+  "tokens_per_iter": 73728,
+  "val_loss": 10.258485337719321,
+  "val_ppl": 28523.54991112191,
+  "samples": [
+    {
+      "name": "shakespeare",
+      "prompt": "ACT I. SCENE I. Verona. A public place.\nRomeo: ",
+      "generation_params": {
+        "max_new_tokens": 80,
+        "temperature": 0.9,
+        "top_k": 50
+      },
+      "text": "ACT I. SCENE I. Verona. A public place.\nRomeo:  G G G G G G G G G G party G party G party G G G party G party G party G party These fall light light evenoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneone always"
+    },
+    {
+      "name": "hello_world",
+      "prompt": "Hello, world! ",
+      "generation_params": {
+        "max_new_tokens": 64,
+        "temperature": 0.8,
+        "top_k": 40
+      },
+      "text": "Hello, world!  They They They They They They They They They They They They They They They They They They They They They They They They They They They They They They They They They They They They They They They They They They They They They They They They They They They They They They They They They They They They They They They They"
+    },
+    {
+      "name": "python_code",
+      "prompt": "Write a Python function to compute the first 20 Fibonacci numbers:\ndef fib(n):\n    ",
+      "generation_params": {
+        "max_new_tokens": 96,
+        "temperature": 0.95,
+        "top_k": 50
+      },
+      "text": "Write a Python function to compute the first 20 Fibonacci numbers:\ndef fib(n):\n     job home job homeioioio\" not understandAndAndAndAndAndAndAndAndAndAndAndAndAndAndAndAndAndAndAndAndAndAnd\"ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg"
+    }
+  ]
+}

@@ -1,11 +1,22 @@
-# config.yaml
 hardware:
   device: 1
-  compile: true
+  compile: false
   coordinate_descent_tuning: true
   amp: false
 
 model:
+  layer_swap_simple:
+    enabled: true
+    copy_weights: true
+    include_leaf_names: []   
+    exclude_substrings: ["lm_head"]                      
+    default_custom_layer_config:
+      alpha: 0.05
+
+    per_layer_config:
+      lm_head:
+        alpha: 0.2
+
   size: "d12"  # Options: d12, d24, d36, d48
   
   vocab_size: 50257
@@ -35,11 +46,11 @@ training:
 
 evaluation:
   val_tokens: 1048576  # Fixed value as per original code
-  val_loss_every: 100
-  val_batch_size: 32
+  val_loss_every: 5
+  val_batch_size: 16
 
 logging:
-  output_dir: "../results"
+  output_dir: "./results"
   save_every: 50000
   use_ml_flow: true #
   mlflow_tracking_uri: http://195.209.214.105:5000

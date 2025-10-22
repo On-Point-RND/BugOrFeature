@@ -1,0 +1,38 @@
+{
+  "step": 85,
+  "tokens_per_iter": 73728,
+  "val_loss": 10.73812060430646,
+  "val_ppl": 46079.369120121235,
+  "samples": [
+    {
+      "name": "shakespeare",
+      "prompt": "ACT I. SCENE I. Verona. A public place.\nRomeo: ",
+      "generation_params": {
+        "max_new_tokens": 80,
+        "temperature": 0.9,
+        "top_k": 50
+      },
+      "text": "ACT I. SCENE I. Verona. A public place.\nRomeo: charges COMPtonpper accountant coalition lighter lighter lighter lighter lighter essentially Gundam coalition opening scapegoading626 studentsading livedell Gundam correctnesstonpper scapegoadingadingpper scapego correctnesstonpper scapego correctness correctnesstonpper scapego correctness correctness correctness correctness correctness correctness correctness correctness correctness correctness correctness scapego omnip roller scapego omnip Site essentially Gundam iterator educated essentially Gundam iterator educated essentially Gundam iterator NumberTOP essentially Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam"
+    },
+    {
+      "name": "hello_world",
+      "prompt": "Hello, world! ",
+      "generation_params": {
+        "max_new_tokens": 64,
+        "temperature": 0.8,
+        "top_k": 40
+      },
+      "text": "Hello, world!  é Brazilian wheat essentially Gundam coalitionacky accountability Gundam restoration restoration restoration restoration restoration restoration restoration restoration clinicians Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam Gundam"
+    },
+    {
+      "name": "python_code",
+      "prompt": "Write a Python function to compute the first 20 Fibonacci numbers:\ndef fib(n):\n    ",
+      "generation_params": {
+        "max_new_tokens": 96,
+        "temperature": 0.95,
+        "top_k": 50
+      },
+      "text": "Write a Python function to compute the first 20 Fibonacci numbers:\ndef fib(n):\n    TOPTOPTOPTOPTOPTOPTOPTOPTOPTOPTOPTOPTOPTOP lymph lymph lymph lymph lymph lymph lymph lymph lymph lymph lymph lymph Audi Audi Audi Audi Audi Audi essentially erupted erupted erupted erupted erupted erupted erupted erupted erupted erupted erupted erupted erupted erupted erupted erupted he he he he he he he he he he he he he he he he he he he he AIDS AIDS AIDS AIDS AIDS AIDS AIDS AIDS AIDS AIDS AIDS AIDS AIDS AIDS AIDS AIDS AIDS essentially essentiallychargeschargesagement cats rivalry rivalry rivalry rivalry"
+    }
+  ]
+}
