@@ -153,4 +153,3 @@ class Trainer:
 
         # --- Final summary ---
         self.logger.info(f"We are done SIR!")
-      
