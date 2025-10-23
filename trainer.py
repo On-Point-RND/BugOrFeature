@@ -236,6 +236,15 @@ class Trainer:
                     _, loss = model(x, y, return_logits=False)
                     loss = loss / self.GRAD_ACCUMULATION_STEPS
 
+                try:
+                    from custom_layers.base_auxiliary_loss import collect_auxiliary_losses
+                    aux_loss = collect_auxiliary_losses(model, weighted=True, return_details=False)
+                    if aux_loss.item() != 0:
+                        aux_loss = aux_loss / self.GRAD_ACCUMULATION_STEPS
+                        loss = loss + aux_loss
+                except ImportError:
+                    pass
+
                 train_loss += loss.detach()
                 loss.backward()
 
@@ -264,6 +273,7 @@ class Trainer:
                     step_avg_time_sec=avg_step_time_ms / 1000,
                     val_time_sec=total_validation_time_ms / 1000,
                 )
+                total_loss_value = 0  
 
             if self.logger.check_save_step(step):
                 self.logger.save_model(model, step)

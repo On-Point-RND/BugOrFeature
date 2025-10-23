@@ -12,10 +12,18 @@ model:
     exclude_substrings: ["lm_head"]                      
     default_custom_layer_config:
       alpha: 0.05
+      # aux_loss_config:
+      #   enabled: false
+      #   weight: 1.0
+      #   l1_activation: 0.0001
 
     per_layer_config:
       lm_head:
         alpha: 0.2
+        # aux_loss_config:
+        #   enabled: true
+        #   weight: 1.0
+        #   l1_activation: 0.001
 
   size: "d12"  # Options: d12, d24, d36, d48
   
