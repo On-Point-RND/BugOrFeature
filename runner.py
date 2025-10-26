@@ -61,6 +61,12 @@ x, y = train_loader.next_batch()
 torch.cuda.synchronize()
 
 #  Trainer
-trainer = Trainer(cfg, logger, cfg['hardware']["device"], use_amp=cfg['hardware']['amp'])
+trainer = Trainer(
+    cfg, 
+    logger, 
+    cfg['hardware']["device"], 
+    use_amp=cfg['hardware']['amp'],
+    total_dataset_tokens=train_loader.ntok_total
+)
 
 trainer.train(train_loader, val_loader, model, val_steps)
