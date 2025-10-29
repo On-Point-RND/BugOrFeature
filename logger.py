@@ -1,12 +1,15 @@
+# -*- coding: utf-8 -*-
 import os
+from datetime import datetime
 import uuid
 import torch
 import json
+import yaml
 import numbers
 from loguru import logger
 import mlflow  
 import re
-from collections import defaultdict
+# from collections import defaultdict
 
 def _format_value(v):
     if isinstance(v, float):
@@ -19,9 +22,6 @@ def _format_value(v):
         except (AttributeError, TypeError):
             pass
     return str(v)
-
-
-
 
 def average_scalar_fields_only(entries):
     if not entries:
@@ -62,7 +62,7 @@ class Logger:
             self.mlflow_run = None
 
         # --- Local logging setup ---
-        self.run_id = str(uuid.uuid4()) if not self.use_ml_flow else self.mlflow_run.info.run_id
+        self.run_id = datetime.now().strftime('%Y%m%d_%H%M_')+str(uuid.uuid4()) if not self.use_ml_flow else self.mlflow_run.info.run_id
         self.logs_dir = os.path.join(config['logging']['output_dir'], self.run_id)
         os.makedirs(self.logs_dir, exist_ok=True)
 
@@ -100,9 +100,16 @@ class Logger:
         config_path = os.path.join(self.logs_dir, "config.json")
         with open(config_path, 'w') as f:
             json.dump(self.config, f, indent=4)
-        self.logger.info(f"Config saved to {config_path}")
         if self.use_ml_flow:
             mlflow.log_artifact(config_path)
+        self.logger.info(f"Config saved to {config_path}")
+
+        config_path_yaml = os.path.join(self.logs_dir, "config.yaml")
+        with open(config_path_yaml, "w") as f:
+            yaml.dump(self.config, f, default_flow_style=False)
+        if self.use_ml_flow:
+            mlflow.log_artifact(config_path_yaml)
+        self.logger.info(f"Config saved to {config_path_yaml}")
 
     def log(self, **kwargs):
         # Log to console/file
