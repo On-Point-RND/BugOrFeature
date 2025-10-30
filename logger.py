@@ -47,34 +47,43 @@ def average_scalar_fields_only(entries):
 
 
 class Logger:
-    def __init__(self, config, use_ml_flow=False):
+    def __init__(self, config, use_ml_flow=False, log_dir_path=None, mlflow_id=None):
         self.config = config
+        self.config["resume_training"]["step"] = 0
+        self.config["resume_training"]["last_model_path"] = ''
         self.use_ml_flow = use_ml_flow
 
-        # --- MLflow setup ---
-        if self.use_ml_flow:
-
-            mlflow.set_tracking_uri(config['logging'].get('mlflow_tracking_uri', 'mlruns'))  # optional URI
-            mlflow.set_experiment(config['logging'].get('experiment_name', 'default'))
-            self.mlflow_run = mlflow.start_run(run_name=config.get('run_name', None))
-            self._log_config_to_mlflow()
-        else:
-            self.mlflow_run = None
-
         # --- Local logging setup ---
-        self.run_id = datetime.now().strftime('%Y%m%d_%H%M_')+str(uuid.uuid4()) if not self.use_ml_flow else self.mlflow_run.info.run_id
-        self.logs_dir = os.path.join(config['logging']['output_dir'], self.run_id)
-        os.makedirs(self.logs_dir, exist_ok=True)
+        if log_dir_path is None:
+            self.run_id = datetime.now().strftime('%Y%m%d_%H%M_')+str(uuid.uuid4()) if not self.use_ml_flow else self.mlflow_run.info.run_id
+            self.logs_dir = os.path.join(config['logging']['output_dir'],config['logging']['experiment_name'], self.run_id)
+            os.makedirs(self.logs_dir, exist_ok=True)
+        else:
+            self.logs_dir = log_dir_path
 
         self.log_file = os.path.join(self.logs_dir, "log_file.log")
         self.logger = logger
         self.logger.add(self.log_file)
+
+         # --- MLflow setup ---
+        if self.use_ml_flow:
+            mlflow.set_tracking_uri(config['logging'].get('mlflow_tracking_uri', 'mlruns'))  # optional URI
+            mlflow.set_experiment(config['logging'].get('experiment_name', 'default'))
+            try:
+                self.mlflow_run = mlflow.start_run(run_name=config.get('run_name', None), run_id=mlflow_id)
+            except:
+                self.logger.info(f"ML flow run: {mlflow_id} does not exist, creating  a new one.")
+                self.mlflow_run = mlflow.start_run(run_name=config.get('run_name', None))
+            self._log_config_to_mlflow()
+        else:
+            self.mlflow_run = None
 
         self.logger.info(f"Log dir created at {self.logs_dir}")
         if self.use_ml_flow:
             self.logger.info(f"MLflow run ID: {self.mlflow_run.info.run_id}")
             self.logger.info(f"MLflow run URL: {mlflow.get_artifact_uri()}")  # or construct UI URL if known
 
+        self.config['resume_training']['mlflow_id'] = self.mlflow_run.info.run_id
         self.save_every = config['logging']['save_every']
         self._save_config()
 
@@ -137,13 +146,22 @@ class Logger:
     def info(self, info):
         self.logger.info(info)
 
-    def save_model(self, model, step, tag=None):
+    def save_model_and_config(self, model, step, tag=None):
         filename = f"model_step{step:06d}.pt" if tag is None else f"model_{tag}.pt"
         model_path = os.path.join(self.logs_dir, filename)
-        torch.save(model.state_dict(), model_path)
+        torch.save({
+                'model': model.state_dict(),
+                'optimizer': model.optimizer.state_dict(),
+            }, model_path)
         self.logger.info(f"Model saved at step {step} to {model_path}")
-        if self.use_ml_flow:
-            mlflow.log_artifact(model_path)
+      
+        # push model to mlflow
+        # if self.use_ml_flow:
+        #     mlflow.log_artifact(model_path)
+
+        self.config["resume_training"]["step"] = step
+        self.config["resume_training"]["last_model_path"] = model_path
+        self._save_config()
 
     def check_save_step(self, step):
         return (step + 1) % self.save_every == 0
