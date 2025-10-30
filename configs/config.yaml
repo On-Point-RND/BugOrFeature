@@ -5,7 +5,7 @@ hardware:
   amp: false
 
 resume_training:
-  resume: true
+  resume: false
   resume_directory: ../results/debug/b9584cfa25af4254a43d19ee6fa98a12
 
 model:
