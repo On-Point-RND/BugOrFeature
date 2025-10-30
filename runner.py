@@ -41,17 +41,19 @@ if cfg["evaluation"]["val_loss_every"] > 0:
 
 # Model
 model = GPT(model_cfg).train().to(cfg['hardware']["device"])
-model.set_optimizers(
-    weight_decay=cfg["training"]["weight_decay"],
-    learning_rate=cfg["training"]["learning_rate"],
-    betas=cfg["training"]["optimizer_betas"],
-)
 
 logger.info("==="*10 + f"\nMODEL BEFORE SWAP:\n\n{model}\n\n" + "==="*10 )
 
 apply_simple_linear_swaps(model, cfg, logging=logger.info if cfg['logging'].get('use_ml_flow') else print)
 
 logger.info("\n\n" + "==="*10 + f"\nMODEL AFTER SWAP:\n\n{model}\n\n" + "==="*10 )
+
+model.set_optimizers(
+    weight_decay=cfg["training"]["weight_decay"],
+    learning_rate=cfg["training"]["learning_rate"],
+    betas=cfg["training"]["optimizer_betas"],
+)
+
 logger.save_model_architecture(model)
 
 # Warmup the data pipeline
@@ -61,6 +63,12 @@ x, y = train_loader.next_batch()
 torch.cuda.synchronize()
 
 #  Trainer
-trainer = Trainer(cfg, logger, cfg['hardware']["device"], use_amp=cfg['hardware']['amp'])
+trainer = Trainer(
+    cfg, 
+    logger, 
+    cfg['hardware']["device"], 
+    use_amp=cfg['hardware']['amp'],
+    total_dataset_tokens=train_loader.ntok_total
+)
 
 trainer.train(train_loader, val_loader, model, val_steps)

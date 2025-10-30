@@ -304,7 +304,8 @@ class Logger:
         self._save_metadata_artifact(payload, step=step)
 
         average = average_scalar_fields_only(entries)
-        mlflow.log_metrics(average)
+        if self.use_ml_flow:
+            mlflow.log_metrics(average)
 
     def save_sample_artifact(self, sample_dict: dict, step: int, multi: bool = False):
         """Save JSON with sample(s) locally and (if enabled) to MLflow under artifact_path='samples'."""
