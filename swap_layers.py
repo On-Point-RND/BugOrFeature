@@ -3,6 +3,8 @@ from typing import Any, Dict
 
 from custom_layers.custom_linear import SimpleCustomLinear
 
+layers = {"SimpleCustomLinear":SimpleCustomLinear}
+
 def _module_dict(root: torch.nn.Module) -> Dict[str, torch.nn.Module]:
     return {name: module for name, module in root.named_modules()}
 
@@ -10,8 +12,9 @@ def _module_dict(root: torch.nn.Module) -> Dict[str, torch.nn.Module]:
 def apply_simple_linear_swaps(
     model: torch.nn.Module,
     cfg: Dict[str, Any],
+    layer_name: str,
     logging: Any = print,
-) -> int:
+) -> torch.nn.Module:
     """
     Делает замену nn.Linear -> SimpleCustomLinear по правилам из YAML.
 
@@ -27,11 +30,16 @@ def apply_simple_linear_swaps(
             "lm_head": {alpha: 0.1}
             "transformer.h.0.mlp.fc_out": {beta: 0.2}
     """
-    section = (cfg.get("model") or {}).get("layer_swap_simple")
-    if not section or not section.get("enabled", False):
-        logging("[layer_swap_simple] disabled/no section — skip")
-        return 0
 
+    if layer_name in layers:
+        CustomLayer = layers[layer_name]
+    else:
+        logging(f"Did not find {layer_name} in registry, returning original model")
+        return model
+        
+
+    section = (cfg.get("model") or {}).get("layer_swap")
+   
     copy_weights = bool(section.get("copy_weights", True))
     include_leaf = set(section.get("include_leaf_names") or [])
     exclude_substrings = [s.lower() for s in (section.get("exclude_substrings") or [])]
@@ -63,7 +71,7 @@ def apply_simple_linear_swaps(
         if full_name in per_layer_cfg:
             effective_cfg.update(per_layer_cfg[full_name])
 
-        new_linear = SimpleCustomLinear.from_original(
+        new_linear = CustomLayer.from_original(
             module,
             metadata=effective_cfg,
             copy_weights=copy_weights,
@@ -73,4 +81,4 @@ def apply_simple_linear_swaps(
         logging(f"[layer_swap_simple] replaced {full_name} -> SimpleCustomLinear")
 
     logging(f"[layer_swap_simple] total replaced: {replaced}")
-    return replaced
+    return model

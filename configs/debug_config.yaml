@@ -1,5 +1,5 @@
 hardware:
-  device: 0
+  device: 2
   compile: false
   coordinate_descent_tuning: true
   amp: false
@@ -51,7 +51,7 @@ evaluation:
   val_batch_size: 16
 
 logging:
-  output_dir: "./hdd"
+  output_dir: "../hdd"
   save_every: 50000
   use_ml_flow: false #
   mlflow_tracking_uri: http://195.209.214.105:5000

@@ -1,12 +1,16 @@
 hardware:
-  device: 1
+  device: 2
   compile: false
   coordinate_descent_tuning: true
   amp: false
 
+resume_training:
+  resume: true
+  resume_directory: ../results/debug/b9584cfa25af4254a43d19ee6fa98a12
+
 model:
-  layer_swap_simple:
-    enabled: true
+  layer_swap:
+    layer_name: SimpleCustomLinear # use original for default 
     copy_weights: true
     include_leaf_names: []   
     exclude_substrings: ["lm_head"]                      
@@ -24,8 +28,6 @@ model:
         #   enabled: true
         #   weight: 1.0
         #   l1_activation: 0.001
-
-  size: "d12"  # Options: d12, d24, d36, d48
   
   vocab_size: 50257
   n_layer: 12
@@ -40,26 +42,24 @@ model:
 
 
 training:
-  batch_size: 64
-  sequence_length: 128
-  num_iterations: 5000000 
-  learning_rate: 0.0001
-  warmup_iters: 1000
-  warmdown_iters: 0
+  batch_size: 8
+  sequence_length: 1024
+  num_iterations: 4768 
+  learning_rate: 0.0018
+  warmup_iters: 256
+  warmdown_iters: 1024
   weight_decay: 0.0001
-  grad_accumulation_steps: 9
+  grad_accumulation_steps: 16
   optimizer_betas: [0.9, 0.95] # Added optimizer betas
  
- 
-
 evaluation:
   val_tokens: 1048576  # Fixed value as per original code
-  val_loss_every: 5
+  val_loss_every: 10
   val_batch_size: 16
 
 logging:
-  output_dir: "./results"
-  save_every: 50000
+  output_dir: "../results"
+  save_every: 10
   use_ml_flow: true #
   mlflow_tracking_uri: http://195.209.214.105:5000
   experiment_name: debug
