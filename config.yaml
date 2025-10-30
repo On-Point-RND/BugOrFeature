@@ -32,29 +32,29 @@ model:
 
 
 training:
-  batch_size: 64
-  sequence_length: 128
-  num_iterations: 5000000 
-  learning_rate: 0.0001
-  warmup_iters: 1000
-  warmdown_iters: 0
+  batch_size: 16
+  sequence_length: 1024
+  num_iterations: 4768 
+  learning_rate: 0.0018
+  warmup_iters: 256
+  warmdown_iters: 1024
   weight_decay: 0.0001
-  grad_accumulation_steps: 9
+  grad_accumulation_steps: 64
   optimizer_betas: [0.9, 0.95] # Added optimizer betas
  
  
 
 evaluation:
   val_tokens: 1048576  # Fixed value as per original code
-  val_loss_every: 5
+  val_loss_every: 128
   val_batch_size: 16
 
 logging:
   output_dir: "./results"
-  save_every: 50000
+  save_every: 1000
   use_ml_flow: true #
   mlflow_tracking_uri: http://195.209.214.105:5000
-  experiment_name: debug
+  experiment_name: bench
 
 data:
   input_bin: "data/fineweb10B/fineweb_train_*.bin"

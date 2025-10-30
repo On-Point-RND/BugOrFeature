@@ -1,0 +1,38 @@
+{
+  "step": 384,
+  "tokens_per_iter": 1048576,
+  "val_loss": 5.669971369206905,
+  "val_ppl": 290.026230591863,
+  "samples": [
+    {
+      "name": "shakespeare",
+      "prompt": "ACT I. SCENE I. Verona. A public place.\nRomeo: ",
+      "generation_params": {
+        "max_new_tokens": 80,
+        "temperature": 0.9,
+        "top_k": 50
+      },
+      "text": "ACT I. SCENE I. Verona. A public place.\nRomeo: \nI am not to the\nI am not to my life.\nI am not to my life. I am not to my life. I am not to my life. I am not to my life. I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I"
+    },
+    {
+      "name": "hello_world",
+      "prompt": "Hello, world! ",
+      "generation_params": {
+        "max_new_tokens": 64,
+        "temperature": 0.8,
+        "top_k": 40
+      },
+      "text": "Hello, world! !!!\nI love!\nI love!\nI love!\nI love!\nI love!\nI love!\nI love!\nI love!\nI love!\nI love!\nI love my love my love my love my love my love my love my love my love my love my love"
+    },
+    {
+      "name": "python_code",
+      "prompt": "Write a Python function to compute the first 20 Fibonacci numbers:\ndef fib(n):\n    ",
+      "generation_params": {
+        "max_new_tokens": 96,
+        "temperature": 0.95,
+        "top_k": 50
+      },
+      "text": "Write a Python function to compute the first 20 Fibonacci numbers:\ndef fib(n):\n     цитрогроготроготроготроготроготроготроготроготроготроготроготроготроготроготроготроготроготрог"
+    }
+  ]
+}

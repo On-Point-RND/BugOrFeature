@@ -1,0 +1,38 @@
+{
+  "step": 2048,
+  "tokens_per_iter": 1048576,
+  "val_loss": 5.408605739474297,
+  "val_ppl": 223.32000425025686,
+  "samples": [
+    {
+      "name": "shakespeare",
+      "prompt": "ACT I. SCENE I. Verona. A public place.\nRomeo: ",
+      "generation_params": {
+        "max_new_tokens": 80,
+        "temperature": 0.9,
+        "top_k": 50
+      },
+      "text": "ACT I. SCENE I. Verona. A public place.\nRomeo: \nThe first, I was the same time, I was a little bit of the same time I was a little bit of the same time I was a little bit of the time I was a bit of the time I was a bit of my life. I was a little bit of my life. I was a little bit of my life. I was a little bit of my life. I was"
+    },
+    {
+      "name": "hello_world",
+      "prompt": "Hello, world! ",
+      "generation_params": {
+        "max_new_tokens": 64,
+        "temperature": 0.8,
+        "top_k": 40
+      },
+      "text": "Hello, world! !!! I am looking for me! I am looking for me! I am looking for me! I am looking for me! I am looking for me! I am looking for me! I am looking for me! I am looking for me! I am looking for me! I am looking for me! I am looking"
+    },
+    {
+      "name": "python_code",
+      "prompt": "Write a Python function to compute the first 20 Fibonacci numbers:\ndef fib(n):\n    ",
+      "generation_params": {
+        "max_new_tokens": 96,
+        "temperature": 0.95,
+        "top_k": 50
+      },
+      "text": "Write a Python function to compute the first 20 Fibonacci numbers:\ndef fib(n):\n    \n(1.\n(1)\n(1)\n(1)\n(1)\n(1)\n(1)\n(1)\n(1)\n(1)\n(1)\n(1)\n(1)\n(1)\n(1)\n(1)\n(1)\n(1)\n(1)\n(1)\n(1)\n(1)\n(1)\n(1)"
+    }
+  ]
+}

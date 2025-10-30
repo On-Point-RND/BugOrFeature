@@ -1,0 +1,38 @@
+{
+  "step": 640,
+  "tokens_per_iter": 1048576,
+  "val_loss": 5.590240389108658,
+  "val_ppl": 267.7999881770549,
+  "samples": [
+    {
+      "name": "shakespeare",
+      "prompt": "ACT I. SCENE I. Verona. A public place.\nRomeo: ",
+      "generation_params": {
+        "max_new_tokens": 80,
+        "temperature": 0.9,
+        "top_k": 50
+      },
+      "text": "ACT I. SCENE I. Verona. A public place.\nRomeo: !!!\nI am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am"
+    },
+    {
+      "name": "hello_world",
+      "prompt": "Hello, world! ",
+      "generation_params": {
+        "max_new_tokens": 64,
+        "temperature": 0.8,
+        "top_k": 40
+      },
+      "text": "Hello, world! !!! I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I"
+    },
+    {
+      "name": "python_code",
+      "prompt": "Write a Python function to compute the first 20 Fibonacci numbers:\ndef fib(n):\n    ",
+      "generation_params": {
+        "max_new_tokens": 96,
+        "temperature": 0.95,
+        "top_k": 50
+      },
+      "text": "Write a Python function to compute the first 20 Fibonacci numbers:\ndef fib(n):\n    ̇аіn = 0.\nThe firstname.lastname.lastname.lastname@example.org.org.org.org.lastname@example.org.org.org.org.org.org.org.lastname@example.org.org.org.org.org.org.org.lastname@example.org.org.org.org.\nThe firstname@example.org.org.org"
+    }
+  ]
+}
