@@ -50,7 +50,7 @@ evaluation:
   val_batch_size: 16
 
 logging:
-  output_dir: "./results"
+  output_dir: "../results"
   save_every: 1000
   use_ml_flow: true #
   mlflow_tracking_uri: http://195.209.214.105:5000
