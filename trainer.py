@@ -14,7 +14,7 @@ except Exception:  # pragma: no cover
 
 
 class Trainer:
-    def __init__(self, config, logger, device, use_amp):
+    def __init__(self, config, logger, device, use_amp, total_dataset_tokens=None):
         self.NUM_ITERATIONS = config['training']['num_iterations']
         self.VAL_LOSS_EVERY = config['evaluation']['val_loss_every']
         self.WARMUP_ITERS = config['training']['warmup_iters']
@@ -40,6 +40,14 @@ class Trainer:
                 torch_config.coordinate_descent_tuning = True
 
         self.tokens_per_iter = S * B * self.GRAD_ACCUMULATION_STEPS
+        self.total_dataset_tokens = total_dataset_tokens
+        
+        # Log dataset info
+        if self.total_dataset_tokens:
+            self.logger.info(f"Total tokens in dataset: {self.total_dataset_tokens:,}")
+            max_tokens = self.NUM_ITERATIONS * self.tokens_per_iter
+            self.logger.info(f"Max tokens to process (all iterations): {max_tokens:,}")
+            self.logger.info(f"Dataset coverage: {max_tokens / self.total_dataset_tokens:.2f}x")
 
     def _maybe_decode_gpt2(self, token_ids: torch.Tensor):
         """Try to decode GPT-2 token ids into text using tiktoken. Return None if unavailable."""
@@ -121,11 +129,18 @@ class Trainer:
             clamped_loss = min(val_loss, 700)
             val_ppl = math.exp(clamped_loss)
 
-            self.logger.log(
-                val_loss=val_loss,
-                val_ppl=val_ppl,
-                step=self.step * self.tokens_per_iter,
-            )
+            log_dict = {
+                "step": self.step,
+                "val_loss": val_loss,
+                "val_ppl": val_ppl,
+                "tokens_processed": self.step * self.tokens_per_iter,
+            }
+            
+            if self.total_dataset_tokens:
+                dataset_progress_pct = (self.step * self.tokens_per_iter / self.total_dataset_tokens) * 100
+                log_dict["dataset_progress_pct"] = dataset_progress_pct
+            
+            self.logger.log(**log_dict)
 
             self.logger.collect_and_log_metadata(model, self.step, self.tokens_per_iter)
 
@@ -236,6 +251,15 @@ class Trainer:
                     _, loss = model(x, y, return_logits=False)
                     loss = loss / self.GRAD_ACCUMULATION_STEPS
 
+                try:
+                    from custom_layers.base_auxiliary_loss import collect_auxiliary_losses
+                    aux_loss = collect_auxiliary_losses(model, weighted=True, return_details=False)
+                    if aux_loss.item() != 0:
+                        aux_loss = aux_loss / self.GRAD_ACCUMULATION_STEPS
+                        loss = loss + aux_loss
+                except ImportError:
+                    pass
+
                 train_loss += loss.detach()
                 loss.backward()
 
@@ -257,13 +281,25 @@ class Trainer:
             avg_step_time_ms = total_training_time_ms / (step + 1) if step >= 0 else 0
 
             if self.VAL_LOSS_EVERY > 0 and (step % self.VAL_LOSS_EVERY == 0 or last_step):
-                self.logger.log(
-                    step=step,
-                    loss=total_loss_value / self.VAL_LOSS_EVERY,
-                    train_time_sec=total_training_time_ms / 1000,
-                    step_avg_time_sec=avg_step_time_ms / 1000,
-                    val_time_sec=total_validation_time_ms / 1000,
-                )
+                # Calculate token progress (after training step, so step+1)
+                tokens_processed = (step + 1) * self.tokens_per_iter
+                
+                log_dict = {
+                    "step": step,
+                    "loss": total_loss_value / self.VAL_LOSS_EVERY,
+                    "train_time_sec": total_training_time_ms / 1000,
+                    "step_avg_time_sec": avg_step_time_ms / 1000,
+                    "val_time_sec": total_validation_time_ms / 1000,
+                    "tokens_processed": tokens_processed,
+                }
+                
+                # Add dataset progress if total_dataset_tokens is available
+                if self.total_dataset_tokens:
+                    dataset_progress_pct = (tokens_processed / self.total_dataset_tokens) * 100
+                    log_dict["dataset_progress_pct"] = dataset_progress_pct
+                
+                self.logger.log(**log_dict)
+                total_loss_value = 0  
 
             if self.logger.check_save_step(step):
                 self.logger.save_model(model, step)
