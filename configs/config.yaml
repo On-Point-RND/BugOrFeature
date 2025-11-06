@@ -1,5 +1,5 @@
 hardware:
-  device: 2
+  device: 0
   compile: false
   coordinate_descent_tuning: true
   amp: false
@@ -30,9 +30,10 @@ model:
         #   l1_activation: 0.001
   
   vocab_size: 50257
-  n_layer: 12
-  n_head: 12
-  n_embed: 768
+  n_layer: 24
+  n_head: 16
+  n_embed: 1024
+
 
   # MODEL_CONFIGS = {
   #   "d12": GPTConfig(vocab_size=cfg['model']['vocab_size'], n_layer=12, n_head=12, n_embd=768),
@@ -41,28 +42,29 @@ model:
   #   "d48": GPTConfig(vocab_size=cfg['model']['vocab_size'], n_layer=48, n_head=25, n_embd=1600),
 
 
+
 training:
-  batch_size: 8
+  batch_size: 32
   sequence_length: 1024
-  num_iterations: 4768 
-  learning_rate: 0.0018
-  warmup_iters: 256
+  num_iterations: 800000 
+  learning_rate: 0.0003    
+  warmup_iters: 0
   warmdown_iters: 1024
-  weight_decay: 0.0001
+  weight_decay: 0.01
   grad_accumulation_steps: 16
   optimizer_betas: [0.9, 0.95] # Added optimizer betas
  
 evaluation:
   val_tokens: 1048576  # Fixed value as per original code
-  val_loss_every: 10
+  val_loss_every: 128
   val_batch_size: 16
 
 logging:
-  output_dir: "../results"
-  save_every: 10
+  output_dir: "../egor_log_results"
+  save_every: 512
   use_ml_flow: true #
   mlflow_tracking_uri: http://195.209.214.105:5000
-  experiment_name: debug
+  experiment_name: train_2b_d24
 
 data:
   input_bin: "data/fineweb10B/fineweb_train_*.bin"
