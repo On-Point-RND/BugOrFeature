@@ -6,6 +6,7 @@ wandb/
 # Custom Directories
 # ======================
 data/fineweb10B/
+results/
 pylog124M/
 logs/
 wandb/
@@ -114,3 +115,4 @@ Thumbs.db
 
 # DVC
 .dvc/
+/hdd
