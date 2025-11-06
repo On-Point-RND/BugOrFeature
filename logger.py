@@ -55,7 +55,7 @@ class Logger:
 
         # --- Local logging setup ---
         if log_dir_path is None:
-            self.run_id = datetime.now().strftime('%Y%m%d_%H%M_')+str(uuid.uuid4()) if not self.use_ml_flow else self.mlflow_run.info.run_id
+            self.run_id = datetime.now().strftime('%Y%m%d_%H%M_')+str(uuid.uuid4()) 
             self.logs_dir = os.path.join(config['logging']['output_dir'],config['logging']['experiment_name'], self.run_id)
             os.makedirs(self.logs_dir, exist_ok=True)
         else:

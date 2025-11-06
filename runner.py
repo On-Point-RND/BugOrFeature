@@ -13,6 +13,7 @@ with open("./configs/config.yaml", "r") as f:
 
 log_dir_path = None
 last_step = 0
+mlflow_id = None
 
 resume = cfg['resume_training']['resume']
 if resume:

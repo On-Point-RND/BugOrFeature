@@ -103,14 +103,22 @@ class Trainer:
         return idx[0]
 
     def get_lr(self, it):
-        assert it <= self.NUM_ITERATIONS
+        assert 0 <= it <= self.NUM_ITERATIONS, f"it={it} out of [0, {self.NUM_ITERATIONS}]"
+        
+        # Warmup phase: [0, WARMUP_ITERS)
         if it < self.WARMUP_ITERS:
             return self.LEARNING_RATE * (it + 1) / self.WARMUP_ITERS
-        elif it < self.NUM_ITERATIONS - self.WARMDOWN_ITERS:
-            return self.LEARNING_RATE
-        else:
-            decay_ratio = (self.NUM_ITERATIONS - it) / self.WARMDOWN_ITERS
+        
+        # Warmdown phase: last WARMDOWN_ITERS steps
+        elif it >= self.NUM_ITERATIONS - self.WARMDOWN_ITERS:
+            # it ranges from (NUM_ITERATIONS - WARMDOWN_ITERS) to NUM_ITERATIONS
+            decay_steps = self.NUM_ITERATIONS - it  # goes from WARMDOWN_ITERS → 0
+            decay_ratio = decay_steps / self.WARMDOWN_ITERS  # from 1.0 → 0.0
             return self.LEARNING_RATE * decay_ratio
+    
+        # Constant phase: middle
+        else:
+            return self.LEARNING_RATE
 
     def validate(self, model, val_loader, val_steps, step):
         torch.cuda.synchronize()
@@ -279,5 +287,6 @@ class Trainer:
                 self.logger.save_model_and_config(model, total_step)
 
         # --- Final summary ---
+        self.logger.save_model_and_config(model, total_step)
         self.logger.info(f"We are done SIR!")
       
