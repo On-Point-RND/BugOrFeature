@@ -268,7 +268,7 @@ class Trainer:
                     }
 
                 
-                self.logger.info(f'Tokens processed {tokens_progress}%')
+                self.logger.info(f'Tokens processed {tokens_processed}%')
                 
                 self.logger.log(**log_dict)
                 total_loss_value = 0  
