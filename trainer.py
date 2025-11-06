@@ -66,7 +66,7 @@ class Trainer:
             self.logger.log(
                 val_loss=val_loss,
                 val_ppl=val_ppl,
-                step=self.step * self.tokens_per_iter
+                tokens_progres=self.step * self.tokens_per_iter
             )
                 
 
@@ -140,13 +140,14 @@ class Trainer:
             avg_step_time_ms = total_training_time_ms / (step + 1) if step >= 0 else 0
 
             if self.VAL_LOSS_EVERY > 0 and (step % self.VAL_LOSS_EVERY == 0 or last_step):
-                self.logger.log(
-                    step=step,
-                    loss=total_loss_value/self.VAL_LOSS_EVERY ,
-                    train_time_sec=total_training_time_ms / 1000,
-                    step_avg_time_sec=avg_step_time_ms / 1000,
-                    val_time_sec=total_validation_time_ms / 1000,
-                )
+                if total_loss_value > 0:    
+                    self.logger.log(
+                        step=step,
+                        loss=total_loss_value/self.VAL_LOSS_EVERY ,
+                        train_time_sec=total_training_time_ms / 1000,
+                        step_avg_time_sec=avg_step_time_ms / 1000,
+                        val_time_sec=total_validation_time_ms / 1000,
+                    )
 
             if self.logger.check_save_step(step):
                 self.logger.save_model(model, step)
