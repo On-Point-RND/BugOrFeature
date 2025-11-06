@@ -1,9 +1,36 @@
 import copy
 import torch
 import torch.nn.functional as F
+import numpy as np
 from typing import Any, Dict, Optional
 from .base_auxiliary_loss import AuxiliaryLoss
 
+def compute_effective_rank(matrix: torch.Tensor) -> float:
+    """Compute the effective rank of a matrix based on singular values"""
+    if matrix.numel() == 0:
+        return 0.0
+    
+    # Reshape matrix to 2D if needed
+    if matrix.dim() > 2:
+        matrix = matrix.view(-1, matrix.shape[-1])
+    
+    # Compute SVD
+    U, S, V = torch.svd(matrix.float())
+    
+    # Compute singular values as probabilities
+    S_squared = S ** 2
+    prob = S_squared / S_squared.sum()
+    
+    # Filter out very small probabilities to avoid log(0)
+    prob = prob[prob > 1e-10]
+    
+    # Compute entropy
+    entropy = -torch.sum(prob * torch.log(prob))
+    
+    # Effective rank is exp(entropy)
+    effective_rank = torch.exp(entropy).item()
+    
+    return effective_rank
 
 class SimpleCustomLinear(torch.nn.Linear, AuxiliaryLoss):
     def __init__(self, in_features, out_features, bias=True, device=None, dtype=None,
@@ -33,9 +60,57 @@ class SimpleCustomLinear(torch.nn.Linear, AuxiliaryLoss):
             'flops_per_token_sparse': sparse_flops_per_token,
         })
 
+    def compute_statistics(self, input: torch.Tensor, output: torch.Tensor):
+        """Compute additional statistics when in eval mode"""
+        if self.training:
+            return
+            
+        stats = {}
+        
+        # Percentage of negative/positive values in input
+        input_total = input.numel()
+        if input_total > 0:
+            input_neg = (input < 0).sum().item()
+            input_pos = (input > 0).sum().item()
+            stats['input_negative_percentage'] = input_neg / input_total
+            stats['input_positive_percentage'] = input_pos / input_total
+        
+        # Percentage of negative/positive values in output
+        output_total = output.numel()
+        if output_total > 0:
+            output_neg = (output < 0).sum().item()
+            output_pos = (output > 0).sum().item()
+            stats['output_negative_percentage'] = output_neg / output_total
+            stats['output_positive_percentage'] = output_pos / output_total
+        
+        # Percentage of negative/positive values in weight matrix
+        weight_total = self.weight.numel()
+        if weight_total > 0:
+            weight_neg = (self.weight < 0).sum().item()
+            weight_pos = (self.weight > 0).sum().item()
+            stats['weight_negative_percentage'] = weight_neg / weight_total
+            stats['weight_positive_percentage'] = weight_pos / weight_total
+        
+        # Bias mean (if bias exists)
+        if self.bias is not None:
+            stats['bias_mean'] = self.bias.mean().item()
+        
+        # Input and output effective rank
+        # stats['input_effective_rank'] = compute_effective_rank(input)
+        # stats['output_effective_rank'] = compute_effective_rank(output)
+        # stats['weight_effective_rank'] = compute_effective_rank(self.weight)
+        
+        # Update metadata with new statistics
+        self.metadata.update(stats)
+
     def forward(self, input: torch.Tensor):
-        self.record_input_sparsity_and_flops(input)
+        
         output = F.linear(input, self.weight, self.bias)
+        
+        # Compute additional statistics in eval mode only
+        if not self.training:
+            self.record_input_sparsity_and_flops(input)
+            self.compute_statistics(input, output)
         
         if self.training and self._aux_loss_enabled:
             self._cached_input = input.detach()

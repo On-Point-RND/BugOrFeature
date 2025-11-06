@@ -83,7 +83,7 @@ class Logger:
             self.logger.info(f"MLflow run ID: {self.mlflow_run.info.run_id}")
             self.logger.info(f"MLflow run URL: {mlflow.get_artifact_uri()}")  # or construct UI URL if known
 
-        self.config['resume_training']['mlflow_id'] = self.mlflow_run.info.run_id
+            self.config['resume_training']['mlflow_id'] = self.mlflow_run.info.run_id
         self.save_every = config['logging']['save_every']
         self._save_config()
 

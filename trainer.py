@@ -47,7 +47,7 @@ class Trainer:
             self.logger.info(f"Total tokens in dataset: {self.total_dataset_tokens:,}")
             max_tokens = self.NUM_ITERATIONS * self.tokens_per_iter
             self.logger.info(f"Max tokens to process (all iterations): {max_tokens:,}")
-            self.logger.info(f"Dataset coverage: {max_tokens / self.total_dataset_tokens:.2f}x")
+        
 
     def _maybe_decode_gpt2(self, token_ids: torch.Tensor):
         """Try to decode GPT-2 token ids into text using tiktoken. Return None if unavailable."""
@@ -256,25 +256,24 @@ class Trainer:
 
             if self.VAL_LOSS_EVERY > 0 and (total_step % self.VAL_LOSS_EVERY == 0 or last_step):
                 # Calculate token progress (after training step, so step+1)
-                tokens_processed = (total_step + 1) * self.tokens_per_iter
+                if train_loss > 0:
+                    tokens_processed = 100*(step+1) * self.tokens_per_iter / self.total_dataset_tokens
+                    log_dict = {
+                        "step": total_step,
+                        "loss": total_loss_value / self.VAL_LOSS_EVERY,
+                        "train_time_sec": total_training_time_ms / 1000,
+                        "step_avg_time_sec": avg_step_time_ms / 1000,
+                        "val_time_sec": total_validation_time_ms / 1000,
+                        "tokens_processed_percent": tokens_processed,
+                    }
+
                 
-                log_dict = {
-                    "step": total_step,
-                    "loss": total_loss_value / self.VAL_LOSS_EVERY,
-                    "train_time_sec": total_training_time_ms / 1000,
-                    "step_avg_time_sec": avg_step_time_ms / 1000,
-                    "val_time_sec": total_validation_time_ms / 1000,
-                    "tokens_processed": tokens_processed,
-                }
-                
-                # Add dataset progress if total_dataset_tokens is available
-                if self.total_dataset_tokens:
-                    dataset_progress_pct = (tokens_processed / self.total_dataset_tokens) * 100
-                    log_dict["dataset_progress_pct"] = dataset_progress_pct
+                self.logger.info(f'Tokens processed {tokens_progress}%')
                 
                 self.logger.log(**log_dict)
                 total_loss_value = 0  
 
+           
             if self.logger.check_save_step(total_step):
                 self.logger.save_model_and_config(model, total_step)
 

@@ -8,7 +8,7 @@ from datasets import BaseDataLoader
 from swap_layers import apply_simple_linear_swaps
 
 # Load config
-with open("./configs/config.yaml", "r") as f:
+with open("./configs/debug_config.yaml", "r") as f:
     cfg = yaml.safe_load(f)
 
 log_dir_path = None
