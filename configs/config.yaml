@@ -44,9 +44,9 @@ model:
 
 
 training:
-  batch_size: 32
+  batch_size: 16
   sequence_length: 1024
-  num_iterations: 800000 
+  num_iterations: 4768 # 800000 
   learning_rate: 0.0003    
   warmup_iters: 0
   warmdown_iters: 1024
@@ -64,7 +64,7 @@ logging:
   save_every: 512
   use_ml_flow: true #
   mlflow_tracking_uri: http://195.209.214.105:5000
-  experiment_name: train_2b_d24
+  experiment_name: trai_relu_basic
 
 data:
   input_bin: "data/fineweb10B/fineweb_train_*.bin"
