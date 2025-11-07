@@ -6,7 +6,7 @@ hardware:
 
 resume_training:
   resume: false
-  resume_directory: ../results/debug/b9584cfa25af4254a43d19ee6fa98a12
+  resume_directory:  ../egor_log_results/generation/20251030_2028_5d0ca215-aadc-40ae-a8d8-baeaa2e43f06/
 
 model:
   layer_swap:
@@ -30,9 +30,9 @@ model:
         #   l1_activation: 0.001
   
   vocab_size: 50257
-  n_layer: 24
-  n_head: 16
-  n_embed: 1024
+  n_layer: 12
+  n_head: 12
+  n_embed: 768
 
 
   # MODEL_CONFIGS = {
@@ -57,14 +57,14 @@ training:
 evaluation:
   val_tokens: 1048576  # Fixed value as per original code
   val_loss_every: 128
-  val_batch_size: 16
+  val_batch_size: 32
 
 logging:
   output_dir: "../egor_log_results"
   save_every: 512
   use_ml_flow: true #
   mlflow_tracking_uri: http://195.209.214.105:5000
-  experiment_name: train_2b_d24
+  experiment_name: train_d12_custom_lr_wd
 
 data:
   input_bin: "data/fineweb10B/fineweb_train_*.bin"
