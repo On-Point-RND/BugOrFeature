@@ -141,7 +141,6 @@ class Trainer:
                 "step":step,
                 "val_loss": val_loss,
                 "val_ppl": val_ppl,
-                "tokens_processed": step * self.tokens_per_iter,
             }
             
             if self.total_dataset_tokens:
