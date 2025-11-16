@@ -64,7 +64,7 @@ logging:
   save_every: 512
   use_ml_flow: true #
   mlflow_tracking_uri: http://195.209.214.105:5000
-  experiment_name: gpt_relu_basic
+  experiment_name: GPT_block_relu_basic
 
 data:
   input_bin: "data/fineweb10B/fineweb_train_*.bin"
