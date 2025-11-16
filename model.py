@@ -94,35 +94,35 @@ class MLP(nn.Module):
         return x
 
 # GPT BLOCK 
-# class Block(nn.Module):
-
-#     def __init__(self, config):
-#         super().__init__()
-#         self.attn = CausalSelfAttention(config)
-#         self.mlp = MLP(config)
-#         self.attn_scale = 1 / math.sqrt(2 * config.n_layer)
-
-#     def forward(self, x):
-#         x = x + self.attn_scale * self.attn(rmsnorm(x))
-#         x = x + self.mlp(rmsnorm(x))
-#         return x
-
-
-# LLAMA BLOCK
-
 class Block(nn.Module):
+
     def __init__(self, config):
         super().__init__()
         self.attn = CausalSelfAttention(config)
         self.mlp = MLP(config)
-        self.ln_1 = nn.Module()  # Add explicit normalization layers
-        self.ln_2 = nn.Module()
-        
+        self.attn_scale = 1 / math.sqrt(2 * config.n_layer)
+
     def forward(self, x):
-        # Standard pre-norm like LLaMA
-        x = x + self.attn(rmsnorm(x))
+        x = x + self.attn_scale * self.attn(rmsnorm(x))
         x = x + self.mlp(rmsnorm(x))
         return x
+
+
+# LLAMA BLOCK
+
+# class Block(nn.Module):
+#     def __init__(self, config):
+#         super().__init__()
+#         self.attn = CausalSelfAttention(config)
+#         self.mlp = MLP(config)
+#         self.ln_1 = nn.Module()  # Add explicit normalization layers
+#         self.ln_2 = nn.Module()
+        
+#     def forward(self, x):
+#         # Standard pre-norm like LLaMA
+#         x = x + self.attn(rmsnorm(x))
+#         x = x + self.mlp(rmsnorm(x))
+#         return x
 
 # -----------------------------------------------------------------------------
 # The main GPT-2 model

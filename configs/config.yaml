@@ -56,7 +56,7 @@ training:
  
 evaluation:
   val_tokens: 1048576  # Fixed value as per original code
-  val_loss_every: 128
+  val_loss_every: 512
   val_batch_size: 16
 
 logging:
@@ -64,7 +64,7 @@ logging:
   save_every: 512
   use_ml_flow: true #
   mlflow_tracking_uri: http://195.209.214.105:5000
-  experiment_name: trai_relu_basic
+  experiment_name: GPT_block_relu_basic
 
 data:
   input_bin: "data/fineweb10B/fineweb_train_*.bin"
