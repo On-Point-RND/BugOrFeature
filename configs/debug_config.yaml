@@ -1,5 +1,5 @@
 hardware:
-  device: 2
+  device: 0
   compile: false
   coordinate_descent_tuning: true
   amp: false
@@ -61,9 +61,9 @@ evaluation:
 logging:
   output_dir: "../results"
   save_every: 1000
-  use_ml_flow: false 
+  use_ml_flow: true 
   mlflow_tracking_uri: http://195.209.214.105:5000
-  experiment_name: debug
+  experiment_name: debug_llama
 
 data:
   input_bin: "data/fineweb10B/fineweb_train_*.bin"

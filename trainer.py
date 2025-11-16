@@ -100,6 +100,7 @@ class Trainer:
                 probs = torch.softmax(logits, dim=-1)
                 next_token = torch.argmax(probs, dim=-1, keepdim=True)  # greedy
                 idx = torch.cat((idx, next_token), dim=1)
+
         return idx[0]
 
     def get_lr(self, it):

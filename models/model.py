@@ -5,6 +5,13 @@ import torch.nn.functional as F
 from dataclasses import dataclass
 
 
+@dataclass
+class GPTConfig:
+    vocab_size: int = 50257
+    n_layer: int = 12
+    n_head: int = 12
+    n_embd: int = 768
+
 
 class Rotary(torch.nn.Module):
     def __init__(self, dim, base=10000):
@@ -107,36 +114,11 @@ class Block(nn.Module):
         x = x + self.mlp(rmsnorm(x))
         return x
 
-
-# LLAMA BLOCK
-
-# class Block(nn.Module):
-#     def __init__(self, config):
-#         super().__init__()
-#         self.attn = CausalSelfAttention(config)
-#         self.mlp = MLP(config)
-#         self.ln_1 = nn.Module()  # Add explicit normalization layers
-#         self.ln_2 = nn.Module()
-        
-#     def forward(self, x):
-#         # Standard pre-norm like LLaMA
-#         x = x + self.attn(rmsnorm(x))
-#         x = x + self.mlp(rmsnorm(x))
-#         return x
-
 # -----------------------------------------------------------------------------
 # The main GPT-2 model
 
 
-@dataclass
-class GPTConfig:
-    vocab_size: int = 50257
-    n_layer: int = 12
-    n_head: int = 12
-    n_embd: int = 768
-
-
-class GPT(nn.Module):
+class Model(nn.Module):
 
     def __init__(self, config):
         super().__init__()
@@ -187,4 +169,7 @@ class GPT(nn.Module):
         self.optimizer = torch.optim.AdamW(
             self.parameters(), lr=learning_rate, weight_decay=weight_decay, betas=betas
         )
+
+    def clear_kv_cache(self):
+        pass 
         

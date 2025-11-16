@@ -3,12 +3,12 @@ import yaml
 import torch
 from trainer import Trainer
 from logger import Logger
-from model import GPT, GPTConfig
+from models.llama_three import LlamaModel, LLAMAConfig
 from datasets import BaseDataLoader
 from swap_layers import apply_simple_linear_swaps
 
 # Load config
-with open("./configs/config.yaml", "r") as f:
+with open("./configs/debug_config.yaml", "r") as f:
     cfg = yaml.safe_load(f)
 
 log_dir_path = None
@@ -41,7 +41,7 @@ logger = Logger(cfg,
                 mlflow_id=mlflow_id)
 
 # Build model config correctly
-model_cfg = GPTConfig(
+model_cfg = LLAMAConfig(
     vocab_size=cfg["model"]["vocab_size"],
     n_layer=cfg["model"]["n_layer"],
     n_head=cfg["model"]["n_head"],
@@ -64,7 +64,7 @@ if cfg["evaluation"]["val_loss_every"] > 0:
     val_loader = BaseDataLoader(cfg["data"]["input_val_bin"], val_batch_size, T, cfg['hardware']["device"])
 
 # Model
-model = GPT(model_cfg).train().to(cfg['hardware']["device"])
+model = LlamaModel(model_cfg).train().to(cfg['hardware']["device"])
 
 logger.info("==="*10 + f"\nMODEL BEFORE SWAP:\n\n{model}\n\n" + "==="*10 )
 
