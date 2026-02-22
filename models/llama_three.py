@@ -165,9 +165,9 @@ class FeedForward(nn.Module):
         self.w1 = nn.Linear(dim, hidden_dim, bias=False)
         self.w2 = nn.Linear(hidden_dim, dim, bias=False)
         self.w3 = nn.Linear(dim, hidden_dim, bias=False)
-
+# TODO change to F.silu
     def forward(self, x):
-        return self.w2(F.silu(self.w1(x)) * self.w3(x))
+        return self.w2(F.relu(self.w1(x)) * self.w3(x))
 
 
 class TransformerBlock(nn.Module):

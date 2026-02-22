@@ -99,7 +99,35 @@ class SimpleCustomLinear(torch.nn.Linear, AuxiliaryLoss):
         # stats['input_effective_rank'] = compute_effective_rank(input)
         # stats['output_effective_rank'] = compute_effective_rank(output)
         # stats['weight_effective_rank'] = compute_effective_rank(self.weight)
+
+        stats['max_input_value'] = input.max().item()
+        stats['min_input_value'] = input.min().item()
+        stats['max_weight_value'] = self.weight.max().item()
+        stats['min_weight_value'] = self.weight.min().item()
+
+        stats['mean_weight_value'] = self.weight.mean().item()
+        stats['std_weight_value'] = self.weight.std().item()
+
+
+        weight_abs = self.weight.data.abs()
+        abs_flat = weight_abs.flatten()
         
+        if abs_flat.numel() > 0:
+            # Get the 99.9th percentile of absolute weights (adjust percentile as needed)
+            threshold = torch.quantile(abs_flat, 0.999)
+        
+            # Count how many weights (in original signed tensor) have |w| >= threshold
+            extreme_mask = weight_abs >= threshold
+            num_extreme = extreme_mask.sum().item()
+            frac_extreme = num_extreme / abs_flat.numel()
+        
+            stats['weight_frac_extreme_magnitude'] = frac_extreme
+            stats['weight_count_extreme_magnitude'] = num_extreme
+            stats['weight_extreme_threshold'] = threshold.item()  # for debugging
+                # stats['output_effective_rank'] = compute_effective_rank(output)
+                # stats['weight_effective_rank'] = compute_effective_rank(self.weight)
+        
+      
         # Update metadata with new statistics
         self.metadata.update(stats)
 

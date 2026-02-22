@@ -30,9 +30,9 @@ model:
         #   l1_activation: 0.001
   
   vocab_size: 50257
-  n_layer: 24
-  n_head: 16
-  n_embed: 1024
+  n_layer: 12
+  n_head: 12
+  n_embed: 768
 
 
   # MODEL_CONFIGS = {
@@ -44,27 +44,27 @@ model:
 
 
 training:
-  batch_size: 16
+  batch_size: 32
   sequence_length: 1024
-  num_iterations: 4768 # 800000 
+  num_iterations: 38146 # 800000 
   learning_rate: 0.0003    
-  warmup_iters: 0
+  warmup_iters: 2000
   warmdown_iters: 1024
   weight_decay: 0.01
-  grad_accumulation_steps: 16
+  grad_accumulation_steps: 8
   optimizer_betas: [0.9, 0.95] # Added optimizer betas
  
 evaluation:
   val_tokens: 1048576  # Fixed value as per original code
-  val_loss_every: 512
-  val_batch_size: 16
+  val_loss_every: 256
+  val_batch_size: 32
 
 logging:
   output_dir: "../egor_log_results"
   save_every: 512
   use_ml_flow: true #
-  mlflow_tracking_uri: http://195.209.214.105:5000
-  experiment_name: GPT_block_relu_basic
+  mlflow_tracking_uri: http://195.209.219.192:5000/
+  experiment_name: reproduce
 
 data:
   input_bin: "data/fineweb10B/fineweb_train_*.bin"
