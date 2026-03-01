@@ -94,10 +94,11 @@ class MLP(nn.Module):
         super().__init__()
         self.up_projection = nn.Linear(config.n_embd, 4 * config.n_embd, bias=False)
         self.down_projection = nn.Linear(4 * config.n_embd, config.n_embd, bias=False)
+        self.activation = nn.ReLU()
 
     def forward(self, x):
         x = self.up_projection(x)
-        x = F.relu(x)
+        x = self.activation(x)
         x = self.down_projection(x)
         return x
 
