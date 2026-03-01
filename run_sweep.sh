@@ -7,11 +7,11 @@ CONFIG_PATH="./configs/debug_config.yaml"
 
 # Activation functions to iterate over
 ACTIVATIONS=(
-    "GELU"
-    "ReLUSquared"
-    "BSiLU"
-    "SUGARBSiLU"
-    "NoisyReLU"
+    # "GELU"
+    # "ReLUSquared"
+    # "BSiLU"
+    # "SUGARBSiLU"
+    # "NoisyReLU"
     "TopKSparseGELU-10"
     "TopKSparseGELU-25"
     "TopKSparseGELU-50"
