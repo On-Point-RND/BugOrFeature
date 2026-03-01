@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Hardcoded config path
-CONFIG_PATH="./configs/debug_config.yaml"
+CONFIG_PATH="./configs/config.yaml"
 
 
 
