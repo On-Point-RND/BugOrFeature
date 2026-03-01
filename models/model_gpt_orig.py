@@ -4,6 +4,7 @@ from torch import nn
 import torch.nn.functional as F
 from dataclasses import dataclass
 
+from .muon_optim import Muon
 
 @dataclass
 class GPTConfig:
@@ -165,10 +166,109 @@ class Model(nn.Module):
 
         return logits, loss
 
-    def set_optimizers(self, weight_decay, learning_rate, betas):
-        self.optimizer = torch.optim.AdamW(
-            self.parameters(), lr=learning_rate, weight_decay=weight_decay, betas=betas
+    # def set_optimizers(self, weight_decay, learning_rate, betas):
+    #     self.optimizer = torch.optim.AdamW(
+    #         self.parameters(), lr=learning_rate, weight_decay=weight_decay, betas=betas
+    #     )
+
+    def set_optimizers(self, weight_decay, learning_rate, betas, 
+                   warmup_iters=0, warmdown_iters=1450, num_iterations=5800):
+        """
+        Set up split optimizers: Muon for transformer weights, AdamW for embedding/head.
+        Also stores LR schedule config for later use.
+        """
+        # Store schedule config for get_lr_multiplier()
+        self.warmup_iters = warmup_iters
+        self.warmdown_iters = warmdown_iters
+        self.num_iterations = num_iterations
+        self.base_lr_adamw = learning_rate          # e.g., 0.0036
+        self.base_lr_muon = 0.1 * learning_rate     # e.g., 0.00036
+        
+        # --- Split parameters ---
+        muon_params = []
+        adamw_params = []
+        
+        for name, param in self.named_parameters():
+            if not param.requires_grad:
+                continue
+            if name in ['transformer.wte.weight', 'lm_head.weight']:
+                adamw_params.append(param)
+            elif param.ndim != 2:
+                adamw_params.append(param)
+            elif name.startswith('transformer.h.'):
+                muon_params.append(param)
+            else:
+                adamw_params.append(param)
+        
+        # --- Create optimizers ---
+        self.optimizer_adamw = torch.optim.AdamW(
+            adamw_params, 
+            lr=self.base_lr_adamw,  # initial LR (will be updated by schedule)
+            betas=betas, 
+            weight_decay=weight_decay
         )
+        
+        self.optimizer_muon = Muon(
+            muon_params,
+            lr=self.base_lr_muon,
+            momentum=0.95,
+            nesterov=True,
+            backend='newtonschulz5',
+            backend_steps=5
+        )
+        
+        self.optimizers = [self.optimizer_adamw, self.optimizer_muon]
+
+    def get_lr_multiplier(self, step):
+        """
+        Returns LR multiplier (0.0 → 1.0 → 0.0) for linear warmup + constant + warmdown.
+        """
+        # Clamp step to valid range
+        step = min(step, self.num_iterations)
+        
+        # 1) Linear warmup
+        if step < self.warmup_iters:
+            return (step + 1) / max(self.warmup_iters, 1)  # avoid div-by-zero
+        
+        # 2) Constant phase
+        elif step < self.num_iterations - self.warmdown_iters:
+            return 1.0
+        
+        # 3) Linear warmdown
+        else:
+            decay_ratio = (self.num_iterations - step) / self.warmdown_iters
+            return decay_ratio
+
+
+
+    
+    def update_lr(self, step):
+        """
+        Apply LR schedule to both optimizers using their respective base LRs.
+        Call this BEFORE optimizer.step() in your training loop.
+        """
+        multiplier = self.get_lr_multiplier(step)
+        
+        # Update AdamW param groups
+        for param_group in self.optimizer_adamw.param_groups:
+            param_group['lr'] = self.base_lr_adamw * multiplier
+        
+        # Update Muon param groups
+        for param_group in self.optimizer_muon.param_groups:
+            param_group['lr'] = self.base_lr_muon * multiplier
+        
+        # Optional: return current LR for logging
+        return {
+            'adamw_lr': self.base_lr_adamw * multiplier,
+            'muon_lr': self.base_lr_muon * multiplier,
+            'multiplier': multiplier
+        }
+    
+    def optimizer_step(self):
+        """Step both optimizers and zero gradients."""
+        for opt in self.optimizers:
+            opt.step()
+            opt.zero_grad(set_to_none=True)
 
     def clear_kv_cache(self):
         pass 

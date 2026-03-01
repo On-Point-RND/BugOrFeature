@@ -147,22 +147,38 @@ class Logger:
         self.logger.info(info)
 
     def save_model_and_config(self, model, step, tag=None):
+        """
+        Save model state, BOTH optimizers, LR schedule config, and training metadata.
+        """
         filename = f"model_step{step:06d}.pt" if tag is None else f"model_{tag}.pt"
         model_path = os.path.join(self.logs_dir, filename)
-        torch.save({
-                'model': model.state_dict(),
-                'optimizer': model.optimizer.state_dict(),
-            }, model_path)
-        self.logger.info(f"Model saved at step {step} to {model_path}")
-      
-        # push model to mlflow
-        # if self.use_ml_flow:
-        #     mlflow.log_artifact(model_path)
-
-        self.config["resume_training"]["step"] = step
-        self.config["resume_training"]["last_model_path"] = model_path
-        self._save_config()
-
+        
+        # Collect all state to save
+        checkpoint = {
+            'step': step,
+            'model': model.state_dict(),
+            
+            # Split optimizers
+            'optimizer_adamw': model.optimizer_adamw.state_dict(),
+            'optimizer_muon': model.optimizer_muon.state_dict(),
+            
+            # LR schedule config (needed to resume schedule correctly)
+            'lr_config': {
+                'base_lr_adamw': model.base_lr_adamw,
+                'base_lr_muon': model.base_lr_muon,
+                'warmup_iters': model.warmup_iters,
+                'warmdown_iters': model.warmdown_iters,
+                'num_iterations': model.num_iterations,
+            },
+            
+            # Optional: training metadata
+            'config': self.config,  # if you have a config object
+        }
+        
+        torch.save(checkpoint, model_path)
+        self.logger.info(f"✅ Checkpoint saved at step {step} to {model_path}")
+        
+       
     def check_save_step(self, step):
         return (step + 1) % self.save_every == 0
 

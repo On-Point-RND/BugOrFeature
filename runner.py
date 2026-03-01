@@ -7,9 +7,19 @@ from models.model_gpt_orig import Model, GPTConfig
 from datasets import BaseDataLoader
 from swap_layers import apply_simple_linear_swaps
 
+
+# 1. Enable TF32 (Massive speedup on A100)
+torch.set_float32_matmul_precision('high')
+# 2. Use Benchmarking to find the fastest kernels
+torch.backends.cudnn.benchmark = True
+
+
+
+
 # Load config
 with open("./configs/config.yaml", "r") as f:
     cfg = yaml.safe_load(f)
+
 
 log_dir_path = None
 last_step = 0

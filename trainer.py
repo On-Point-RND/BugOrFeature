@@ -103,23 +103,26 @@ class Trainer:
 
         return idx[0]
 
-    def get_lr(self, it):
-        assert 0 <= it <= self.NUM_ITERATIONS, f"it={it} out of [0, {self.NUM_ITERATIONS}]"
+    # def get_lr(self, it):
+    #     # 1) Linear Warmup
+    #     if it < self.WARMUP_ITERS:
+    #         return self.LEARNING_RATE * (it + 1) / self.WARMUP_ITERS
         
-        # Warmup phase: [0, WARMUP_ITERS)
-        if it < self.WARMUP_ITERS:
-            return self.LEARNING_RATE * (it + 1) / self.WARMUP_ITERS
+    #     # 2) Linear Warmdown (The final "landing")
+    #     if it > self.NUM_ITERATIONS - self.WARMDOWN_ITERS:
+    #         decay_steps = self.NUM_ITERATIONS - it
+    #         # Decays from current cosine level down to 0 (or a small min_lr)
+    #         return self.LEARNING_RATE * (decay_steps / self.WARMDOWN_ITERS)
         
-        # Warmdown phase: last WARMDOWN_ITERS steps
-        elif it >= self.NUM_ITERATIONS - self.WARMDOWN_ITERS:
-            # it ranges from (NUM_ITERATIONS - WARMDOWN_ITERS) to NUM_ITERATIONS
-            decay_steps = self.NUM_ITERATIONS - it  # goes from WARMDOWN_ITERS → 0
-            decay_ratio = decay_steps / self.WARMDOWN_ITERS  # from 1.0 → 0.0
-            return self.LEARNING_RATE * decay_ratio
-    
-        # Constant phase: middle
-        else:
-            return self.LEARNING_RATE
+    #     # 3) Cosine Decay (The middle "working" phase)
+    #     # We decay from LEARNING_RATE down to ~10% of LEARNING_RATE
+    #     # during the period between warmup and warmdown.
+    #     decay_ratio = (it - self.WARMUP_ITERS) / (self.NUM_ITERATIONS - self.WARMUP_ITERS - self.WARMDOWN_ITERS)
+    #     coeff = 0.5 * (1.0 + math.cos(math.pi * decay_ratio)) 
+        
+    #     min_lr = self.LEARNING_RATE * 0.1 # Standard practice: decay to 10%
+    #     return min_lr + coeff * (self.LEARNING_RATE - min_lr)
+
 
     def validate(self, model, val_loader, val_steps, step):
         torch.cuda.synchronize()
@@ -192,6 +195,7 @@ class Trainer:
         if self.torch_compile:
             self.logger.info("Started model compilation")
             compile_start = time.perf_counter()
+           # model = torch.compile(model, mode="max-autotune")
             model = torch.compile(model)  # NOTE: may cause issues on some GPUs
             compile_time = time.perf_counter() - compile_start
             self.logger.info(f"Model compiled in {compile_time:.2f} seconds")
@@ -246,12 +250,13 @@ class Trainer:
                 loss.backward()
 
             # --- Optimizer step ---
-            lr = self.get_lr(total_step)
-            for param_group in model.optimizer.param_groups:
-                param_group["lr"] = lr
+            # lr = self.get_lr(total_step)
+            # for param_group in model.optimizer.param_groups:
+            #     param_group["lr"] = lr
 
-            model.optimizer.step()
-            model.optimizer.zero_grad(set_to_none=True)
+            model.update_lr(total_step)
+            model.optimizer_step()
+
 
             # --- Record training time for this step ---
             torch.cuda.synchronize()
