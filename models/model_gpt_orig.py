@@ -44,10 +44,26 @@ def apply_rotary_emb(x, cos, sin):
     return torch.cat([y1, y2], 3)
 
 
-def rmsnorm(x0, eps=1e-6):
-    x = x0.float()
-    x = x * torch.rsqrt(x.pow(2).mean(-1, keepdim=True) + eps)
-    return x.type_as(x0)
+class RMSNorm(nn.Module):
+    def __init__(self, normalized_shape, eps=1e-6):
+        super().__init__()
+        self.normalized_shape = normalized_shape
+        self.eps = eps
+        # Learnable parameter (optional, standard RMSNorm doesn't have this)
+        self.weight = nn.Parameter(torch.ones(normalized_shape))
+    
+    def forward(self, x0):
+        x = x0.float()
+        x = x * torch.rsqrt(x.pow(2).mean(-1, keepdim=True) + self.eps)
+        return x.type_as(x0) * self.weight
+    
+    def extra_repr(self):
+        return f'normalized_shape={self.normalized_shape}, eps={self.eps}'
+
+# def rmsnorm(x0, eps=1e-6):
+#     x = x0.float()
+#     x = x * torch.rsqrt(x.pow(2).mean(-1, keepdim=True) + eps)
+#     return x.type_as(x0)
 
 
 class CausalSelfAttention(nn.Module):
@@ -110,10 +126,12 @@ class Block(nn.Module):
         self.attn = CausalSelfAttention(config)
         self.mlp = MLP(config)
         self.attn_scale = 1 / math.sqrt(2 * config.n_layer)
+        self.norm_one = RMSNorm(config.n_embd)
+        self.norm_two = RMSNorm(config.n_embd)
 
     def forward(self, x):
-        x = x + self.attn_scale * self.attn(rmsnorm(x))
-        x = x + self.mlp(rmsnorm(x))
+        x = x + self.attn_scale * self.attn(self.norm_one(x))
+        x = x + self.mlp(self.norm_two(x))
         return x
 
 # -----------------------------------------------------------------------------
@@ -137,6 +155,8 @@ class Model(nn.Module):
             self.lm_head.weight
         )  # https://paperswithcode.com/method/weight-tying
 
+        self.norm = RMSNorm(config.n_embd)
+
     def forward(self, idx, targets=None, return_logits=True):
         b, t = idx.size()
         pos = torch.arange(0, t, dtype=torch.long, device=idx.device)  # shape (t)
@@ -146,7 +166,7 @@ class Model(nn.Module):
 
         for block in self.transformer.h:
             x = block(x)
-        x = rmsnorm(x)
+        x = self.norm(x)
 
         if targets is not None:
             # if we are given some desired targets also calculate the loss

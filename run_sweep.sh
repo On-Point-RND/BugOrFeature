@@ -1,38 +1,33 @@
 #!/bin/bash
 
 # Hardcoded config path
-CONFIG_PATH="./configs/config_device.yaml"
+CONFIG_PATH="./configs/debug_config.yaml"
 
 
 
 # Activation functions to iterate over
-ACTIVATIONS=(
-#   "GELU"
-#    "ReLUSquared"
- #   "BSiLU"
- #   "SUGARBSiLU"
-    "NoisyReLU"
-   #  "TopKSparseGELU-10"
-   #  "TopKSparseGELU-25"
-   # "TopKSparseGELU-50"
-   #  "TopKSparseGELU-75"
-   #  "TopKSparseGELU-90"
-)
+NORMS=(
+"QuantileLayerNorm-10"
+"QuantileLayerNorm-25"
+"QuantileLayerNorm-50"
+"QuantileLayerNorm-75"
+"QuantileLayerNorm-90"
+"LayerNorm")
 
 echo "========================================"
-echo "Running activation sweep with config: $CONFIG_PATH"
+echo "Running normalizations sweep with config: $CONFIG_PATH"
 echo "========================================"
 
-for ACT in "${ACTIVATIONS[@]}"; do
+for NORM in "${NORMS[@]}"; do
     echo ""
-    echo ">>> Running with activation: $ACT"
+    echo ">>> Running with normalization: $NORM"
     echo "===================================="
     
-    python runner.py --config "$CONFIG_PATH" --replaced_activation "$ACT" --original_activation "ReLU"
+    python runner.py --config "$CONFIG_PATH" --replaced_normalization "$NORM" --original_normalization "RMSNorm"
     
     EXIT_CODE=$?
     if [ $EXIT_CODE -ne 0 ]; then
-        echo "ERROR: runner.py failed with exit code $EXIT_CODE for activation $ACT"
+        echo "ERROR: runner.py failed with exit code $EXIT_CODE for normalization $NORM"
         # Uncomment below to stop on first failure
         # exit $EXIT_CODE
     fi

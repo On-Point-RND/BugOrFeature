@@ -14,6 +14,25 @@ def _review_as_with_batch(x: torch.Tensor, target_shape: torch.Size) -> torch.Te
     return x.view(1, *x.shape, *((1,) * extra_dims))
 
 
+
+
+
+class RMSNorm(nn.Module):
+    def __init__(self, normalized_shape, eps=1e-6):
+        super().__init__()
+        self.normalized_shape = normalized_shape
+        self.eps = eps
+        # Learnable parameter (optional, standard RMSNorm doesn't have this)
+        self.weight = nn.Parameter(torch.ones(normalized_shape))
+    
+    def forward(self, x0):
+        x = x0.float()
+        x = x * torch.rsqrt(x.pow(2).mean(-1, keepdim=True) + self.eps)
+        return x.type_as(x0) * self.weight
+    
+    def extra_repr(self):
+        return f'normalized_shape={self.normalized_shape}, eps={self.eps}'
+
 ##########################################################################
 #          Hand-written implementations of normalization layers          #
 ##########################################################################
@@ -300,7 +319,8 @@ class QuantileLayerNorm(LayerNorm):
             track_running_stats: bool = True,
             running_shape: Optional[torch.Size] = None,
             momentum: float = 0.1,
-            max_tracked_cnt: Optional[int] = None,
+            max_tracked_cnt: Optional[int] = 2000,
+            training: bool = True,
             **kwargs
         ):
         super().__init__(*args, **kwargs)
@@ -313,6 +333,7 @@ class QuantileLayerNorm(LayerNorm):
         self.track_running_stats = track_running_stats
         self.momentum = momentum
         self.max_tracked_cnt = max_tracked_cnt
+        self._running_shape = running_shape  # Store for lazy initialization
 
         self.quantile_view_fn = {
             'global': lambda x: x.view(-1),
@@ -320,9 +341,15 @@ class QuantileLayerNorm(LayerNorm):
             'channelwise': lambda x: x.view(x.size(0), x.size(1), -1),
         }[self.quantile_search_mode]
 
+        # Remove fixed buffer initialization - will be initialized lazily on first forward
+
+    def _init_buffers_if_needed(self, x: torch.Tensor):
+        """Lazy initialization of buffers on the correct device."""
         if self.track_running_stats:
-            self.register_buffer('running_layer_mean', torch.zeros(running_shape or (1,)))
-            self.register_buffer('num_batches_tracked', torch.tensor(0, dtype=torch.long))
+            if not hasattr(self, 'running_layer_mean') or self.running_layer_mean is None:
+                device = x.device
+                self.register_buffer('running_layer_mean', torch.zeros(self._running_shape or (1,), device=device))
+                self.register_buffer('num_batches_tracked', torch.tensor(0, dtype=torch.long))
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         """
@@ -333,6 +360,9 @@ class QuantileLayerNorm(LayerNorm):
         Returns:
             torch.Tensor: Normalized tensor of the same shape as input.
         """
+        # Lazy initialization of buffers on first forward pass
+        self._init_buffers_if_needed(x)
+        
         layer_mean = None
 
         if self.sparsity_level is None:
@@ -372,7 +402,7 @@ class QuantileLayerNorm(LayerNorm):
 NORMALIZATION_NAMES_MAP = {
     'BatchNorm2d': nn.BatchNorm2d,
     'LayerNorm': nn.LayerNorm,
-
+    'RMSNorm': RMSNorm,
     'QuantileBatchNorm2d': QuantileBatchNorm2d,
     'QuantileBatchNorm2d-10': partial(QuantileBatchNorm2d, sparsity_level=0.1),
     'QuantileBatchNorm2d-25': partial(QuantileBatchNorm2d, sparsity_level=0.25),

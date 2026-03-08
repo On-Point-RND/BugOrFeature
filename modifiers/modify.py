@@ -7,6 +7,7 @@ from modifiers.activations import ACTIVATION_NAMES_MAP, ActivationClass
 from modifiers.normalizations import NORMALIZATION_NAMES_MAP, NormalizationClass
 
 
+
 ##########################################################################
 #                Function to replace layers in a module                  #
 ##########################################################################
@@ -44,26 +45,63 @@ def replace_activation(
     print(f"Replaced {len(resulting_layers)} activation(s): {original_activation} -> {replaced_activation}")
     return resulting_layers
 
+##########################################################################
+#                Function to replace layers in a module                  #
+##########################################################################
 
 def replace_normalization(
     module: nn.Module,
-    original_normalization: NormalizationClass = 'BatchNorm2d',
-    replaced_normalization: NormalizationClass | nn.Module = 'SparseBatchNorm2dQuantile50',
+    original_normalization:  nn.Module = 'RMSNorm',
+    replaced_normalization: NormalizationClass |  nn.Module = 'LayerNorm',
 ) -> List[nn.Module]:
     assert original_normalization in NORMALIZATION_NAMES_MAP, f"Original normalization '{original_normalization}' is not supported."
     assert replaced_normalization in NORMALIZATION_NAMES_MAP or isinstance(replaced_normalization, nn.Module), f"Replaced normalization '{replaced_normalization}' is not supported."
 
+    print(original_normalization, replaced_normalization)
     original_cls = NORMALIZATION_NAMES_MAP.get(original_normalization)
     replaced_cls = NORMALIZATION_NAMES_MAP.get(replaced_normalization) if isinstance(replaced_normalization, str) else replaced_normalization
 
+    # Parameters that should NOT be passed to constructor (managed by nn.Module)
+    module_attributes = {'weight', 'bias', 'running_mean', 'running_var', 'num_batches_tracked', 'running_layer_mean'}
+    
     resulting_layers: List[nn.Module] = []
     
     for layer in module.modules():
         for child_name, child in layer.named_children():
-            if isinstance(child, original_cls):
-                new_activation = replaced_cls(**child.__dict__)
-                setattr(layer, child_name, new_activation)
-                resulting_layers.append(new_activation)
+            if child.__class__.__name__ == original_cls.__name__:
+                # Get device from original layer
+                original_device = next(child.parameters()).device if list(child.parameters()) else torch.device('cpu')
+                
+                # Filter out private PyTorch attributes and module-managed attributes
+                valid_kwargs = {
+                    k: v for k, v in child.__dict__.items() 
+                    if not k.startswith('_') and k not in module_attributes
+                }
+                new_normalization = replaced_cls(**valid_kwargs)
+                
+                # Copy weight if it exists in original and is not None
+                if hasattr(child, 'weight'):
+                    weight = getattr(child, 'weight')
+                    if weight is not None:
+                        # Delete old parameter first, then register new one
+                        del new_normalization.weight
+                        new_normalization.register_parameter('weight', weight)
+                
+                # Copy bias if it exists in original and is not None
+                if hasattr(child, 'bias'):
+                    bias = getattr(child, 'bias')
+                    if bias is not None:
+                        if hasattr(new_normalization, 'bias') and new_normalization.bias is not None:
+                            del new_normalization.bias
+                        new_normalization.register_parameter('bias', bias)
+                else:
+                    # Original has no bias - remove bias from new layer to avoid device mismatch
+                    if hasattr(new_normalization, 'bias') and new_normalization.bias is not None:
+                        del new_normalization.bias
+                        new_normalization.register_parameter('bias', None)
+                    
+                setattr(layer, child_name, new_normalization)
+                resulting_layers.append(new_normalization)
 
     print(f"Replaced {len(resulting_layers)} normalization(s): {original_normalization} -> {replaced_normalization}")
     return resulting_layers

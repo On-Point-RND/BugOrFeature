@@ -22,11 +22,11 @@ parser.add_argument('--config', type=str, default='./configs/config.yaml',
                     help='Path to config file (default: ./configs/config.yaml)')
 parser.add_argument('--original_activation', type=str, default='ReLU',
                     help='Original activation function to replace (default: GELU)')
-parser.add_argument('--replaced_activation', type=str, default='ReLUSquared',
+parser.add_argument('--replaced_activation', type=str, default='None',
                     help='Activation function to replace with (default: ReLUSquared, use "None" to skip)')
 
-parser.add_argument('--original_normalization', type=str, default='BatchNorm2d',
-                    help='Original normalization to replace (default: BatchNorm2d)')
+parser.add_argument('--original_normalization', type=str, default='RMSNorm',
+                    help='Original normalization to replace (default: RMSNorm)')
 parser.add_argument('--replaced_normalization', type=str, default='None',
                     help='Normalization to replace with (default: QuantileBatchNorm2d-50, use "None" to skip)')
 
