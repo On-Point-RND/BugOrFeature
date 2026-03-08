@@ -1,22 +1,22 @@
 #!/bin/bash
 
 # Hardcoded config path
-CONFIG_PATH="./configs/config.yaml"
+CONFIG_PATH="./configs/config_device.yaml"
 
 
 
 # Activation functions to iterate over
 ACTIVATIONS=(
-    "GELU"
-    "ReLUSquared"
-    "BSiLU"
-    "SUGARBSiLU"
+#   "GELU"
+#    "ReLUSquared"
+ #   "BSiLU"
+ #   "SUGARBSiLU"
     "NoisyReLU"
-    "TopKSparseGELU-10"
-    "TopKSparseGELU-25"
-    "TopKSparseGELU-50"
-    "TopKSparseGELU-75"
-    "TopKSparseGELU-90"
+   #  "TopKSparseGELU-10"
+   #  "TopKSparseGELU-25"
+   # "TopKSparseGELU-50"
+   #  "TopKSparseGELU-75"
+   #  "TopKSparseGELU-90"
 )
 
 echo "========================================"

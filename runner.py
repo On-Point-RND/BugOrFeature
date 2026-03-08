@@ -12,7 +12,7 @@ from modifiers import replace_activation, replace_normalization
 
 
 # 1. Enable TF32 (Massive speedup on A100)
-torch.set_float32_matmul_precision('high')
+# torch.set_float32_matmul_precision('high')
 # 2. Use Benchmarking to find the fastest kernels
 torch.backends.cudnn.benchmark = True
 

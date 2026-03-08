@@ -14,18 +14,34 @@ from modifiers.decorators import analytical_module, topk_sparse_module
 
 # ReLU^2
 
+
+class ReLUSquaredFunction(torch.autograd.Function):
+    @staticmethod
+    def forward(ctx, input):
+        # Save input for backward pass (needed to compute mask)
+        ctx.save_for_backward(input)
+        # Compute forward: (max(0, x))^2
+        # Note: Intermediate tensors created here are NOT saved in the graph
+        output = F.relu(input)
+        return torch.square(output)
+
+    @staticmethod
+    def backward(ctx, grad_output):
+        input, = ctx.saved_tensors
+        # Gradient of (ReLU(x))^2 is: 2 * ReLU(x) * (1 if x>0 else 0)
+        # Which simplifies to: 2 * ReLU(x)
+        # We recompute ReLU(x) from input instead of saving it from forward
+        relu_input = F.relu(input)
+        grad_input = 2 * relu_input * grad_output
+        return grad_input
+
 @analytical_module
-class ReLUSquared(nn.ReLU):
-    """
-    ReLUSquared is an activation function that applies the ReLU operation followed by squaring the output (i.e., f(x) = (max(0, x))^2).
-    """
+class ReLUSquared(nn.Module):
+    def __init__(self):
+        super().__init__()
+        
     def forward(self, input):
-        output = super().forward(input)
-        if getattr(self, 'inplace', False):
-            output.square_()
-        else:
-            output = torch.square(output)
-        return output
+        return ReLUSquaredFunction.apply(input)
 
 
 # B-SiLU
@@ -78,9 +94,12 @@ class SUGARBSiLU(nn.ReLU):
 @analytical_module
 class NoisyReLU(nn.ReLU):
     """
-    NoisyReLU is a variant of the ReLU activation function that adds noise to the output during training. The noise is generated based on the negative part of the input, and its scale is controlled by a learnable parameter p and a hyperparameter c. The noise can help regularize the model and improve generalization by preventing overfitting to the training data.
+    NoisyReLU is a variant of the ReLU activation function that adds noise to the output during training. 
+    The noise is generated based on the negative part of the input, and its scale is controlled by a 
+    learnable parameter p and a hyperparameter c. The noise can help regularize the model and improve 
+    generalization by preventing overfitting to the training data.
 
-    see: https://arxiv.org/pdf/1603.00391 for more details on NoisyReLU and its properties.
+    See: https://arxiv.org/pdf/1603.00391 for more details on NoisyReLU and its properties.
     """
 
     def __init__(
@@ -98,22 +117,33 @@ class NoisyReLU(nn.ReLU):
         self.alpha = alpha
         self.c = c
         self.noise_type = noise_type
+        # Registered parameter - will move with module via .to(device) when used correctly
         self.p = nn.Parameter(torch.randn(1))
         
     def forward(self, x):
         if not self.training:
             return F.relu(x)
         
+        # SAFETY: Ensure p is on same device as input (handles edge cases where .to() wasn't called properly)
+        p = self.p.to(x.device)
+        
         # Training time with noise
         mask = x < 0
-        delta = torch.where(mask, x, 0.0)
         
-        sigma = delta.mul(-self.p).sigmoid().sub(0.5).square()
+        # Create explicit zero tensor on same device/dtype as input
+        zero = torch.tensor(0.0, device=x.device, dtype=x.dtype)
+        delta = torch.where(mask, x, zero)
         
+        # Use device-aligned p
+        sigma = delta.mul(-p).sigmoid().sub(0.5).square()
+        
+        # randn_like respects device/dtype of x
         epsilon = torch.randn_like(x)
         if self.noise_type == 'half-normal':
             epsilon.abs_()
-        noise = sigma.mul(epsilon.mul_(self.c)).masked_fill_(mask, 0.0)
+        
+        # Use explicit zero for masked_fill
+        noise = sigma.mul(epsilon.mul_(self.c)).masked_fill_(mask, zero)
         
         x = F.leaky_relu(x, (1 - self.alpha)) + noise
         

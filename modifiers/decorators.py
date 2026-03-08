@@ -17,7 +17,7 @@ def analytical_module(cls: Type[nn.Module]) -> Type[nn.Module]:
         def __init__(
             self,
             *args,
-            debug_info: bool = True,
+            debug_info: bool = False,
             **kwargs,
         ):
             super().__init__(*args, **kwargs)
@@ -71,13 +71,17 @@ def topk_sparse_module(cls: Type[nn.Module]) -> Type[nn.Module]:
                 x = super().forward(x)
 
             if self.sparsity_level is not None:
-                x_act_resized = x.view(x.size(dim=0), -1)
-                total_elements = x_act_resized.size(dim=-1)  # per-sample element count
+                # Get batch size while preserving other dimensions
+                batch_size = x.size(0)
+                x_flat = x.view(batch_size, -1)  # [batch, rest]
+                total_elements = x_flat.size(-1)  # per-sample element count
                 n_keep = int((1.0 - self.sparsity_level) * total_elements)
                 
-                kth_values = torch.kthvalue(x_act_resized, n_keep, dim=-1).values
-                mask = x < kth_values[:, None, None, None]
-                x.masked_fill_(mask, 0.0)
+                kth_values = torch.kthvalue(x_flat, n_keep, dim=-1).values  # [batch]
+                # Reshape kth_values to match x's dimensions for broadcasting
+                kth_values = kth_values.view(batch_size, *([1] * (x.dim() - 1)))
+                mask = x < kth_values
+                x = x.masked_fill(mask, 0.0)
 
             if not self.post_sparsity:
                 x = super().forward(x)
@@ -90,3 +94,4 @@ def topk_sparse_module(cls: Type[nn.Module]) -> Type[nn.Module]:
     SparseModule.__name__ = f"TopK{cls.__name__}"
 
     return SparseModule
+
