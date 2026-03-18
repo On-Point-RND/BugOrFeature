@@ -6,6 +6,30 @@ from dataclasses import dataclass
 
 from .muon_optim import Muon
 
+class ReLUSquaredFunction(torch.autograd.Function):
+    @staticmethod
+    def forward(ctx, input):
+        # Compute ReLU output once
+        relu_out = F.relu(input)
+        squared = torch.square(relu_out)
+        clipped = torch.clamp(squared, max=50)
+        
+        # Save ONLY what's needed for backward (the ReLU output, not full input)
+        # This is the same size PyTorch saves internally, but we avoid extra intermediates
+        ctx.save_for_backward(relu_out, squared < 50)  # float mask + bool mask
+        
+        return clipped
+
+    @staticmethod
+    def backward(ctx, grad_output):
+        relu_out, clip_mask = ctx.saved_tensors
+        
+        # Gradient: 2 * ReLU(x) * grad_output, zeroed where clipped
+        grad_input = 2 * relu_out * grad_output * clip_mask
+        
+        return grad_input
+
+
 @dataclass
 class GPTConfig:
     vocab_size: int = 50257
@@ -110,11 +134,11 @@ class MLP(nn.Module):
         super().__init__()
         self.up_projection = nn.Linear(config.n_embd, 4 * config.n_embd, bias=False)
         self.down_projection = nn.Linear(4 * config.n_embd, config.n_embd, bias=False)
-        self.activation = nn.ReLU()
+        #self.activation =  ReLUSquaredFunction() #nn.ReLU()
 
     def forward(self, x):
         x = self.up_projection(x)
-        x = self.activation(x)
+        x =  ReLUSquaredFunction.apply(x)  #self.activation(x)
         x = self.down_projection(x)
         return x
 

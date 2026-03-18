@@ -1,18 +1,20 @@
 #!/bin/bash
 
 # Hardcoded config path
-CONFIG_PATH="./configs/debug_config.yaml"
+CONFIG_PATH="./configs/config_device.yaml"
 
 
 
 # Activation functions to iterate over
 NORMS=(
-"QuantileLayerNorm-10"
-"QuantileLayerNorm-25"
-"QuantileLayerNorm-50"
+# "QuantileLayerNorm-10"
+# "QuantileLayerNorm-25"
+# "QuantileLayerNorm-50"
+"LayerNorm"
 "QuantileLayerNorm-75"
 "QuantileLayerNorm-90"
-"LayerNorm")
+
+)
 
 echo "========================================"
 echo "Running normalizations sweep with config: $CONFIG_PATH"

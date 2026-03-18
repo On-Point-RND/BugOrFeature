@@ -164,31 +164,31 @@ class Trainer:
 
 
             samples_out = []
-            for spec in SAMPLE_SPECT:
-                tok_seq = self._generate_tokens(
-                    model,
-                    max_new_tokens=spec["gen"]["max_new_tokens"],
-                    temperature=spec["gen"]["temperature"],
-                    top_k=spec["gen"]["top_k"],
-                    prompt=spec["prompt"],
-                    bos_token=50256,
-                )
-                text = self._maybe_decode_gpt2(tok_seq)
-                samples_out.append({
-                    "name": spec["name"],
-                    "prompt": spec["prompt"],
-                    "generation_params": spec["gen"],
-                    "text": text,
-                })
+            # for spec in SAMPLE_SPECT:
+            #     tok_seq = self._generate_tokens(
+            #         model,
+            #         max_new_tokens=spec["gen"]["max_new_tokens"],
+            #         temperature=spec["gen"]["temperature"],
+            #         top_k=spec["gen"]["top_k"],
+            #         prompt=spec["prompt"],
+            #         bos_token=50256,
+            #     )
+            #     text = self._maybe_decode_gpt2(tok_seq)
+            #     samples_out.append({
+            #         "name": spec["name"],
+            #         "prompt": spec["prompt"],
+            #         "generation_params": spec["gen"],
+            #         "text": text,
+            #     })
 
-            payload = {
-                "step": int(self.step),
-                "tokens_per_iter": int(self.tokens_per_iter),
-                "val_loss": float(val_loss),
-                "val_ppl": float(val_ppl),
-                "samples": samples_out,
-            }
-            self.logger.save_sample_artifact(payload, step=step, multi=True)
+            # payload = {
+            #     "step": int(self.step),
+            #     "tokens_per_iter": int(self.tokens_per_iter),
+            #     "val_loss": float(val_loss),
+            #     "val_ppl": float(val_ppl),
+            #     "samples": samples_out,
+            # }
+            # self.logger.save_sample_artifact(payload, step=step, multi=True)
 
     def train(self, train_loader, val_loader, model, val_steps):
         # --- Optional model compilation ---

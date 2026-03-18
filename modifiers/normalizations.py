@@ -319,7 +319,7 @@ class QuantileLayerNorm(LayerNorm):
             track_running_stats: bool = True,
             running_shape: Optional[torch.Size] = None,
             momentum: float = 0.1,
-            max_tracked_cnt: Optional[int] = 2000,
+            max_tracked_cnt: Optional[int] = 4000,
             training: bool = True,
             **kwargs
         ):

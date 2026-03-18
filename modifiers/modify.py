@@ -1,3 +1,4 @@
+import inspect
 from typing import List
 from functools import partial
 
@@ -62,7 +63,7 @@ def replace_normalization(
     replaced_cls = NORMALIZATION_NAMES_MAP.get(replaced_normalization) if isinstance(replaced_normalization, str) else replaced_normalization
 
     # Parameters that should NOT be passed to constructor (managed by nn.Module)
-    module_attributes = {'weight', 'bias', 'running_mean', 'running_var', 'num_batches_tracked', 'running_layer_mean'}
+    module_attributes = {'training', 'weight', 'bias', 'running_mean', 'running_var', 'num_batches_tracked', 'running_layer_mean'}
     
     resulting_layers: List[nn.Module] = []
     
@@ -77,6 +78,20 @@ def replace_normalization(
                     k: v for k, v in child.__dict__.items() 
                     if not k.startswith('_') and k not in module_attributes
                 }
+                # Filter out arguments that couldn't be passed to constructor
+                # var_names = set()
+                # has_kwarg = False
+                # for k, v in inspect.signature(replaced_cls).parameters.items():
+                #     if v.kind == 4: # <_ParameterKind.VAR_KEYWORD: 4>
+                #         has_kwarg = True
+                #     elif v.kind == 1 or v.kind == 3: # <_ParameterKind.POSITIONAL_OR_KEYWORD: 1> | <_ParameterKind.KEYWORD_ONLY: 3>
+                #         var_names.add(k)
+                # if not has_kwarg:
+                #     valid_kwargs = {
+                #         k: v for k, v in valid_kwargs.items() 
+                #         if k in var_names
+                #     }
+                
                 new_normalization = replaced_cls(**valid_kwargs)
                 
                 # Copy weight if it exists in original and is not None

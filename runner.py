@@ -17,34 +17,34 @@ from modifiers import replace_activation, replace_normalization
 torch.backends.cudnn.benchmark = True
 
 # Parse command line arguments
-parser = argparse.ArgumentParser(description='Train model with configurable activations and normalizations')
-parser.add_argument('--config', type=str, default='./configs/config.yaml',
-                    help='Path to config file (default: ./configs/config.yaml)')
-parser.add_argument('--original_activation', type=str, default='ReLU',
-                    help='Original activation function to replace (default: GELU)')
-parser.add_argument('--replaced_activation', type=str, default='None',
-                    help='Activation function to replace with (default: ReLUSquared, use "None" to skip)')
+# parser = argparse.ArgumentParser(description='Train model with configurable activations and normalizations')
+# parser.add_argument('--config', type=str, default='./configs/config.yaml',
+#                     help='Path to config file (default: ./configs/config.yaml)')
+# parser.add_argument('--original_activation', type=str, default='ReLU',
+#                     help='Original activation function to replace (default: GELU)')
+# parser.add_argument('--replaced_activation', type=str, default='None',
+#                     help='Activation function to replace with (default: ReLUSquared, use "None" to skip)')
 
-parser.add_argument('--original_normalization', type=str, default='RMSNorm',
-                    help='Original normalization to replace (default: RMSNorm)')
-parser.add_argument('--replaced_normalization', type=str, default='None',
-                    help='Normalization to replace with (default: QuantileBatchNorm2d-50, use "None" to skip)')
+# parser.add_argument('--original_normalization', type=str, default='RMSNorm',
+#                     help='Original normalization to replace (default: RMSNorm)')
+# parser.add_argument('--replaced_normalization', type=str, default='None',
+#                     help='Normalization to replace with (default: QuantileBatchNorm2d-50, use "None" to skip)')
 
-args = parser.parse_args()
+#args = parser.parse_args()
 
 # Load config
-config_path = args.config
+config_path = "./configs/config.yaml"  #args.config
 print(f"Loading config from: {config_path}")
 with open(config_path, "r") as f:
     cfg = yaml.safe_load(f)
 
 
-# Convert "None" strings to None
-replaced_activation = None if args.replaced_activation.lower() == 'none' else args.replaced_activation
-replaced_normalization = None if args.replaced_normalization.lower() == 'none' else args.replaced_normalization
+# # Convert "None" strings to None
+# replaced_activation = None if args.replaced_activation.lower() == 'none' else args.replaced_activation
+# replaced_normalization = None if args.replaced_normalization.lower() == 'none' else args.replaced_normalization
 
-cfg["model"]["layer_swap"]["replace_activations"] = replaced_activation
-cfg["model"]["layer_swap"]["replace_norms"] = replaced_normalization
+# cfg["model"]["layer_swap"]["replace_activations"] = replaced_activation
+# cfg["model"]["layer_swap"]["replace_norms"] = replaced_normalization
 
 log_dir_path = None
 last_step = 0
@@ -111,19 +111,19 @@ if target_layer.lower() != "original":
                               target_layer, 
                               logging=logger.info if cfg['logging'].get('use_ml_flow') else print)
 
-# Replace activation if specified
-if replaced_activation is not None:
-    logger.info(f"Replacing activation: {args.original_activation} -> {replaced_activation}")
-    replace_activation(model, original_activation=args.original_activation, replaced_activation=replaced_activation)
-else:
-    logger.info(f"Skipping activation replacement (replaced_activation is None)")
+# # Replace activation if specified
+# if replaced_activation is not None:
+#     logger.info(f"Replacing activation: {args.original_activation} -> {replaced_activation}")
+#     replace_activation(model, original_activation=args.original_activation, replaced_activation=replaced_activation)
+# else:
+#     logger.info(f"Skipping activation replacement (replaced_activation is None)")
 
-# Replace normalization if specified
-if replaced_normalization is not None:
-    logger.info(f"Replacing normalization: {args.original_normalization} -> {replaced_normalization}")
-    replace_normalization(model, original_normalization=args.original_normalization, replaced_normalization=replaced_normalization)
-else:
-    logger.info(f"Skipping normalization replacement (replaced_normalization is None)")
+# # Replace normalization if specified
+# if replaced_normalization is not None:
+#     logger.info(f"Replacing normalization: {args.original_normalization} -> {replaced_normalization}")
+#     replace_normalization(model, original_normalization=args.original_normalization, replaced_normalization=replaced_normalization)
+# else:
+#     logger.info(f"Skipping normalization replacement (replaced_normalization is None)")
 
 logger.info("\n\n" + "==="*10 + f"\nMODEL AFTER SWAP:\n\n{model}\n\n" + "==="*10 )
 
